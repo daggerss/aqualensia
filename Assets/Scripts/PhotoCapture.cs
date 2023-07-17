@@ -8,9 +8,15 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Taker")]
     [SerializeField] private Image photoDisplay;
     [SerializeField] private GameObject photoFrame;
+    [SerializeField] private float displayTime;
+
+    [Header("Flash Effect")]
+    [SerializeField] private GameObject cameraFlash;
+    [SerializeField] private float flashTime;
 
     private Texture2D screenCapture;
     private int photoWidth, photoHeight;
+    private bool viewingPhoto;
     
     // Set up screenshot
     void Start()
@@ -26,7 +32,7 @@ public class PhotoCapture : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !viewingPhoto)
         {
             StartCoroutine(CapturePhoto());
         }
@@ -60,8 +66,18 @@ public class PhotoCapture : MonoBehaviour
     // Display and hide photo
     IEnumerator DisplayPhoto()
     {
+        // Show all
+        viewingPhoto = true;
         photoFrame.SetActive(true);
-        yield return new WaitForSeconds(2);
+        cameraFlash.SetActive(true);
+
+        // Flash wait + hide
+        yield return new WaitForSeconds(flashTime);
+        cameraFlash.SetActive(false);
+
+        // Photo wait + hide
+        yield return new WaitForSeconds(displayTime);
         photoFrame.SetActive(false);
+        viewingPhoto = false;
     }
 }
