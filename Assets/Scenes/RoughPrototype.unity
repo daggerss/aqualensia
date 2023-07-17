@@ -388,6 +388,8 @@ GameObject:
   - component: {fileID: 142746218}
   - component: {fileID: 142746220}
   - component: {fileID: 142746219}
+  - component: {fileID: 142746222}
+  - component: {fileID: 142746221}
   m_Layer: 5
   m_Name: PhotoDisplay
   m_TagString: Untagged
@@ -453,6 +455,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142746217}
   m_CullTransparentMesh: 1
+--- !u!95 &142746221
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142746217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ab428917fddd3f4ba4871f85540ae7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &142746222
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142746217}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &142880517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1187,7 @@ MonoBehaviour:
   displayTime: 2
   cameraFlash: {fileID: 96667163}
   flashTime: 0.2
+  fadingAnimation: {fileID: 142746221}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0

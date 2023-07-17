@@ -14,6 +14,9 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private GameObject cameraFlash;
     [SerializeField] private float flashTime;
 
+    [Header("Photo Fade Effect")]
+    [SerializeField] private Animator fadingAnimation;
+
     private Texture2D screenCapture;
     private int photoWidth, photoHeight;
     private bool viewingPhoto;
@@ -70,6 +73,7 @@ public class PhotoCapture : MonoBehaviour
         viewingPhoto = true;
         photoFrame.SetActive(true);
         cameraFlash.SetActive(true);
+        fadingAnimation.Play("PhotoFade");
 
         // Flash wait + hide
         yield return new WaitForSeconds(flashTime);
