@@ -18,6 +18,9 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Fade Effect")]
     [SerializeField] private Animator fadingAnimation;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource cameraAudio;
+
     private Texture2D screenCapture;
     private int photoWidth, photoHeight;
     private bool viewingPhoto;
@@ -47,7 +50,7 @@ public class PhotoCapture : MonoBehaviour
     {
         // Hide viewfinder
         viewfinder.SetActive(false);
-        
+
         yield return new WaitForEndOfFrame();
 
         int x = (Screen.width / 2) - (photoWidth / 2);
@@ -76,6 +79,7 @@ public class PhotoCapture : MonoBehaviour
         // Show all
         viewingPhoto = true;
         photoFrame.SetActive(true);
+        cameraAudio.Play();
         cameraFlash.SetActive(true);
         fadingAnimation.Play("PhotoFade");
 
