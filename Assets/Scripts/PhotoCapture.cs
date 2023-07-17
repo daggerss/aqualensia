@@ -9,6 +9,7 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private Image photoDisplay;
     [SerializeField] private GameObject photoFrame;
     [SerializeField] private float displayTime;
+    [SerializeField] private GameObject viewfinder;
 
     [Header("Flash Effect")]
     [SerializeField] private GameObject cameraFlash;
@@ -44,6 +45,9 @@ public class PhotoCapture : MonoBehaviour
     // Take screenshot
     IEnumerator CapturePhoto()
     {
+        // Hide viewfinder
+        viewfinder.SetActive(false);
+        
         yield return new WaitForEndOfFrame();
 
         int x = (Screen.width / 2) - (photoWidth / 2);
@@ -83,5 +87,8 @@ public class PhotoCapture : MonoBehaviour
         yield return new WaitForSeconds(displayTime);
         photoFrame.SetActive(false);
         viewingPhoto = false;
+
+        // Show viewfinder
+        viewfinder.SetActive(true);
     }
 }
