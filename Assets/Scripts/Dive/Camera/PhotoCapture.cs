@@ -116,13 +116,13 @@ public class PhotoCapture : MonoBehaviour
         // Get + clamp mouse position
         float xOffset = 40f;
         float yOffset = 55f;
-        mousePosition = Vector3.zero;
         mousePosition.x = Mathf.Clamp(Input.mousePosition.x,
                                       (frameWidth / 2) + xOffset,
                                       Screen.width - (frameWidth / 2) - xOffset);
         mousePosition.y = Mathf.Clamp(Input.mousePosition.y,
                                       (frameHeight / 2) + yOffset,
                                       Screen.height - (frameHeight / 2) - yOffset);
+        mousePosition.z = Input.mousePosition.z;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         // Adjust values
