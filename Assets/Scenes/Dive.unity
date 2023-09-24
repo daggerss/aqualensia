@@ -1181,6 +1181,7 @@ MonoBehaviour:
   photoFrame: {fileID: 278001009}
   displayTime: 2
   viewfinder: {fileID: 842896}
+  cropSize: 3.55
   cameraFlash: {fileID: 96667163}
   flashTime: 0.2
   fadingAnimation: {fileID: 142746221}

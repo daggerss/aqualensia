@@ -10,6 +10,7 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private GameObject photoFrame;
     [SerializeField] private float displayTime;
     [SerializeField] private GameObject viewfinder;
+    [SerializeField] private float cropSize;
 
     [Header("Flash Effect")]
     [SerializeField] private GameObject cameraFlash;
@@ -29,7 +30,6 @@ public class PhotoCapture : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
 
         RectTransform photoRectTransform = photoDisplay.GetComponent<RectTransform>();
-        float cropSize = 2;
 
         photoWidth = (int)(photoRectTransform.rect.width / cropSize);
         photoHeight = (int)(photoRectTransform.rect.height / cropSize);
@@ -54,7 +54,7 @@ public class PhotoCapture : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         int x = (Screen.width / 2) - (photoWidth / 2);
-        int y = (Screen.height / 2) - (photoHeight / 2) - (int)photoDisplay.transform.position.y;
+        int y = (Screen.height / 2) - (photoHeight / 2);
 
         Rect regionToRead = new Rect(x, y, photoWidth, photoHeight);
 
