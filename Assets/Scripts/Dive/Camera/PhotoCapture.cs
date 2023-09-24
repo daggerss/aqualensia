@@ -18,9 +18,7 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Fade Effect")]
     [SerializeField] private Animator fadingAnimation;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource cameraAudio;
-
+    private AudioManager audioManager;    
     private Texture2D screenCapture;
     private int photoWidth, photoHeight;
     private bool viewingPhoto;
@@ -28,6 +26,8 @@ public class PhotoCapture : MonoBehaviour
     // Set up screenshot
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+
         RectTransform photoRectTransform = photoDisplay.GetComponent<RectTransform>();
         float cropSize = 2;
 
@@ -79,7 +79,7 @@ public class PhotoCapture : MonoBehaviour
         // Show all
         viewingPhoto = true;
         photoFrame.SetActive(true);
-        cameraAudio.Play();
+        audioManager.PlaySFX("Shutter");
         cameraFlash.SetActive(true);
         fadingAnimation.Play("PhotoFade");
 
