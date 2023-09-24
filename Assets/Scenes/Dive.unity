@@ -267,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52852573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.2, y: 38.5, z: 0}
+  m_LocalPosition: {x: 24, y: 35, z: 0}
   m_LocalScale: {x: 24, y: 24, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142880517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.580147, y: 30.07629, z: -6.7776117}
+  m_LocalPosition: {x: 40.38015, y: 26.57629, z: -6.7776117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -892,7 +892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.580147, y: 30.07629, z: -6.7776117}
+  m_LocalPosition: {x: 40.38015, y: 26.57629, z: -6.7776117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1278,10 +1278,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 7.717492, y: 2.2256832}
       - {x: 5.9755993, y: 3.851457}
-      - {x: 3.27688, y: 3.859196}
-      - {x: 3.30591, y: 4.864216}
-      - {x: 0.44558275, y: 4.9521832}
-      - {x: 0.4765783, y: 4.0113487}
+      - {x: 4.480954, y: 4.1000113}
+      - {x: 4.6015162, y: 5.1681457}
+      - {x: -0.88427174, y: 5.0995617}
+      - {x: -0.8359597, y: 4.1478853}
       - {x: -3.59373, y: 3.954806}
       - {x: -4.1104474, y: 2.5386453}
       - {x: -5.8060346, y: 1.854413}
