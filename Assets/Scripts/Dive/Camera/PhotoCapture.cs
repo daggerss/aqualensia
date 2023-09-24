@@ -19,15 +19,25 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Fade Effect")]
     [SerializeField] private Animator fadingAnimation;
 
-    private AudioManager audioManager;    
+    private AudioManager audioManager;
+
     private Texture2D screenCapture;
-    private int photoWidth, photoHeight;
+    private int photoWidth, photoHeight, frameWidth, frameHeight;
     private bool viewingPhoto;
-    
+
+    private Vector3 mousePosition;
+    private Vector3 frameWorldPosition;
+    private Vector3 frameScreenPosition;
+
     // Set up screenshot
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+
+        RectTransform frameRectTransform = photoFrame.GetComponent<RectTransform>();
+
+        frameWidth = (int)(frameRectTransform.rect.width / cropSize);
+        frameHeight = (int)(frameRectTransform.rect.height / cropSize);
 
         RectTransform photoRectTransform = photoDisplay.GetComponent<RectTransform>();
 
@@ -39,6 +49,10 @@ public class PhotoCapture : MonoBehaviour
 
     void Update()
     {
+        // Aim
+        AimCamera();
+
+        // Capture
         if (Input.GetMouseButtonDown(0) && !viewingPhoto)
         {
             StartCoroutine(CapturePhoto());
@@ -53,8 +67,9 @@ public class PhotoCapture : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        int x = (Screen.width / 2) - (photoWidth / 2);
-        int y = (Screen.height / 2) - (photoHeight / 2);
+        frameScreenPosition = Camera.main.WorldToScreenPoint(frameWorldPosition);
+        int x = (int)frameScreenPosition.x - (photoWidth / 2);
+        int y = (int)frameScreenPosition.y - (photoHeight / 2);
 
         Rect regionToRead = new Rect(x, y, photoWidth, photoHeight);
 
@@ -94,5 +109,28 @@ public class PhotoCapture : MonoBehaviour
 
         // Show viewfinder
         viewfinder.SetActive(true);
+    }
+
+    // Aim
+    void AimCamera()
+    {
+        // Get + clamp mouse position
+        float offset = 25f;
+        mousePosition = Vector3.zero;
+        mousePosition.x = Mathf.Clamp(Input.mousePosition.x,
+                                      frameWidth / 2 + offset,
+                                      Screen.width - (frameWidth / 2) - offset);
+        mousePosition.y = Mathf.Clamp(Input.mousePosition.y,
+                                      frameHeight / 2 + offset,
+                                      Screen.height - (frameHeight / 2) - offset);
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        // Adjust values
+        mousePosition.z = 1.0f;
+        frameWorldPosition = new Vector3(mousePosition.x, mousePosition.y - 0.25f, 1.0f);
+
+        // Set position
+        photoFrame.transform.position = frameWorldPosition;
+        viewfinder.transform.position = mousePosition;
     }
 }
