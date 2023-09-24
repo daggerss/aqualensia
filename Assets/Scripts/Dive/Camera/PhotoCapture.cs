@@ -114,8 +114,8 @@ public class PhotoCapture : MonoBehaviour
     void AimCamera()
     {
         // Get + clamp mouse position
-        float xOffset = 40f;
-        float yOffset = 55f;
+        float xOffset = 20f;
+        float yOffset = 30f;
         mousePosition.x = Mathf.Clamp(Input.mousePosition.x,
                                       (frameWidth / 2) + xOffset,
                                       Screen.width - (frameWidth / 2) - xOffset);
