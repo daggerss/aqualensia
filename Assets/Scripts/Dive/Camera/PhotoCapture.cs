@@ -10,7 +10,6 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private GameObject photoFrame;
     [SerializeField] private float displayTime;
     [SerializeField] private GameObject viewfinder;
-    [SerializeField] private float cropSize;
 
     [Header("Flash Effect")]
     [SerializeField] private GameObject cameraFlash;
@@ -36,13 +35,13 @@ public class PhotoCapture : MonoBehaviour
 
         RectTransform frameRectTransform = photoFrame.GetComponent<RectTransform>();
 
-        frameWidth = (int)(frameRectTransform.rect.width / cropSize);
-        frameHeight = (int)(frameRectTransform.rect.height / cropSize);
+        frameWidth = (int)(frameRectTransform.rect.width);
+        frameHeight = (int)(frameRectTransform.rect.height);
 
         RectTransform photoRectTransform = photoDisplay.GetComponent<RectTransform>();
 
-        photoWidth = (int)(photoRectTransform.rect.width / cropSize);
-        photoHeight = (int)(photoRectTransform.rect.height / cropSize);
+        photoWidth = (int)(photoRectTransform.rect.width);
+        photoHeight = (int)(photoRectTransform.rect.height);
 
         screenCapture = new Texture2D(photoWidth, photoHeight, TextureFormat.RGB24, false);
     }
@@ -115,14 +114,15 @@ public class PhotoCapture : MonoBehaviour
     void AimCamera()
     {
         // Get + clamp mouse position
-        float offset = 25f;
+        float xOffset = 40f;
+        float yOffset = 55f;
         mousePosition = Vector3.zero;
         mousePosition.x = Mathf.Clamp(Input.mousePosition.x,
-                                      frameWidth / 2 + offset,
-                                      Screen.width - (frameWidth / 2) - offset);
+                                      (frameWidth / 2) + xOffset,
+                                      Screen.width - (frameWidth / 2) - xOffset);
         mousePosition.y = Mathf.Clamp(Input.mousePosition.y,
-                                      frameHeight / 2 + offset,
-                                      Screen.height - (frameHeight / 2) - offset);
+                                      (frameHeight / 2) + yOffset,
+                                      Screen.height - (frameHeight / 2) - yOffset);
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         // Adjust values
