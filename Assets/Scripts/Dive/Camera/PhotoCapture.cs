@@ -31,7 +31,7 @@ public class PhotoCapture : MonoBehaviour
     // Set up screenshot
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
 
         RectTransform frameRectTransform = photoFrame.GetComponent<RectTransform>();
 
