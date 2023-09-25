@@ -10,6 +10,8 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private GameObject photoFrame;
     [SerializeField] private float displayTime;
     [SerializeField] private GameObject viewfinder;
+    [SerializeField] private float aimXOffset;
+    [SerializeField] private float aimYOffset;
 
     [Header("Flash Effect")]
     [SerializeField] private GameObject cameraFlash;
@@ -21,12 +23,11 @@ public class PhotoCapture : MonoBehaviour
     private AudioManager audioManager;
 
     private Texture2D screenCapture;
-    private int photoWidth, photoHeight, frameWidth, frameHeight;
+    private int photoWidth, photoHeight, viewWidth, viewHeight;
     private bool viewingPhoto;
 
-    private Vector3 mousePosition;
-    private Vector3 frameWorldPosition;
-    private Vector3 frameScreenPosition;
+    private Vector3 viewMousePos;
+    private Vector3 photoMousePos;
 
     // Set up screenshot
     void Start()
@@ -37,16 +38,17 @@ public class PhotoCapture : MonoBehaviour
         // Audio
         audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
 
+        // Viewfinder size
+        RectTransform tempRectTransform = viewfinder.GetComponent<RectTransform>();
+
+        viewWidth = (int)(tempRectTransform.rect.width);
+        viewHeight = (int)(tempRectTransform.rect.height);
+
         // Photo details
-        RectTransform frameRectTransform = photoFrame.GetComponent<RectTransform>();
+        tempRectTransform = photoDisplay.GetComponent<RectTransform>();
 
-        frameWidth = (int)(frameRectTransform.rect.width);
-        frameHeight = (int)(frameRectTransform.rect.height);
-
-        RectTransform photoRectTransform = photoDisplay.GetComponent<RectTransform>();
-
-        photoWidth = (int)(photoRectTransform.rect.width);
-        photoHeight = (int)(photoRectTransform.rect.height);
+        photoWidth = (int)(tempRectTransform.rect.width);
+        photoHeight = (int)(tempRectTransform.rect.height);
 
         screenCapture = new Texture2D(photoWidth, photoHeight, TextureFormat.RGB24, false);
     }
@@ -71,9 +73,8 @@ public class PhotoCapture : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        frameScreenPosition = Camera.main.WorldToScreenPoint(frameWorldPosition);
-        int x = (int)frameScreenPosition.x - (photoWidth / 2);
-        int y = (int)frameScreenPosition.y - (photoHeight / 2);
+        int x = (int)photoMousePos.x - (photoWidth / 2);
+        int y = (int)photoMousePos.y - (photoHeight / 2);
 
         Rect regionToRead = new Rect(x, y, photoWidth, photoHeight);
 
@@ -101,6 +102,7 @@ public class PhotoCapture : MonoBehaviour
         audioManager.PlaySFX("Shutter");
         cameraFlash.SetActive(true);
         fadingAnimation.Play("PhotoFade");
+        viewfinder.SetActive(true);
 
         // Flash wait + hide
         yield return new WaitForSeconds(flashTime);
@@ -110,32 +112,35 @@ public class PhotoCapture : MonoBehaviour
         yield return new WaitForSeconds(displayTime);
         photoFrame.SetActive(false);
         viewingPhoto = false;
-
-        // Show viewfinder
-        viewfinder.SetActive(true);
     }
 
     // Aim
     void AimCamera()
     {
-        // Get + clamp mouse position
-        float xOffset = 20f;
-        float yOffset = 30f;
-        mousePosition.x = Mathf.Clamp(Input.mousePosition.x,
-                                      (frameWidth / 2) + xOffset,
-                                      Screen.width - (frameWidth / 2) - xOffset);
-        mousePosition.y = Mathf.Clamp(Input.mousePosition.y,
-                                      (frameHeight / 2) + yOffset,
-                                      Screen.height - (frameHeight / 2) - yOffset);
-        mousePosition.z = Input.mousePosition.z;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        // Mouse position for viewfinder
+        viewMousePos = ClampMousePosition(viewWidth, viewHeight);
+        viewMousePos = Camera.main.ScreenToWorldPoint(viewMousePos);
+        viewMousePos.z = 1.0f;
 
-        // Adjust values
-        mousePosition.z = 1.0f;
-        frameWorldPosition = new Vector3(mousePosition.x, mousePosition.y - 0.25f, 1.0f);
+        // Mouse position for photo
+        photoMousePos = ClampMousePosition(photoWidth, photoHeight);
+        photoMousePos.z = 1.0f;
 
-        // Set position
-        photoFrame.transform.position = frameWorldPosition;
-        viewfinder.transform.position = mousePosition;
+        // Set viewfinder position
+        viewfinder.transform.position = viewMousePos;
+    }
+
+    // Get mouse position within screen
+    Vector3 ClampMousePosition(float xReference, float yReference)
+    {
+        float x = Mathf.Clamp(Input.mousePosition.x,
+                            (xReference / 2) + aimXOffset,
+                            Screen.width - (xReference / 2) - aimXOffset);
+        float y = Mathf.Clamp(Input.mousePosition.y,
+                                      (yReference / 2) + aimYOffset,
+                                      Screen.height - (yReference / 2) - aimYOffset);
+        float z = Input.mousePosition.z;
+
+        return new Vector3(x, y, z);
     }
 }
