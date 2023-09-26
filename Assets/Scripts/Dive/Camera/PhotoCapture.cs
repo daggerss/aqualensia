@@ -21,7 +21,8 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private float flashTime;
 
     [Header("Photo Fade Effect")]
-    [SerializeField] private Animator fadingAnimation;
+    [SerializeField] private Animator displayAnimation;
+    [SerializeField] private Animator frameAnimation;
 
     private AudioManager audioManager;
 
@@ -109,18 +110,23 @@ public class PhotoCapture : MonoBehaviour
     {
         // Show all
         viewingPhoto = true;
+        photoFrame.GetComponent<CanvasGroup>().alpha = 1;
         photoFrame.SetActive(true);
         audioManager.PlaySFX("Shutter");
         cameraFlash.SetActive(true);
-        fadingAnimation.Play("PhotoFade");
+        displayAnimation.Play("FadeIn");
         viewfinder.SetActive(true);
 
         // Flash wait + hide
         yield return new WaitForSeconds(flashTime);
         cameraFlash.SetActive(false);
 
+        // Photo fade out
+        yield return new WaitForSeconds(displayTime / 2);
+        frameAnimation.Play("FadeOut");
+
         // Photo wait + hide
-        yield return new WaitForSeconds(displayTime);
+        yield return new WaitForSeconds(displayTime / 2);
         photoFrame.SetActive(false);
         viewingPhoto = false;
     }
