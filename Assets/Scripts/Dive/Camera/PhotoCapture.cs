@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class PhotoCapture : MonoBehaviour
 {
-    [Header("Photo Taker")]
-    [SerializeField] private Image photoDisplay;
-    [SerializeField] private GameObject photoFrame;
-    [SerializeField] private float displayTime;
+    [Header("Viewfinder")]
     [SerializeField] private GameObject viewfinder;
     [SerializeField] private float aimXOffset;
     [SerializeField] private float aimYOffset;
+    [SerializeField] private Cooldown cooldown;
+
+    [Header("Photo Display")]
+    [SerializeField] private Image photoDisplay;
+    [SerializeField] private GameObject photoFrame;
+    [SerializeField] private float displayTime;
 
     [Header("Flash Effect")]
     [SerializeField] private GameObject cameraFlash;
@@ -59,9 +62,17 @@ public class PhotoCapture : MonoBehaviour
         AimCamera();
 
         // Capture
-        if (Input.GetMouseButtonDown(0) && !viewingPhoto)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) &&
+            !viewingPhoto && !cooldown.IsCoolingDown)
         {
             StartCoroutine(CapturePhoto());
+            cooldown.StartCooldown();
+        }
+
+        // Cooldown
+        if (cooldown.IsCoolingDown)
+        {
+            cooldown.UpdateSlider();
         }
     }
 
