@@ -1576,6 +1576,9 @@ MonoBehaviour:
   flashTime: 0.2
   displayAnimation: {fileID: 142746221}
   frameAnimation: {fileID: 278001013}
+  generalUI:
+  - {fileID: 842896}
+  - {fileID: 1699453941}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0

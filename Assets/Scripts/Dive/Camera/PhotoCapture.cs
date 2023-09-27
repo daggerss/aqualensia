@@ -24,6 +24,9 @@ public class PhotoCapture : MonoBehaviour
     [SerializeField] private Animator displayAnimation;
     [SerializeField] private Animator frameAnimation;
 
+    [Header("Others")]
+    [SerializeField] private GameObject[] generalUI;
+
     private AudioManager audioManager;
 
     private Texture2D screenCapture;
@@ -83,8 +86,11 @@ public class PhotoCapture : MonoBehaviour
     // Take screenshot
     IEnumerator CapturePhoto()
     {
-        // Hide viewfinder
-        viewfinder.SetActive(false);
+        // Hide general UI
+        foreach (GameObject ui in generalUI)
+        {
+            ui.SetActive(false);
+        }
 
         yield return new WaitForEndOfFrame();
 
@@ -118,7 +124,11 @@ public class PhotoCapture : MonoBehaviour
         audioManager.PlaySFX("Shutter");
         cameraFlash.SetActive(true);
         displayAnimation.Play("FadeIn");
-        viewfinder.SetActive(true);
+        
+        foreach (GameObject ui in generalUI)
+        {
+            ui.SetActive(true);
+        }
 
         // Flash wait + hide
         yield return new WaitForSeconds(flashTime);
