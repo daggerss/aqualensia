@@ -42,6 +42,9 @@ public class PhotoCapture : MonoBehaviour
         // Audio
         audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
 
+        // Camera flash opacity
+        cameraFlash.GetComponent<CanvasGroup>().alpha = 0.75f;
+
         // Viewfinder size
         RectTransform tempRectTransform = viewfinder.GetComponent<RectTransform>();
 

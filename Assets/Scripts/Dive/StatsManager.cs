@@ -4,11 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Cinemachine;
 
 public class StatsManager : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     [SerializeField] private Cooldown airLevel;
+
+    [Header("Ascent")]
+    [SerializeField] private float ascendTime;
+    [SerializeField] private float ascendSpeed;
+    [SerializeField] private CinemachineConfiner2D vCamConfiner;
+    [SerializeField] private CompositeCollider2D tileCollider;
+    [SerializeField] private GameObject whiteScreen;
+    [SerializeField] private Animator whiteScreenAnimation;
+
+    [Header("Depth")]
     [SerializeField] private TMP_Text depthText;
     [SerializeField] private TMP_Text zoneText;
 
@@ -18,11 +29,11 @@ public class StatsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set up air level
         // TODO: Set new air level upgrade?
-        
         airLevel.StartCooldown();
 
-        // TODO: Set transform to exit point
+        // TODO: Set transform to exit point (for depth)
     }
 
     // Update is called once per frame
@@ -43,8 +54,7 @@ public class StatsManager : MonoBehaviour
 
         if (!airLevel.IsCoolingDown)
         {
-            Cursor.visible = true;
-            SceneManager.LoadScene("Overworld");
+            StartCoroutine(Ascend());
         }
     }
 
@@ -83,5 +93,26 @@ public class StatsManager : MonoBehaviour
         {
             zoneText.text = "—";
         }
+    }
+
+    IEnumerator Ascend()
+    {
+        // Fade to white
+        whiteScreen.SetActive(true);
+        whiteScreenAnimation.speed = 1 / ascendTime;
+        whiteScreenAnimation.Play("FadeIn");
+
+        // Disable movement + obstacles
+        vCamConfiner.enabled = false;
+        tileCollider.enabled = false;
+        player.GetComponent<Movement>().enabled = false;
+
+        // Ascend
+        player.transform.Translate(Vector3.up * ascendSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(ascendTime);
+
+        // Load scene
+        Cursor.visible = true;
+        SceneManager.LoadScene("Overworld");
     }
 }
