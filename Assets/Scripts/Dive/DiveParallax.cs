@@ -18,8 +18,7 @@ public class DiveParallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scrollPosition = new Vector2(transform.position.x * parallaxSpeed,
-                                     transform.position.y * parallaxSpeed);
+        scrollPosition = transform.position * parallaxSpeed;
         background.uvRect = new Rect(scrollPosition, background.uvRect.size);
     }
 }
