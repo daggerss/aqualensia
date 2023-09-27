@@ -5,8 +5,10 @@ using Cinemachine;
 
 public class CameraZoom : MonoBehaviour
 {
-    private float zoom;
+    private float zoom = -1f;
     private float scroll;
+    private GameObject mainCam;
+    private CinemachineBrain brain;
     private CinemachineVirtualCamera vCam;
 
     [SerializeField] private float zoomMultiplier;
@@ -15,25 +17,50 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private float zoomSpeed;
     [SerializeField] private float smoothTime;
 
+    CinemachineVirtualCamera ActiveVirtualCamera
+    {
+        get { return brain == null ? null : brain.ActiveVirtualCamera as CinemachineVirtualCamera; }
+    }
+
+    void Awake()
+    {
+        mainCam = GameObject.Find("Main Camera");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         // Get virtual cam
-        CinemachineBrain cinemachineBrain = (Camera.main == null) ? null : Camera.main.GetComponent<CinemachineBrain>();
-        vCam = (cinemachineBrain == null) ? null : cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
+        brain = mainCam.GetComponent<CinemachineBrain>();
+        vCam = ActiveVirtualCamera;
 
-        if (vCam == null) // Error
-        {
-            Debug.Log("Main Camera, Cinemachine Brain, or Virtual Camera is null!");
-        }
-        else // Set current
+        if (vCam != null) // Baka sakali
         {
             zoom = vCam.m_Lens.OrthographicSize;
         }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
+    {
+        // Get virtual cam again
+        if (vCam == null)
+        {
+            vCam = ActiveVirtualCamera;
+        }
+        // Zoom proper
+        else
+        {
+            if (zoom <= -1f)
+            {
+                zoom = vCam.m_Lens.OrthographicSize;
+            }
+
+            ZoomCam();
+        }
+    }
+
+    private void ZoomCam()
     {
         scroll = Input.GetAxis("Mouse ScrollWheel");
         zoom -= scroll * zoomMultiplier;
