@@ -10,6 +10,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Cooldown airLevel;
     [SerializeField] private TMP_Text depthText;
+    [SerializeField] private TMP_Text zoneText;
 
     private float depth;
     private float depthScale = 0.5f;
@@ -29,6 +30,7 @@ public class StatsManager : MonoBehaviour
     {
         UpdateAirLevel();
         UpdateDepth();
+        UpdateOceanZone();
     }
 
     // Air level manager
@@ -52,5 +54,34 @@ public class StatsManager : MonoBehaviour
         depth = (transform.position - player.transform.position).magnitude;
         depth *= depthScale;
         depthText.text = depth.ToString("F1") + " m";
+    }
+
+    // Determine ocean zone
+    private void UpdateOceanZone()
+    {
+        if (0 <= depth && depth < 200)
+        {
+            zoneText.text = "Sunlight Zone";
+        }
+        else if (200 <= depth && depth < 1000)
+        {
+            zoneText.text = "Twilight Zone";
+        }
+        else if (1000 <= depth && depth < 4000)
+        {
+            zoneText.text = "Midnight Zone";
+        }
+        else if (4000 <= depth && depth < 6000)
+        {
+            zoneText.text = "Abyssal Zone";
+        }
+        else if (6000 <= depth && depth < 11000)
+        {
+            zoneText.text = "Hadal Zone";
+        }
+        else
+        {
+            zoneText.text = "—";
+        }
     }
 }
