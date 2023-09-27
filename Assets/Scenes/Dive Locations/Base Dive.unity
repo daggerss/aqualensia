@@ -2159,7 +2159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 52852573}
   airLevel:
-    <CooldownTime>k__BackingField: 5
+    <CooldownTime>k__BackingField: 30
     cooldownSlider: {fileID: 0}
     cooldownRadial: {fileID: 2079976681}
   ascendTime: 3
