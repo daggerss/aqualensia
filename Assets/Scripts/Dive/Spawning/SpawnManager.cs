@@ -28,38 +28,41 @@ public class SpawnManager : MonoBehaviour
 
         foreach (Creature creature in creatures)
         {
-            // TODO: spawn based on population scale
             creatureInfo.creature = creature;
 
-            Vector2 spawnPosition = GetRandomSpawnPosition(spawnableAreaCollider);
-
-            // Spawn only if valid
-            if (!spawnPosition.Equals(Vector2.zero))
+            // Spawn based on rarity
+            for (int i = 0; i < creature.PopulationScale; i++)
             {
-                GameObject spawnedCreature = Instantiate(creaturePrefab, spawnPosition, Quaternion.identity);
+                Vector2 spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
 
-                // Organize in hierarchy
-                if (parentTransform != null)
+                // Spawn only if valid
+                if (!spawnPosition.Equals(Vector2.zero))
                 {
-                    spawnedCreature.transform.SetParent(parentTransform);
+                    GameObject spawnedCreature = Instantiate(creaturePrefab, spawnPosition, Quaternion.identity);
+
+                    // Organize in hierarchy
+                    if (parentTransform != null)
+                    {
+                        spawnedCreature.transform.SetParent(parentTransform);
+                    }
                 }
             }
         }
     }
 
-    private Vector2 GetRandomSpawnPosition(Collider2D spawnableAreaCollider)
+    public Vector2 GetRandomMapPosition(Collider2D spawnableAreaCollider)
     {
         // Set up
-        Vector2 spawnPosition = Vector2.zero;
+        Vector2 mapPosition = Vector2.zero;
         
         // Look for valid spawn position at maximum of 200 attempts
         for (int i = 0; i < 200; i++)
         {
-            spawnPosition = GetRandomPointInCollider(spawnableAreaCollider);
+            mapPosition = GetRandomPointInCollider(spawnableAreaCollider);
             
-            if (!isSpawnOverlapping(spawnPosition))
+            if (!isPositionOverlapping(mapPosition))
             {
-                return spawnPosition;
+                return mapPosition;
             }
         }
 
@@ -82,9 +85,9 @@ public class SpawnManager : MonoBehaviour
         return new Vector2(randomX, randomY);
     }
 
-    private bool isSpawnOverlapping(Vector2 spawnPosition)
+    private bool isPositionOverlapping(Vector2 position)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, creatureRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, creatureRadius);
 
         // Check if on invalid layers
         foreach (Collider2D collider in colliders)

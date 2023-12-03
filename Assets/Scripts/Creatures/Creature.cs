@@ -16,4 +16,13 @@ public class Creature : ScriptableObject
     [SerializeField]
     private string _scientificName;
     public string scientificName => _scientificName;
+
+    [Header("Behavior")]
+    [SerializeField]
+    private float _populationScale;
+    public float PopulationScale => _populationScale;
+
+    [SerializeField]
+    private float _speed;
+    public float Speed => _speed;
 }
