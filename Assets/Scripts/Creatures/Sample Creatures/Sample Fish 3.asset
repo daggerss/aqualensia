@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
-  m_Name: Sample Fish
+  m_Name: Sample Fish 3
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: ae5b6b87f6fe91942b5a538567c2789a, type: 3}
-  _commonName: Sample Fish 1
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 1aa7b493fea1d464a9c2638563dab63b, type: 3}
+  _commonName: Sample Fish 3
   _scientificName: 
-  _populationScale: 8
-  _speed: 10
-  <Status>k__BackingField: 0
-  <CaptureCount>k__BackingField: 4
+  _populationScale: 6
+  _speed: 7
+  <Status>k__BackingField: 2
+  <CaptureCount>k__BackingField: 0

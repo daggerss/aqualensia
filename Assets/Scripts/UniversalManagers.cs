@@ -23,3 +23,6 @@ public class UniversalManagers : MonoBehaviour
         }
     }
 }
+
+/* ----------------------------- Universal Enums ---------------------------- */
+public enum CreatureStatus { Identified, Captured, Unknown };

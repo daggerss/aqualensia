@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
 
         foreach (Creature creature in creatures)
         {
-            creatureInfo.creature = creature;
+            creatureInfo.Creature = creature;
 
             // Spawn based on rarity
             for (int i = 0; i < creature.PopulationScale; i++)

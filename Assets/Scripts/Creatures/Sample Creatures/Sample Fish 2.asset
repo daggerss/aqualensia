@@ -17,3 +17,5 @@ MonoBehaviour:
   _scientificName: 
   _populationScale: 5
   _speed: 5
+  <Status>k__BackingField: 1
+  <CaptureCount>k__BackingField: 2

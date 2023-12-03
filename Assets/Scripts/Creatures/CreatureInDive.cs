@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class CreatureInDive : MonoBehaviour
 {
-    public Creature creature;
+    public Creature Creature;
 
     [Header("Behavior")]
     [SerializeField] private float minWaitTime;
@@ -28,7 +28,7 @@ public class CreatureInDive : MonoBehaviour
     {
         // Display
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = creature.Sprite;
+        spriteRenderer.sprite = Creature.Sprite;
 
         // Flip setup
         originalLocalScale = transform.localScale;
@@ -37,7 +37,7 @@ public class CreatureInDive : MonoBehaviour
         // Movement setup
         aiPath = GetComponent<AIPath>();
         targetArea = transform.parent.GetComponentInParent<Collider2D>();
-        aiPath.maxSpeed = creature.Speed;
+        aiPath.maxSpeed = Creature.Speed;
 
         // Movement functions
         StartCoroutine(Move());
