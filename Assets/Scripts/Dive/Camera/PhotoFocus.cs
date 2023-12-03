@@ -32,7 +32,6 @@ public class PhotoFocus : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         DisplayInfo(false);
-        ClearInfo();
     }
 
     private void SetInfo(Creature creature)
@@ -61,11 +60,6 @@ public class PhotoFocus : MonoBehaviour
 
         // Count
         captureCountText.text = creature.CaptureCount + "/4";
-    }
-
-    private void ClearInfo()
-    {
-        creatureNameText.text = "";
     }
 
     private void DisplayInfo(bool toDisplay)
