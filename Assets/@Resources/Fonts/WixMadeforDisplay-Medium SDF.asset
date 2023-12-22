@@ -73,9 +73,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: WixMadeforDisplay-Medium SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -789007381
   material: {fileID: -5464732291222712158}
-  materialHashCode: 0
+  materialHashCode: 1963665515
   m_Version: 1.1.0
   m_SourceFontFileGUID: fb200e7fd4723b943aa11bc55cd03177
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: fb200e7fd4723b943aa11bc55cd03177, type: 3}

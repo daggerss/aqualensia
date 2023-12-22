@@ -10,6 +10,7 @@ public class StatsManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Cooldown airLevel;
+    [SerializeField] private TMP_Text airText;
 
     [Header("Ascent")]
     [SerializeField] private float ascendTime;
@@ -23,6 +24,11 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private TMP_Text depthText;
     [SerializeField] private TMP_Text zoneText;
 
+    [Header("Zone")]
+    [SerializeField] private Image zoneIcon;
+    [SerializeField] private Sprite[] zoneSprites;
+
+    private int airLeft;
     private float depth;
     private float depthScale = 0.5f;
 
@@ -49,11 +55,17 @@ public class StatsManager : MonoBehaviour
     {
         if (airLevel.IsCoolingDown)
         {
+            // Text
+            airLeft = (int)(airLevel.CooldownTime - Time.time);
+            airText.text = airLeft.ToString();
+
+            // Radial
             airLevel.UpdateRadial();
         }
 
         if (!airLevel.IsCoolingDown)
         {
+            airLeft = 0;
             StartCoroutine(Ascend());
         }
     }
@@ -71,22 +83,27 @@ public class StatsManager : MonoBehaviour
     {
         if (0 <= depth && depth < 200)
         {
+            zoneIcon.sprite = zoneSprites[0];
             zoneText.text = "Sunlight Zone";
         }
         else if (200 <= depth && depth < 1000)
         {
+            zoneIcon.sprite = zoneSprites[1];
             zoneText.text = "Twilight Zone";
         }
         else if (1000 <= depth && depth < 4000)
         {
+            zoneIcon.sprite = zoneSprites[2];
             zoneText.text = "Midnight Zone";
         }
         else if (4000 <= depth && depth < 6000)
         {
+            zoneIcon.sprite = zoneSprites[3];
             zoneText.text = "Abyssal Zone";
         }
         else if (6000 <= depth && depth < 11000)
         {
+            zoneIcon.sprite = zoneSprites[3];
             zoneText.text = "Hadal Zone";
         }
         else

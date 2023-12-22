@@ -50,6 +50,7 @@ public class Cooldown
         }
     }
 
+    // Update Radial UI
     public void UpdateRadial()
     {
         if (cooldownRadial != null)
