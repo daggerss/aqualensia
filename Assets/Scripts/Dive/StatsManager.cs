@@ -123,6 +123,7 @@ public class StatsManager : MonoBehaviour
         vCamConfiner.enabled = false;
         tileCollider.enabled = false;
         player.GetComponent<Movement>().enabled = false;
+        player.GetComponent<Rigidbody2D>().simulated = false;
 
         // Ascend
         player.transform.Translate(Vector3.up * ascendSpeed * Time.deltaTime);
