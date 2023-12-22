@@ -9,8 +9,11 @@ using Cinemachine;
 public class StatsManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+
+    [Header("Air")]
     [SerializeField] private Cooldown airLevel;
     [SerializeField] private TMP_Text airText;
+    [SerializeField] private ColorBlink[] dangerBlinks;
 
     [Header("Ascent")]
     [SerializeField] private float ascendTime;
@@ -61,6 +64,15 @@ public class StatsManager : MonoBehaviour
 
             // Radial
             airLevel.UpdateRadial();
+
+            // Danger UI
+            foreach (ColorBlink blink in dangerBlinks)
+            {
+                if(airLeft <= blink.OnTimeLeft)
+                {
+                    blink.Activate();
+                }
+            }
         }
 
         if (!airLevel.IsCoolingDown)
