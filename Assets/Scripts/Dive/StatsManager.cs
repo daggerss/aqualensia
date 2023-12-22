@@ -56,7 +56,7 @@ public class StatsManager : MonoBehaviour
         if (airLevel.IsCoolingDown)
         {
             // Text
-            airLeft = (int)(airLevel.CooldownTime - Time.time);
+            airLeft = (int)(airLevel.CooldownTime - Time.timeSinceLevelLoad);
             airText.text = airLeft.ToString();
 
             // Radial
