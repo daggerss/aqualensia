@@ -15,14 +15,6 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private TMP_Text airText;
     [SerializeField] private ColorBlink[] dangerBlinks;
 
-    [Header("Ascent")]
-    [SerializeField] private float ascendTime;
-    [SerializeField] private float ascendSpeed;
-    [SerializeField] private CinemachineConfiner2D vCamConfiner;
-    [SerializeField] private CompositeCollider2D tileCollider;
-    [SerializeField] private GameObject whiteScreen;
-    [SerializeField] private Animator whiteScreenAnimation;
-
     [Header("Depth")]
     [SerializeField] private TMP_Text depthText;
     [SerializeField] private TMP_Text zoneText;
@@ -30,6 +22,17 @@ public class StatsManager : MonoBehaviour
     [Header("Zone")]
     [SerializeField] private Image zoneIcon;
     [SerializeField] private Sprite[] zoneSprites;
+
+    [Header("Ascent")]
+    [SerializeField] private float ascendTime;
+    [SerializeField] private float ascendSpeed;
+    [SerializeField] private GameObject whiteScreen;
+    [SerializeField] private Animator whiteScreenAnimation;
+
+    [Header("Disable on Ascent")]
+    [SerializeField] private CinemachineConfiner2D vCamConfiner;
+    [SerializeField] private CompositeCollider2D tileCollider;
+    [SerializeField] private Camera miniMapCam;
 
     private int airLeft;
     private float depth;
@@ -134,6 +137,7 @@ public class StatsManager : MonoBehaviour
         // Disable movement + obstacles
         vCamConfiner.enabled = false;
         tileCollider.enabled = false;
+        miniMapCam.cullingMask &=  ~(1 << LayerMask.NameToLayer("Walls"));
         player.GetComponent<Movement>().enabled = false;
         player.GetComponent<Rigidbody2D>().simulated = false;
 
