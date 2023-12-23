@@ -32,7 +32,6 @@ public class StatsManager : MonoBehaviour
     [Header("Disable on Ascent")]
     [SerializeField] private CinemachineConfiner2D vCamConfiner;
     [SerializeField] private CompositeCollider2D tileCollider;
-    [SerializeField] private Camera miniMapCam;
 
     private int airLeft;
     private float depth;
@@ -137,7 +136,6 @@ public class StatsManager : MonoBehaviour
         // Disable movement + obstacles
         vCamConfiner.enabled = false;
         tileCollider.enabled = false;
-        miniMapCam.cullingMask &=  ~(1 << LayerMask.NameToLayer("Walls"));
         player.GetComponent<Movement>().enabled = false;
         player.GetComponent<Rigidbody2D>().simulated = false;
 
