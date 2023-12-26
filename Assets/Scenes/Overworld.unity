@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 45810582}
   - component: {fileID: 45810581}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 125771768}
   - component: {fileID: 125771767}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 287185508}
   - component: {fileID: 287185507}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 309582391}
   - component: {fileID: 309582390}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,7 +1788,7 @@ GameObject:
   - component: {fileID: 382889062}
   - component: {fileID: 382889061}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1864,7 +1864,7 @@ GameObject:
   - component: {fileID: 400454027}
   - component: {fileID: 400454026}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1940,7 +1940,7 @@ GameObject:
   - component: {fileID: 423850841}
   - component: {fileID: 423850840}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 535879748}
   - component: {fileID: 535879747}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2736,7 +2736,7 @@ GameObject:
   - component: {fileID: 605308213}
   - component: {fileID: 605308212}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2813,7 +2813,7 @@ GameObject:
   - component: {fileID: 619225363}
   - component: {fileID: 619225362}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2889,7 +2889,7 @@ GameObject:
   - component: {fileID: 622515715}
   - component: {fileID: 622515714}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3785,7 +3785,7 @@ GameObject:
   - component: {fileID: 837511332}
   - component: {fileID: 837511331}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4785,7 +4785,7 @@ GameObject:
   - component: {fileID: 966871389}
   - component: {fileID: 966871388}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4937,7 +4937,7 @@ GameObject:
   - component: {fileID: 1066434002}
   - component: {fileID: 1066434001}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5072,7 +5072,7 @@ GameObject:
   - component: {fileID: 1083008290}
   - component: {fileID: 1083008289}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5220,7 +5220,7 @@ GameObject:
   - component: {fileID: 1128382058}
   - component: {fileID: 1128382057}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5418,7 +5418,7 @@ GameObject:
   - component: {fileID: 1177550030}
   - component: {fileID: 1177550029}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5629,7 +5629,7 @@ GameObject:
   - component: {fileID: 1239042242}
   - component: {fileID: 1239042241}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5918,7 +5918,7 @@ GameObject:
   - component: {fileID: 1342626578}
   - component: {fileID: 1342626577}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6539,7 +6539,7 @@ GameObject:
   - component: {fileID: 1529084729}
   - component: {fileID: 1529084728}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6615,7 +6615,7 @@ GameObject:
   - component: {fileID: 1538674980}
   - component: {fileID: 1538674979}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6750,7 +6750,7 @@ GameObject:
   - component: {fileID: 1544486736}
   - component: {fileID: 1544486735}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6961,7 +6961,7 @@ GameObject:
   - component: {fileID: 1577230147}
   - component: {fileID: 1577230146}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7279,7 +7279,7 @@ GameObject:
   - component: {fileID: 1664798408}
   - component: {fileID: 1664798407}
   m_Layer: 5
-  m_Name: Shots Text
+  m_Name: Shots Text #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7414,7 +7414,7 @@ GameObject:
   - component: {fileID: 1703725925}
   - component: {fileID: 1703725924}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7490,7 +7490,7 @@ GameObject:
   - component: {fileID: 1713456849}
   - component: {fileID: 1713456848}
   m_Layer: 5
-  m_Name: Shots
+  m_Name: Shots #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7771,6 +7771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1816850401}
+  - component: {fileID: 1816850402}
   m_Layer: 0
   m_Name: Log Display
   m_TagString: Untagged
@@ -7793,6 +7794,68 @@ Transform:
   m_Father: {fileID: 896401768}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1816850402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816850400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac14e1f2dfdd81f439f9193f6a308280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logNumText: {fileID: 261413409}
+  currentDepthText: {fileID: 1207815737}
+  currentDepthStar: {fileID: 1488564542}
+  previousDepthText: {fileID: 1496204981}
+  previousDepthStar: {fileID: 2021844436}
+  currentShotsText: {fileID: 1488745981}
+  currentShotsStar: {fileID: 1495103459}
+  previousShotsText: {fileID: 1641502849}
+  previousShotsStar: {fileID: 239902150}
+  rarestImage: {fileID: 329260469}
+  rarestText: {fileID: 1848595866}
+  rarestCategoryImage: {fileID: 338565947}
+  rarestCategoryText: {fileID: 273754760}
+  captured:
+  - creatureImage: {fileID: 1342626577}
+    shots: {fileID: 622515712}
+    shotsText: {fileID: 1544486735}
+    tag: {fileID: 1177550027}
+  - creatureImage: {fileID: 287185507}
+    shots: {fileID: 605308210}
+    shotsText: {fileID: 1066434001}
+    tag: {fileID: 1703725922}
+  - creatureImage: {fileID: 1239042241}
+    shots: {fileID: 1713456846}
+    shotsText: {fileID: 423850840}
+    tag: {fileID: 535879745}
+  - creatureImage: {fileID: 1887564701}
+    shots: {fileID: 1128382055}
+    shotsText: {fileID: 125771767}
+    tag: {fileID: 2138373564}
+  - creatureImage: {fileID: 1529084728}
+    shots: {fileID: 45810579}
+    shotsText: {fileID: 1664798407}
+    tag: {fileID: 966871386}
+  - creatureImage: {fileID: 619225362}
+    shots: {fileID: 1577230144}
+    shotsText: {fileID: 1538674979}
+    tag: {fileID: 400454024}
+  - creatureImage: {fileID: 382889061}
+    shots: {fileID: 309582388}
+    shotsText: {fileID: 837511331}
+    tag: {fileID: 1083008287}
+  newBestColor: {r: 1, g: 0.83137256, b: 0.12941177, a: 0}
+  LCColor: {r: 0, g: 0, b: 0, a: 0}
+  NTColor: {r: 0, g: 0, b: 0, a: 0}
+  VUColor: {r: 0, g: 0, b: 0, a: 0}
+  ENColor: {r: 0, g: 0, b: 0, a: 0}
+  CRColor: {r: 0, g: 0, b: 0, a: 0}
+  NEColor: {r: 0, g: 0, b: 0, a: 0}
+  DDColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1835783344
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,7 +8229,7 @@ GameObject:
   - component: {fileID: 1887564702}
   - component: {fileID: 1887564701}
   m_Layer: 5
-  m_Name: List Creature Icon
+  m_Name: List Creature Icon #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8951,7 +9014,7 @@ GameObject:
   - component: {fileID: 2138373567}
   - component: {fileID: 2138373566}
   m_Layer: 5
-  m_Name: New Tag
+  m_Name: New Tag #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
