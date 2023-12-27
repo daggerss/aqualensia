@@ -37,6 +37,9 @@ public class StatsManager : MonoBehaviour
     private float depth;
     private float depthScale = 0.5f;
 
+    private LogManager diveLog;
+    private float deepestDepth = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,9 @@ public class StatsManager : MonoBehaviour
         airLevel.StartCooldown();
 
         // TODO: Set transform to exit point (for depth)
+
+        // Dive Log
+        diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
     }
 
     // Update is called once per frame
@@ -52,6 +58,7 @@ public class StatsManager : MonoBehaviour
     {
         UpdateAirLevel();
         UpdateDepth();
+        UpdateDeepestDepth();
         UpdateOceanZone();
     }
 
@@ -89,7 +96,7 @@ public class StatsManager : MonoBehaviour
     {
         depth = (transform.position - player.transform.position).magnitude;
         depth *= depthScale;
-        depthText.text = depth.ToString("F1") + " m";
+        depthText.text = depth.ToString("F1") + "m";
     }
 
     // Determine ocean zone
@@ -126,6 +133,19 @@ public class StatsManager : MonoBehaviour
         }
     }
 
+    // Update deepest depth
+    private void UpdateDeepestDepth()
+    {
+        if (depth > deepestDepth)
+        {
+            // Update here
+            deepestDepth = depth;
+
+            // Update log
+            diveLog.CurrentBestDepth = deepestDepth;
+        }
+    }
+
     IEnumerator Ascend()
     {
         // Fade to white
@@ -143,7 +163,8 @@ public class StatsManager : MonoBehaviour
         player.transform.Translate(Vector3.up * ascendSpeed * Time.deltaTime);
         yield return new WaitForSeconds(ascendTime);
 
-        // Load scene
+        // Set up + Load scene
+        diveLog.ExitDive = true;
         Cursor.visible = true;
         SceneManager.LoadScene("Overworld");
     }

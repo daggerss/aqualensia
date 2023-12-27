@@ -29,6 +29,7 @@ public class LogCapturedUI
     public void Reset()
     {
         creatureImage.sprite = null;
+        creatureImage.color = Color.clear;
         shots.SetActive(false);
         tag.SetActive(false);
     }

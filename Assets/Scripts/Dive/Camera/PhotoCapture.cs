@@ -26,6 +26,7 @@ public class PhotoCapture : MonoBehaviour
 
     [Header("Others")]
     [SerializeField] private GameObject[] generalUI;
+    [SerializeField] private LogTrigger logTrigger;
 
     private AudioManager audioManager;
 
@@ -72,6 +73,7 @@ public class PhotoCapture : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) &&
             !viewingPhoto && !cooldown.IsCoolingDown)
         {
+            logTrigger.Log();
             StartCoroutine(CapturePhoto());
             cooldown.StartCooldown();
         }

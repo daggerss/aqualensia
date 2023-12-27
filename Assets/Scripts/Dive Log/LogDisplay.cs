@@ -6,6 +6,9 @@ using TMPro;
 
 public class LogDisplay : MonoBehaviour
 {
+    [Header("Parent UI")]
+    [SerializeField] private GameObject[] logUI;
+
     [Header("Heading")]
     [SerializeField] private TMP_Text logNumText;
 
@@ -32,6 +35,7 @@ public class LogDisplay : MonoBehaviour
 
     [Header("Colors")]
     [SerializeField] private Color newBestColor;
+    [SerializeField] private Color darkTextColor;
     [SerializeField] private Color LCColor;
     [SerializeField] private Color NTColor;
     [SerializeField] private Color VUColor;
@@ -40,17 +44,126 @@ public class LogDisplay : MonoBehaviour
     [SerializeField] private Color NEColor;
     [SerializeField] private Color DDColor;
 
+    private LogManager diveLog;
+
+    /* -------------------------------------------------------------------------- */
+    /*                                    Setup                                   */
+    /* -------------------------------------------------------------------------- */
+    void Awake()
+    {
+        // Dive Log
+        diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
+    }
+
+    void Start()
+    {
+        if (diveLog.ExitDive)
+        {
+            // Set log display
+            UpdateLogNum();
+            UpdateDepth();
+            UpdateShots();
+            UpdateRarest();
+            UpdateCaptured();
+
+            // Show UI
+            foreach (GameObject ui in logUI)
+            {
+                ui.SetActive(true);
+            }
+
+            // Reset everything
+            diveLog.ResetLog();
+        }
+
+        else
+        {
+            // Hide UI
+            foreach (GameObject ui in logUI)
+            {
+                ui.SetActive(false);
+            }
+        }
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /*                                  Dive Log                                  */
+    /* -------------------------------------------------------------------------- */
+
+    private void UpdateLogNum()
+    {
+        // Update total dives
+        diveLog.TotalDives += 1;
+        
+        // Set display
+        SetLogNum(diveLog.TotalDives);
+    }
+
+    private void UpdateDepth()
+    {
+        // Set display
+        SetDepth(diveLog.CurrentBestDepth, diveLog.PreviousBestDepth);
+
+        // Update new best
+        diveLog.UpdateDepth();
+    }
+
+    private void UpdateShots()
+    {
+        // Set display
+        SetShots(diveLog.CurrentBestShots, diveLog.PreviousBestShots);
+
+        // Update new best
+        diveLog.UpdateShots();
+    }
+
+    private void UpdateRarest()
+    {
+        // Find rarest
+        Creature c = diveLog.FindRarest();
+
+        // Set display
+        SetRarest(c.Sprite, c.CommonName, c.ConservationStatus);
+    }
+
+    private void UpdateCaptured()
+    {
+        // Go through entire list UI
+        for (int i = 0; i < 7; i++)
+        {
+            try
+            {
+                // Get creature log
+                CreatureLog currentLog = diveLog.CapturedCreatures[i];
+
+                // Set item
+                SetCaptured(i, currentLog.CapturedCreature.Sprite,
+                               currentLog.CaptureCount, currentLog.isNew);
+            }
+
+            catch
+            {
+                // Reset item
+                ResetCaptured(i);
+            }
+        }
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /*                                     UI                                     */
+    /* -------------------------------------------------------------------------- */
+
     // Set Log Num UI
-    public void SetLogNum(int num)
+    private void SetLogNum(int num)
     {
         logNumText.text = num.ToString();
     }
 
     // Set Depth UI
-    public void SetDepth(float current, float previous)
+    private void SetDepth(float current, float previous)
     {
-        currentDepthText.text = current.ToString();
-        previousDepthText.text = previous.ToString();
+        currentDepthText.text = current.ToString("F1") + "m";
+        previousDepthText.text = previous.ToString("F1") + "m";
 
         if (current > previous)
         {
@@ -60,14 +173,14 @@ public class LogDisplay : MonoBehaviour
         }
         else
         {
-            currentDepthText.color = new Color(255, 255, 255);
+            currentDepthText.color = Color.white;
             currentDepthStar.SetActive(false);
             previousDepthStar.SetActive(true);
         }
     }
 
     // Set Shots UI
-    public void SetShots(float current, float previous)
+    private void SetShots(int current, int previous)
     {
         currentShotsText.text = current.ToString();
         previousShotsText.text = previous.ToString();
@@ -80,63 +193,66 @@ public class LogDisplay : MonoBehaviour
         }
         else
         {
-            currentShotsText.color = new Color(255, 255, 255);
+            currentShotsText.color = Color.white;
             currentShotsStar.SetActive(false);
             previousShotsStar.SetActive(true);
         }
     }
 
     // Set Rarest UI
-    public void SetRarest(Sprite img, string name, ConservationStatus category)
+    private void SetRarest(Sprite img, string name, ConservationStatus category)
     {
         rarestImage.sprite = img;
         rarestText.text = name;
+        rarestCategoryText.color = darkTextColor;
 
         if (category == ConservationStatus.LC)
         {
-            rarestImage.color = LCColor;
+            rarestCategoryImage.color = LCColor;
             rarestCategoryText.text = "Least Concern";
         }
 
         else if (category == ConservationStatus.NT)
         {
-            rarestImage.color = NTColor;
+            rarestCategoryImage.color = NTColor;
             rarestCategoryText.text = "Near Threatened";
         }
 
         else if (category == ConservationStatus.VU)
         {
-            rarestImage.color = VUColor;
+            rarestCategoryImage.color = VUColor;
             rarestCategoryText.text = "Vulnerable";
         }
 
         else if (category == ConservationStatus.EN)
         {
-            rarestImage.color = ENColor;
+            rarestCategoryImage.color = ENColor;
+            rarestCategoryText.color = Color.white;
             rarestCategoryText.text = "Endangered";
         }
 
         else if (category == ConservationStatus.CR)
         {
-            rarestImage.color = CRColor;
+            rarestCategoryImage.color = CRColor;
+            rarestCategoryText.color = Color.white;
             rarestCategoryText.text = "Critically Endangered";
         }
 
         else if (category == ConservationStatus.NE)
         {
-            rarestImage.color = NEColor;
+            rarestCategoryImage.color = NEColor;
             rarestCategoryText.text = "Not Evaluated";
         }
 
         else if (category == ConservationStatus.DD)
         {
-            rarestImage.color = DDColor;
+            rarestCategoryImage.color = DDColor;
             rarestCategoryText.text = "Data Deficient";
         }
     }
 
     // Set Captured UI at Index
-    public void SetCaptured(int index, Sprite img, int shots, bool isNew)
+    private void SetCaptured(int index, Sprite img, int shots, bool isNew)
     {
         captured[index].SetImage(img);
         captured[index].SetShots(shots);
@@ -144,7 +260,7 @@ public class LogDisplay : MonoBehaviour
     }
 
     // Reset Captured UI at Index
-    public void ResetCaptured(int index)
+    private void ResetCaptured(int index)
     {
         captured[index].Reset();
     }

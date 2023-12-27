@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 842897}
   - component: {fileID: 842899}
   - component: {fileID: 842901}
+  - component: {fileID: 842902}
   - component: {fileID: 842900}
   m_Layer: 5
   m_Name: Viewfinder
@@ -236,6 +237,18 @@ MonoBehaviour:
   - {r: 1, g: 0.83137256, b: 0.12941177, a: 1}
   creatureNameText: {fileID: 194855045}
   captureCountText: {fileID: 1358932295}
+--- !u!114 &842902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08e7c21b96345e45938db4280cc6f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &52852573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1754,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 235d35bd729fba24aa23e5c1a1d53b30, type: 2}
   - {fileID: 11400000, guid: 14a9172ce2946b54c95e70ac763e5867, type: 2}
   - {fileID: 11400000, guid: 0c0b9bc5572b8914db7954851b87d2fe, type: 2}
+  spawnTime: 0
 --- !u!60 &381175755
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24634,6 +24648,7 @@ MonoBehaviour:
   - {fileID: 842896}
   - {fileID: 1048935685}
   - {fileID: 418162495}
+  logTrigger: {fileID: 842902}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0
