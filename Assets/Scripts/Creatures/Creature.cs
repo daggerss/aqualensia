@@ -15,7 +15,32 @@ public class Creature : ScriptableObject
 
     [SerializeField]
     private string _scientificName;
-    public string scientificName => _scientificName;
+    public string ScientificName => _scientificName;
+
+    [SerializeField]
+    private ConservationStatus _conservationStatus;
+    public ConservationStatus ConservationStatus => _conservationStatus;
+
+    [SerializeField]
+    private TimeOfDay _activeTime;
+    public TimeOfDay ActiveTime => _activeTime;
+
+    [SerializeField]
+    private OceanZone _upperZone;
+    public OceanZone UpperZone => _upperZone;
+
+    [SerializeField]
+    private OceanZone _lowerZone;
+    public OceanZone LowerZone => _lowerZone;
+
+    [field: Header("Research Information")]
+    [SerializeField]
+    private string[] _photoInfo = new string[4];
+    public string[] PhotoInfo => _photoInfo;
+
+    [SerializeField]
+    private string[] _galleryInfo = new string[4];
+    public string[] GalleryInfo => _galleryInfo;
 
     [Header("Behavior")]
     [SerializeField]
@@ -28,8 +53,22 @@ public class Creature : ScriptableObject
 
     [field: Header("Progression")]
     [field: SerializeField]
-    public CreatureStatus Status {get; set;}
+    public CreatureStatus CaptureStatus {get; set;}
 
     [field: SerializeField]
-    public int CaptureCount {get; set;}
+    private int _captureCount;
+    public int CaptureCount
+    {
+        get
+        {
+            return _captureCount;
+        }
+        set
+        {
+            _captureCount = Mathf.Clamp(value, 0, 4);
+        }
+    }
+
+    [field: SerializeField]
+    public bool isBlocked {get; set;}
 }

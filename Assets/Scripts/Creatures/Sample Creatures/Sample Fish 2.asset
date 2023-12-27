@@ -15,7 +15,22 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: 21300000, guid: 2fb2e61d0b6fe2044850098c7e06ac19, type: 3}
   _commonName: Sample Fish 2
   _scientificName: 
+  _conservationStatus: 4
+  _activeTime: 0
+  _upperZone: 0
+  _lowerZone: 0
+  _photoInfo:
+  - 
+  - 
+  - 
+  - 
+  _galleryInfo:
+  - 
+  - 
+  - 
+  - 
   _populationScale: 5
   _speed: 5
-  <Status>k__BackingField: 1
-  <CaptureCount>k__BackingField: 2
+  <CaptureStatus>k__BackingField: 1
+  _captureCount: 2
+  <isBlocked>k__BackingField: 0

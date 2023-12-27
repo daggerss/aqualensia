@@ -28,22 +28,26 @@ public class SpawnManager : MonoBehaviour
 
         foreach (Creature creature in creatures)
         {
-            creatureInfo.Creature = creature;
-
-            // Spawn based on rarity
-            for (int i = 0; i < creature.PopulationScale; i++)
+            if (!creature.isBlocked)
             {
-                Vector2 spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
-
-                // Spawn only if valid
-                if (!spawnPosition.Equals(Vector2.zero))
+                // Set prefab's creature
+                creatureInfo.Creature = creature;
+    
+                // Spawn based on rarity
+                for (int i = 0; i < creature.PopulationScale; i++)
                 {
-                    GameObject spawnedCreature = Instantiate(creaturePrefab, spawnPosition, Quaternion.identity);
-
-                    // Organize in hierarchy
-                    if (parentTransform != null)
+                    Vector2 spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
+    
+                    // Spawn only if valid
+                    if (!spawnPosition.Equals(Vector2.zero))
                     {
-                        spawnedCreature.transform.SetParent(parentTransform);
+                        GameObject spawnedCreature = Instantiate(creaturePrefab, spawnPosition, Quaternion.identity);
+    
+                        // Organize in hierarchy
+                        if (parentTransform != null)
+                        {
+                            spawnedCreature.transform.SetParent(parentTransform);
+                        }
                     }
                 }
             }

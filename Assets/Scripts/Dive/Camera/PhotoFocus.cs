@@ -37,14 +37,14 @@ public class PhotoFocus : MonoBehaviour
     private void SetInfo(Creature creature)
     {
         // Name
-        if (creature.Status == CreatureStatus.Identified)
+        if (creature.CaptureStatus == CreatureStatus.Identified)
         {
             statusImage.sprite = statusSprites[0];
             statusImage.color = statusColors[0];
             creatureNameText.text = creature.CommonName;
         }
 
-        else if (creature.Status == CreatureStatus.Captured)
+        else if (creature.CaptureStatus == CreatureStatus.Captured)
         {
             statusImage.sprite = statusSprites[1];
             statusImage.color = statusColors[1];
