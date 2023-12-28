@@ -141,7 +141,7 @@ public class LogDisplay : MonoBehaviour
                                currentLog.CaptureCount, currentLog.isNew);
             }
 
-            catch
+            catch // No log at index
             {
                 // Reset item
                 ResetCaptured(i);

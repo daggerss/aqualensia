@@ -13,6 +13,7 @@ public class LogCapturedUI
     public void SetImage(Sprite img)
     {
         creatureImage.sprite = img;
+        creatureImage.color = Color.white;
     }
 
     public void SetShots(int shotsNum)
