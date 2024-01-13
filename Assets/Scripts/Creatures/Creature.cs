@@ -35,12 +35,14 @@ public class Creature : ScriptableObject
 
     [field: Header("Research Information")]
     [SerializeField]
+    [TextArea(3, 10)]
     private string[] _photoInfo = new string[4];
     public string[] PhotoInfo => _photoInfo;
 
     [SerializeField]
-    private string[] _galleryInfo = new string[4];
-    public string[] GalleryInfo => _galleryInfo;
+    [TextArea(3, 10)]
+    private string _galleryInfo;
+    public string GalleryInfo => _galleryInfo;
 
     [Header("Behavior")]
     [SerializeField]
