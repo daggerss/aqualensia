@@ -27,22 +27,13 @@ public class LogDisplay : MonoBehaviour
     [Header("Rarest")]
     [SerializeField] private Image rarestImage;
     [SerializeField] private TMP_Text rarestText;
-    [SerializeField] private Image rarestCategoryImage;
-    [SerializeField] private TMP_Text rarestCategoryText;
+    [SerializeField] private ConservationStatusUI categoryUI;
 
     [Header("Captured")]
     [SerializeField] private LogCapturedUI[] captured;
 
     [Header("Colors")]
     [SerializeField] private Color newBestColor;
-    [SerializeField] private Color darkTextColor;
-    [SerializeField] private Color LCColor;
-    [SerializeField] private Color NTColor;
-    [SerializeField] private Color VUColor;
-    [SerializeField] private Color ENColor;
-    [SerializeField] private Color CRColor;
-    [SerializeField] private Color NEColor;
-    [SerializeField] private Color DDColor;
 
     private LogManager diveLog;
 
@@ -212,51 +203,7 @@ public class LogDisplay : MonoBehaviour
     {
         rarestImage.sprite = img;
         rarestText.text = name;
-        rarestCategoryText.color = darkTextColor;
-
-        if (category == ConservationStatus.LC)
-        {
-            rarestCategoryImage.color = LCColor;
-            rarestCategoryText.text = "Least Concern";
-        }
-
-        else if (category == ConservationStatus.NT)
-        {
-            rarestCategoryImage.color = NTColor;
-            rarestCategoryText.text = "Near Threatened";
-        }
-
-        else if (category == ConservationStatus.VU)
-        {
-            rarestCategoryImage.color = VUColor;
-            rarestCategoryText.text = "Vulnerable";
-        }
-
-        else if (category == ConservationStatus.EN)
-        {
-            rarestCategoryImage.color = ENColor;
-            rarestCategoryText.color = Color.white;
-            rarestCategoryText.text = "Endangered";
-        }
-
-        else if (category == ConservationStatus.CR)
-        {
-            rarestCategoryImage.color = CRColor;
-            rarestCategoryText.color = Color.white;
-            rarestCategoryText.text = "Critically Endangered";
-        }
-
-        else if (category == ConservationStatus.NE)
-        {
-            rarestCategoryImage.color = NEColor;
-            rarestCategoryText.text = "Not Evaluated";
-        }
-
-        else if (category == ConservationStatus.DD)
-        {
-            rarestCategoryImage.color = DDColor;
-            rarestCategoryText.text = "Data Deficient";
-        }
+        categoryUI.SetStatus(category);
     }
 
     // Set Captured UI at Index
