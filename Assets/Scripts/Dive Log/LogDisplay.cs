@@ -123,7 +123,15 @@ public class LogDisplay : MonoBehaviour
         Creature c = diveLog.FindRarest();
 
         // Set display
-        SetRarest(c.Sprite, c.CommonName, c.ConservationStatus);
+        if (c.CaptureStatus == CreatureStatus.Identified)
+        {
+            SetRarest(c.Sprite, c.CommonName, c.ConservationStatus);
+        }
+
+        else // Do not reveal name if unidentified
+        {
+            SetRarest(c.Sprite, "???", c.ConservationStatus);
+        }
     }
 
     private void UpdateCaptured()
