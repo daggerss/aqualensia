@@ -24,6 +24,9 @@ public class CreatureInDive : MonoBehaviour
     private Vector2 randomPosition;
     private AIPath aiPath;
 
+    // Flags
+    public bool wasCaptured {get; set;}
+
     void Start()
     {
         // Display
@@ -41,6 +44,9 @@ public class CreatureInDive : MonoBehaviour
 
         // Movement functions
         StartCoroutine(Move());
+
+        // Flags
+        wasCaptured = false;
     }
 
     void Update()

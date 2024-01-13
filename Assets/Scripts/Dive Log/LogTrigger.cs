@@ -6,7 +6,8 @@ using UnityEngine;
 public class LogTrigger : MonoBehaviour
 {
     private LogManager diveLog;
-    private Creature creatureInView;
+    private CreatureInDive creatureInstance;
+    private Creature creature;
 
     void Start()
     {
@@ -24,27 +25,33 @@ public class LogTrigger : MonoBehaviour
     // Get Creature In View
     private void OnTriggerStay2D(Collider2D other)
     {
-        creatureInView = other.gameObject.GetComponent<CreatureInDive>().Creature;
+        creatureInstance = other.gameObject.GetComponent<CreatureInDive>();
+        creature = creatureInstance.Creature;
     }
 
     // Remove Creature
     private void OnTriggerExit2D(Collider2D other)
     {
-        creatureInView = null;
+        creature = null;
     }
 
     // Log Creature Info
     private void LogCreature()
     {
-        if (creatureInView != null)
+        // A creature is in view and it's an unencountered instance
+        if (creature != null && !creatureInstance.wasCaptured)
         {
-            // Scriptable Creature
-            creatureInView.CaptureCount += 1;
+            // Creature in Dive
+            creatureInstance.wasCaptured = true;
 
+            // Scriptable Creature
+            creature.CaptureCount += 1;
+
+            /* -------------------------- Dive Log -------------------------- */
             // Get dive log's index of creature in view
             int index = diveLog.CapturedCreatures.FindIndex(x =>
                         x.CapturedCreature.ScientificName ==
-                        creatureInView.ScientificName);
+                        creature.ScientificName);
 
             // Already captured in this dive
             if (index != -1)
@@ -58,14 +65,14 @@ public class LogTrigger : MonoBehaviour
             {
                 CreatureLog logInfo = new CreatureLog();
 
-                logInfo.CapturedCreature = creatureInView;
+                logInfo.CapturedCreature = creature;
                 logInfo.CaptureCount = 1;
 
                 // New capture overall
-                if (creatureInView.CaptureStatus == CreatureStatus.Unknown)
+                if (creature.CaptureStatus == CreatureStatus.Unknown)
                 {
                     // Scriptable Creature
-                    creatureInView.CaptureStatus = CreatureStatus.Captured;
+                    creature.CaptureStatus = CreatureStatus.Captured;
 
                     // Logged Creature
                     logInfo.isNew = true;
