@@ -7,12 +7,18 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
 
     [SerializeField] private GameObject creaturePrefab;
+
+    [Header("Fixed Points Spawn")]
+    [SerializeField] private Vector2[] sessilePositions;
+
+    [Header("Dynamic Spawn")]
     [SerializeField] private Transform parentTransform;
     [SerializeField] private LayerMask layersNotToSpawnOn;
     [SerializeField] private float creatureRadius;
 
     private CreatureInDive creatureInfo;
     private StateManager stateManager;
+    private List<int> usedSessilePositions = new List<int>();
 
     void Awake()
     {
@@ -26,13 +32,18 @@ public class SpawnManager : MonoBehaviour
         stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
     }
 
-    public void SpawnCreatures(Collider2D spawnableAreaCollider, Creature[] creatures)
+    // Spawn mobile or sessile
+    public void SpawnCreatures(Creature[] creatures, Collider2D spawnableAreaCollider = null)
     {
+        // Instantiate variables
         creatureInfo = creaturePrefab.GetComponent<CreatureInDive>();
+        bool forSessile = (spawnableAreaCollider == null);
+        Vector2 spawnPosition;
 
         foreach (Creature creature in creatures)
         {
             // Spawn creatures based on blocked and active time
+            // TODO: active time both
             if (!creature.isBlocked && (creature.ActiveTime == stateManager.CurrentTimeOfDay))
             {
                 // Set prefab's creature
@@ -41,7 +52,15 @@ public class SpawnManager : MonoBehaviour
                 // Spawn based on rarity
                 for (int i = 0; i < creature.PopulationScale; i++)
                 {
-                    Vector2 spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
+                    if (forSessile) // Sessile position
+                    {
+                        spawnPosition = GetRandomFixedPosition();
+                    }
+
+                    else // Dynamic position
+                    {
+                        spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
+                    }
     
                     // Spawn only if valid
                     if (!spawnPosition.Equals(Vector2.zero))
@@ -76,7 +95,22 @@ public class SpawnManager : MonoBehaviour
         }
 
         // Warning if none found
-        Debug.LogWarning("Could not find a valid spawn position");
+        Debug.LogWarning("Could not find a valid map spawn position");
+        return Vector2.zero;
+    }
+
+    private Vector2 GetRandomFixedPosition()
+    {
+        int randomIndex = Random.Range(0, sessilePositions.Length);
+
+        if (!usedSessilePositions.Contains(randomIndex))
+        {
+            usedSessilePositions.Add(randomIndex);
+            return sessilePositions[randomIndex];
+        }
+
+        // Warning if none found
+        Debug.LogWarning("Could not find a valid sessile spawn position");
         return Vector2.zero;
     }
 

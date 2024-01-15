@@ -26,6 +26,10 @@ public class Creature : ScriptableObject
     public TimeOfDay ActiveTime => _activeTime;
 
     [SerializeField]
+    private bool _sessile;
+    public bool Sessile => _sessile;
+
+    [SerializeField]
     private OceanZone _upperZone;
     public OceanZone UpperZone => _upperZone;
 

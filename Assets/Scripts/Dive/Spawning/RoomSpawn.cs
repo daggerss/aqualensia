@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RoomSpawn : MonoBehaviour
 {
-    [SerializeField] private Creature[] creatures;
+    [SerializeField] private Creature[] mobileCreatures;
+    [SerializeField] private Creature[] sessileCreatures;
 
     private Collider2D spawnableArea;
 
@@ -18,8 +19,9 @@ public class RoomSpawn : MonoBehaviour
         Spawn();
     }
 
-    public virtual void Spawn()
+    void Spawn()
     {
-        SpawnManager.instance.SpawnCreatures(spawnableArea, creatures);
+        SpawnManager.instance.SpawnCreatures(mobileCreatures, spawnableArea);
+        SpawnManager.instance.SpawnCreatures(sessileCreatures);
     }
 }

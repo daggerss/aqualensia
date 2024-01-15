@@ -33,17 +33,20 @@ public class CreatureInDive : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Creature.Sprite;
 
-        // Flip setup
-        originalLocalScale = transform.localScale;
-        flippedLocalScale = Vector3.Scale(originalLocalScale, new Vector3(-1f, 1f, 1f));
+        if (!Creature.Sessile)
+        {
+            // Flip setup
+            originalLocalScale = transform.localScale;
+            flippedLocalScale = Vector3.Scale(originalLocalScale, new Vector3(-1f, 1f, 1f));
 
-        // Movement setup
-        aiPath = GetComponent<AIPath>();
-        targetArea = transform.parent.GetComponentInParent<Collider2D>();
-        aiPath.maxSpeed = Creature.Speed;
+            // Movement setup
+            aiPath = GetComponent<AIPath>();
+            targetArea = transform.parent.GetComponentInParent<Collider2D>();
+            aiPath.maxSpeed = Creature.Speed;
 
-        // Movement functions
-        StartCoroutine(Move());
+            // Movement functions
+            StartCoroutine(Move());
+        }
 
         // Flags
         wasCaptured = false;
@@ -51,7 +54,10 @@ public class CreatureInDive : MonoBehaviour
 
     void Update()
     {
-        Flip();
+        if(!Creature.Sessile)
+        {
+            Flip();
+        }
     }
 
     // Patrol within map
