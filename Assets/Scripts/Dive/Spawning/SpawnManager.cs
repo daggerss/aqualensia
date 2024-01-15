@@ -43,8 +43,8 @@ public class SpawnManager : MonoBehaviour
         foreach (Creature creature in creatures)
         {
             // Spawn creatures based on blocked and active time
-            // TODO: active time both
-            if (!creature.isBlocked && (creature.ActiveTime == stateManager.CurrentTimeOfDay))
+            if (!creature.isBlocked && ((creature.ActiveTime == stateManager.CurrentTimeOfDay) ||
+                                        (creature.ActiveTime == TimeOfDay.Both)))
             {
                 // Set prefab's creature
                 creatureInfo.Creature = creature;
