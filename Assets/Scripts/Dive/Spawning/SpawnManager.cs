@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float creatureRadius;
 
     private CreatureInDive creatureInfo;
+    private StateManager stateManager;
 
     void Awake()
     {
@@ -20,6 +21,9 @@ public class SpawnManager : MonoBehaviour
         {
             instance = this;
         }
+
+        // Setup
+        stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
     }
 
     public void SpawnCreatures(Collider2D spawnableAreaCollider, Creature[] creatures)
@@ -28,7 +32,8 @@ public class SpawnManager : MonoBehaviour
 
         foreach (Creature creature in creatures)
         {
-            if (!creature.isBlocked)
+            // Spawn creatures based on blocked and active time
+            if (!creature.isBlocked && (creature.ActiveTime == stateManager.CurrentTimeOfDay))
             {
                 // Set prefab's creature
                 creatureInfo.Creature = creature;
