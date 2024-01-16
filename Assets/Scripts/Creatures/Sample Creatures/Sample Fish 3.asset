@@ -15,8 +15,9 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: 21300000, guid: 1aa7b493fea1d464a9c2638563dab63b, type: 3}
   _commonName: Sample Fish 3
   _scientificName: Scientificus 3
-  _conservationStatus: 6
+  _conservationStatus: 5
   _activeTime: 0
+  _sessile: 0
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
@@ -24,11 +25,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  _galleryInfo:
-  - 
-  - 
-  - 
-  - 
+  _galleryInfo: 
   _populationScale: 6
   _speed: 7
   <CaptureStatus>k__BackingField: 2
