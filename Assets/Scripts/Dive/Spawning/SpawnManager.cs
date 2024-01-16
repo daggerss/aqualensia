@@ -101,12 +101,18 @@ public class SpawnManager : MonoBehaviour
 
     private Vector2 GetRandomFixedPosition()
     {
-        int randomIndex = Random.Range(0, sessilePositions.Length);
+        int randomIndex = 0;
 
-        if (!usedSessilePositions.Contains(randomIndex))
+        // Look for valid spawn position at maximum of 200 attempts        
+        for (int i = 0; i < 200; i++)
         {
-            usedSessilePositions.Add(randomIndex);
-            return sessilePositions[randomIndex];
+            randomIndex = Random.Range(0, sessilePositions.Length);
+    
+            if (!usedSessilePositions.Contains(randomIndex))
+            {
+                usedSessilePositions.Add(randomIndex);
+                return sessilePositions[randomIndex];
+            }
         }
 
         // Warning if none found

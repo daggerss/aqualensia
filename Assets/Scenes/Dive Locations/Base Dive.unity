@@ -1753,8 +1753,9 @@ MonoBehaviour:
   mobileCreatures:
   - {fileID: 11400000, guid: 235d35bd729fba24aa23e5c1a1d53b30, type: 2}
   - {fileID: 11400000, guid: 14a9172ce2946b54c95e70ac763e5867, type: 2}
-  sessileCreatures:
   - {fileID: 11400000, guid: 0c0b9bc5572b8914db7954851b87d2fe, type: 2}
+  sessileCreatures:
+  - {fileID: 11400000, guid: ae0eb15bd41456a4f81eb4f2fd198742, type: 2}
 --- !u!60 &381175755
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -43283,14 +43284,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 7618159270492880575, guid: 638999313cc12c64395e320852e2eac9, type: 3}
   sessilePositions:
-  - {x: -25, y: 8}
-  - {x: 50, y: -8}
-  - {x: 65, y: -8}
-  - {x: 2, y: 12}
-  - {x: 15, y: 12}
-  - {x: -66, y: -48}
-  - {x: -35, y: -28}
-  - {x: -16, y: -60}
+  - {x: -25, y: 10}
+  - {x: 50, y: -6}
+  - {x: 65, y: -6}
+  - {x: 2, y: 14}
+  - {x: 15, y: 14}
+  - {x: -66, y: -46}
+  - {x: -35, y: -26}
+  - {x: -16, y: -58}
   parentTransform: {fileID: 135968621}
   layersNotToSpawnOn:
     serializedVersion: 2
