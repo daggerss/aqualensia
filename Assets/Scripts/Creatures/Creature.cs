@@ -5,10 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Creature", menuName = "Aqualensia/Creature", order = 0)]
 public class Creature : ScriptableObject
 {
-    [field: Header("Basic Information")]
-    [field: SerializeField]
-    public Sprite Sprite {get; private set;}
+    [Header("Sprites")]
+    [SerializeField]
+    private Sprite _sprite;
+    public Sprite Sprite => _sprite;
 
+    [SerializeField]
+    private Sprite _realPhoto;
+    public Sprite RealPhoto => _realPhoto;
+
+    [Header("Basic Information")]
     [SerializeField]
     private string _commonName;
     public string CommonName => _commonName;
