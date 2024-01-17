@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
-  m_Name: Sample Fish 2
+  m_Name: Scaly-foot Snail
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 2fb2e61d0b6fe2044850098c7e06ac19, type: 3}
-  _realPhoto: {fileID: 0}
-  _commonName: Sample Fish 2
-  _scientificName: Scientificus 2
-  _conservationStatus: 4
+  <Sprite>k__BackingField: {fileID: 0}
+  _commonName: Scaly-foot Snail
+  _scientificName: Chrysomallon squamiferum
+  _conservationStatus: 5
   _activeTime: 0
   _sessile: 0
-  _upperZone: 0
-  _lowerZone: 0
+  _upperZone: 2
+  _lowerZone: 2
   _photoInfo:
   - 
   - 
   - 
   - 
   _galleryInfo: 
-  _populationScale: 5
-  _speed: 5
-  <CaptureStatus>k__BackingField: 1
-  _captureCount: 1
+  _populationScale: 0
+  _speed: 0
+  <CaptureStatus>k__BackingField: 0
+  _captureCount: 0
   <isBlocked>k__BackingField: 0

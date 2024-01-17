@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Sample Fish 3
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 1aa7b493fea1d464a9c2638563dab63b, type: 3}
+  _sprite: {fileID: 21300000, guid: 1aa7b493fea1d464a9c2638563dab63b, type: 3}
+  _realPhoto: {fileID: 0}
   _commonName: Sample Fish 3
   _scientificName: Scientificus 3
   _conservationStatus: 5
@@ -28,6 +29,6 @@ MonoBehaviour:
   _galleryInfo: 
   _populationScale: 6
   _speed: 7
-  <CaptureStatus>k__BackingField: 2
+  <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   <isBlocked>k__BackingField: 0
