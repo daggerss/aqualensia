@@ -38,5 +38,5 @@ public enum TimeOfDay { Day, Night, Both };
 public enum OceanZone { Sunlight, Twilight, Midnight, Abyssal, Hadal };
 
 /* -------------------------------- Creatures ------------------------------- */
-public enum CreatureStatus { Identified, Captured, Unknown };
+public enum CreatureStatus { Unknown, Captured, Identified };
 public enum ConservationStatus { NE, DD, LC, NT, VU, EN, CR };
