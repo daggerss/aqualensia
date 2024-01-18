@@ -31,7 +31,7 @@ public class CreatureInDive : MonoBehaviour
     {
         // Display
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = Creature.Sprite;
+        SetSprite();
 
         if (!Creature.Sessile)
         {
@@ -57,6 +57,19 @@ public class CreatureInDive : MonoBehaviour
         if(!Creature.Sessile)
         {
             Flip();
+        }
+    }
+
+    void SetSprite()
+    {
+        if (Creature.SchoolSprite == null)
+        {
+            spriteRenderer.sprite = Creature.Sprite;
+        }
+
+        else
+        {
+            spriteRenderer.sprite = Creature.SchoolSprite;
         }
     }
 

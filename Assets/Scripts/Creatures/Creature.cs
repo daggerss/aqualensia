@@ -11,6 +11,10 @@ public class Creature : ScriptableObject
     public Sprite Sprite => _sprite;
 
     [SerializeField]
+    private Sprite _schoolSprite;
+    public Sprite SchoolSprite => _schoolSprite;
+
+    [SerializeField]
     private Sprite _realPhoto;
     public Sprite RealPhoto => _realPhoto;
 
