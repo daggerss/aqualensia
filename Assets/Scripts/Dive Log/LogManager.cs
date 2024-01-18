@@ -51,6 +51,12 @@ public class LogManager : MonoBehaviour
     // Find Rarest
     public Creature FindRarest()
     {
+        // If none captured
+        if (CapturedCreatures.Count == 0)
+        {
+            return null;
+        }
+
         // Defaults
         int currentRarestStatus = 0;
         rarestCreature = CapturedCreatures[0].CapturedCreature;

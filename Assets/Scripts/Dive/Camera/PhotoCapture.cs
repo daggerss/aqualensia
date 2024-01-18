@@ -75,8 +75,8 @@ public class PhotoCapture : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) &&
             !viewingPhoto && !cooldown.IsCoolingDown)
         {
-            StartCoroutine(CapturePhoto());
             OnPhotoCapture?.Invoke(); // Log, Creature Response
+            StartCoroutine(CapturePhoto());
             cooldown.StartCooldown();
         }
 

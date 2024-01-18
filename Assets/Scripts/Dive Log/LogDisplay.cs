@@ -114,7 +114,12 @@ public class LogDisplay : MonoBehaviour
         Creature c = diveLog.FindRarest();
 
         // Set display
-        if (c.CaptureStatus == CreatureStatus.Identified)
+        if (c == null)
+        {
+            SetRarest(null, "No Creatures Captured");
+        }
+
+        else if (c.CaptureStatus == CreatureStatus.Identified)
         {
             SetRarest(c.Sprite, c.CommonName, c.ConservationStatus);
         }
@@ -199,11 +204,22 @@ public class LogDisplay : MonoBehaviour
     }
 
     // Set Rarest UI
-    private void SetRarest(Sprite img, string name, ConservationStatus category)
+    private void SetRarest(Sprite img, string name,
+                           ConservationStatus category = ConservationStatus.NE)
     {
         rarestImage.sprite = img;
+        rarestImage.color = Color.white;
         rarestText.text = name;
-        categoryUI.SetStatus(category);
+
+        if (img != null) // Check if rarest exists
+        {
+            categoryUI.SetStatus(category);
+        }
+
+        else
+        {
+            rarestImage.color = Color.clear;
+        }
     }
 
     // Set Captured UI at Index
