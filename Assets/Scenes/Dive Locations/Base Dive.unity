@@ -24649,7 +24649,6 @@ MonoBehaviour:
   - {fileID: 842896}
   - {fileID: 1048935685}
   - {fileID: 418162495}
-  logTrigger: {fileID: 842902}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0

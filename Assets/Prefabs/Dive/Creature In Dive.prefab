@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 5004313631571180544}
   - component: {fileID: 6191645562623307094}
   - component: {fileID: 1565350599565388718}
+  - component: {fileID: -1173679817697593611}
   - component: {fileID: 8650673948036008391}
   - component: {fileID: 8213738135422549605}
   - component: {fileID: 5715006480469693673}
@@ -134,10 +135,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6881346c644bbb14b8dc7c2d4c7a580e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 11400000, guid: 14a9172ce2946b54c95e70ac763e5867, type: 2}
+  Creature: {fileID: 11400000, guid: ae0eb15bd41456a4f81eb4f2fd198742, type: 2}
   minWaitTime: 1
   maxWaitTime: 3
   target: {fileID: 3426312934648953512}
+--- !u!114 &-1173679817697593611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618159270492880575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea35e5c38720054bb739a222ad54ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8650673948036008391
 Rigidbody2D:
   serializedVersion: 4

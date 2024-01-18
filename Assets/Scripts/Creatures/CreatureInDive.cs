@@ -104,4 +104,17 @@ public class CreatureInDive : MonoBehaviour
             transform.localScale = originalLocalScale;
         }
     }
+
+    // Flee for 1 second
+    public IEnumerator Flee()
+    {
+        // Speed up
+        aiPath.maxSpeed = 50;
+
+        // Wait 1 second
+        yield return new WaitForSeconds(1);
+
+        // Return to default
+        aiPath.maxSpeed = Creature.Speed;
+    }
 }
