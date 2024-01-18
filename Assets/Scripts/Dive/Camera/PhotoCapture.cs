@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PhotoCapture : MonoBehaviour
 {
@@ -26,8 +27,9 @@ public class PhotoCapture : MonoBehaviour
 
     [Header("Others")]
     [SerializeField] private GameObject[] generalUI;
-    [SerializeField] private LogTrigger logTrigger;
 
+    [HideInInspector]
+    public static event Action OnPhotoCapture;
     private AudioManager audioManager;
 
     private Texture2D screenCapture;
@@ -73,8 +75,8 @@ public class PhotoCapture : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) &&
             !viewingPhoto && !cooldown.IsCoolingDown)
         {
-            logTrigger.Log();
             StartCoroutine(CapturePhoto());
+            OnPhotoCapture?.Invoke(); // Log, Creature Response
             cooldown.StartCooldown();
         }
 

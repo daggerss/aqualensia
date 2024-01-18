@@ -9,17 +9,16 @@ public class LogTrigger : MonoBehaviour
     private CreatureInDive creatureInstance;
     private Creature creature;
 
+    void OnEnable()
+    {
+        // Add log to capture event
+        PhotoCapture.OnPhotoCapture += Log;
+    }
+
     void Start()
     {
         // Dive Log
         diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
-    }
-
-    // Log Shots + Creature
-    public void Log()
-    {
-        diveLog.CurrentBestShots += 1;
-        LogCreature();
     }
 
     // Get Creature In View
@@ -33,6 +32,13 @@ public class LogTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         creature = null;
+    }
+
+    // Log Shots + Creature
+    private void Log()
+    {
+        diveLog.CurrentBestShots += 1;
+        LogCreature();
     }
 
     // Log Creature Info
