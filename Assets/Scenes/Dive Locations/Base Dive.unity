@@ -43291,6 +43291,8 @@ MonoBehaviour:
   - {x: -66, y: -46}
   - {x: -35, y: -26}
   - {x: -16, y: -58}
+  - {x: 76, y: -4}
+  - {x: -12, y: 10}
   parentTransform: {fileID: 135968621}
   layersNotToSpawnOn:
     serializedVersion: 2
