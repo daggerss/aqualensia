@@ -45,10 +45,10 @@ public class LogTrigger : MonoBehaviour
     private void LogCreature()
     {
         // A creature is in view and it's an unencountered instance
-        if (creature != null && !creatureInstance.wasCaptured)
+        if (creature != null && !creatureInstance.WasCaptured)
         {
             // Creature in Dive
-            creatureInstance.wasCaptured = true;
+            creatureInstance.WasCaptured = true;
 
             // Scriptable Creature
             creature.CaptureCount += 1;

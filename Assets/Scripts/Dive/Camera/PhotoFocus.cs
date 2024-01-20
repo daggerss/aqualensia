@@ -12,26 +12,27 @@ public class PhotoFocus : MonoBehaviour
     [SerializeField] private Image statusImage;
     [SerializeField] private Sprite[] statusSprites;
     [SerializeField] private Color[] statusColors;
+    [SerializeField] private GameObject capturedLabel;
 
     [Header("Text")]
     [SerializeField] private TMP_Text creatureNameText;
     [SerializeField] private TMP_Text captureCountText;
 
+    private CreatureInDive creatureInstance;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        SetInfo(other.gameObject.GetComponent<CreatureInDive>().Creature);
-        DisplayInfo(true);
-    }
+        creatureInstance = other.gameObject.GetComponent<CreatureInDive>();
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        SetInfo(other.gameObject.GetComponent<CreatureInDive>().Creature);
+        SetInfo(creatureInstance.Creature);
         DisplayInfo(true);
+        DisplayCapturedLabel(creatureInstance.WasCaptured);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         DisplayInfo(false);
+        DisplayCapturedLabel(false);
     }
 
     private void SetInfo(Creature creature)
@@ -60,6 +61,11 @@ public class PhotoFocus : MonoBehaviour
 
         // Count
         captureCountText.text = creature.CaptureCount + "/4";
+    }
+
+    private void DisplayCapturedLabel(bool toDisplay)
+    {
+        capturedLabel.SetActive(toDisplay);
     }
 
     private void DisplayInfo(bool toDisplay)

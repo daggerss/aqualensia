@@ -25,7 +25,7 @@ public class CreatureInDive : MonoBehaviour
     private AIPath aiPath;
 
     // Flags
-    public bool wasCaptured {get; set;}
+    public bool WasCaptured {get; set;}
 
     void Start()
     {
@@ -49,7 +49,7 @@ public class CreatureInDive : MonoBehaviour
         }
 
         // Flags
-        wasCaptured = false;
+        WasCaptured = false;
     }
 
     void Update()
