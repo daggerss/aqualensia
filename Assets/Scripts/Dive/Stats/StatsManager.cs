@@ -17,10 +17,10 @@ public class StatsManager : MonoBehaviour
 
     [Header("Depth")]
     [SerializeField] private TMP_Text depthText;
-    [SerializeField] private TMP_Text zoneText;
 
     [Header("Zone")]
     [SerializeField] private Image zoneIcon;
+    [SerializeField] private TMP_Text zoneText;
     [SerializeField] private Sprite[] zoneSprites;
 
     [Header("Ascent")]
