@@ -108,6 +108,9 @@ public class CreatureInDive : MonoBehaviour
     // Flee for 1 second
     public IEnumerator Flee()
     {
+        // Change target position
+        randomPosition = SpawnManager.instance.GetRandomMapPosition(targetArea);
+
         // Speed up
         aiPath.maxSpeed = 50;
 
