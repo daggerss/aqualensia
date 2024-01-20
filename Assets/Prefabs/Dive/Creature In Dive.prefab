@@ -138,6 +138,10 @@ MonoBehaviour:
   Creature: {fileID: 11400000, guid: ae0eb15bd41456a4f81eb4f2fd198742, type: 2}
   minWaitTime: 1
   maxWaitTime: 3
+  findTargetTimer:
+    <CooldownTime>k__BackingField: 10
+    cooldownSlider: {fileID: 0}
+    cooldownRadial: {fileID: 0}
   target: {fileID: 3426312934648953512}
 --- !u!114 &-1173679817697593611
 MonoBehaviour:
