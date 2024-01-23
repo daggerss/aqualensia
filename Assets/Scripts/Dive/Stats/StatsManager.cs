@@ -16,6 +16,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private ColorBlink[] dangerBlinks;
 
     [Header("Depth")]
+    [SerializeField] private float depthScale = 0.5f;
     [SerializeField] private TMP_Text depthText;
 
     [Header("Zone")]
@@ -35,7 +36,6 @@ public class StatsManager : MonoBehaviour
 
     private int airLeft;
     private float depth;
-    private float depthScale = 0.5f;
 
     private LogManager diveLog;
     private float deepestDepth = 0f;
