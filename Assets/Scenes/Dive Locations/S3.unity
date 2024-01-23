@@ -459,37 +459,6 @@ Transform:
   m_Father: {fileID: 2055898362}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &135968620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 135968621}
-  m_Layer: 0
-  m_Name: Creatures
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &135968621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135968620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1316763357}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &138881250 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1638504619245233976, guid: 4b3b54a911bac284384717a65396116f, type: 3}
@@ -53016,7 +52985,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -53111,7 +53080,6 @@ Transform:
   m_Children:
   - {fileID: 381175753}
   - {fileID: 1096452289}
-  - {fileID: 135968621}
   m_Father: {fileID: 2091825961}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53279,6 +53247,7 @@ MonoBehaviour:
   dangerBlinks:
   - {fileID: 73540775}
   - {fileID: 418162497}
+  depthScale: 0.5
   depthText: {fileID: 1025596998}
   zoneIcon: {fileID: 597024585}
   zoneText: {fileID: 1283672188}
@@ -98059,7 +98028,6 @@ MonoBehaviour:
   - {x: -55, y: -82}
   - {x: -45, y: -82}
   - {x: -19, y: -98}
-  parentTransform: {fileID: 135968621}
   layersNotToSpawnOn:
     serializedVersion: 2
     m_Bits: 192
