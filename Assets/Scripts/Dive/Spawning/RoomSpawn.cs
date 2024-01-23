@@ -21,7 +21,8 @@ public class RoomSpawn : MonoBehaviour
 
     void Spawn()
     {
-        SpawnManager.instance.SpawnCreatures(mobileCreatures, spawnableArea);
-        SpawnManager.instance.SpawnCreatures(sessileCreatures);
+        SpawnManager.instance.SpawnCreatures(mobileCreatures, transform,
+                                             spawnableArea);
+        SpawnManager.instance.SpawnCreatures(sessileCreatures, transform);
     }
 }

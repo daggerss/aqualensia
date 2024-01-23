@@ -12,7 +12,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Vector2[] sessilePositions;
 
     [Header("Dynamic Spawn")]
-    [SerializeField] private Transform parentTransform;
     [SerializeField] private LayerMask layersNotToSpawnOn;
     [SerializeField] private float creatureRadius;
 
@@ -33,7 +32,8 @@ public class SpawnManager : MonoBehaviour
     }
 
     // Spawn mobile or sessile
-    public void SpawnCreatures(Creature[] creatures, Collider2D spawnableAreaCollider = null)
+    public void SpawnCreatures(Creature[] creatures, Transform parentTransform,
+                               Collider2D spawnableAreaCollider = null)
     {
         // Instantiate variables
         creatureInfo = creaturePrefab.GetComponent<CreatureInDive>();
