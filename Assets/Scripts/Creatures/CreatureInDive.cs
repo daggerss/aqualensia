@@ -10,7 +10,6 @@ public class CreatureInDive : MonoBehaviour
     [Header("Behavior")]
     [SerializeField] private float minWaitTime;
     [SerializeField] private float maxWaitTime;
-    [SerializeField] private Cooldown findTargetTimer;
 
     [Header("Pathfinding")]
     [SerializeField] private Transform target;
@@ -81,10 +80,7 @@ public class CreatureInDive : MonoBehaviour
         {
             randomPosition = SpawnManager.instance.GetRandomMapPosition(targetArea);
 
-            findTargetTimer.StartCooldown();
-
-            while((Vector2.Distance(transform.position, randomPosition) > 0.2f)
-                  && findTargetTimer.IsCoolingDown)
+            while(Vector2.Distance(transform.position, randomPosition) > 0.2f)
             {
                 target.position = randomPosition;
 
