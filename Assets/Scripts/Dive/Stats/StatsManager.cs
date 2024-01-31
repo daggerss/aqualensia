@@ -94,7 +94,7 @@ public class StatsManager : MonoBehaviour
     // Calculate depth
     private void UpdateDepth()
     {
-        depth = (transform.position - player.transform.position).magnitude;
+        depth = transform.position.y - player.transform.position.y;
         depth *= depthScale;
         depthText.text = depth.ToString("F1") + "m";
     }
