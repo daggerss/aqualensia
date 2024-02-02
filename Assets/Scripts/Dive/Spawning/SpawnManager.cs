@@ -65,13 +65,10 @@ public class SpawnManager : MonoBehaviour
                     // Spawn only if valid
                     if (!spawnPosition.Equals(Vector2.zero))
                     {
-                        GameObject spawnedCreature = Instantiate(creaturePrefab, spawnPosition, Quaternion.identity);
-    
-                        // Organize in hierarchy
-                        if (parentTransform != null)
-                        {
-                            spawnedCreature.transform.SetParent(parentTransform);
-                        }
+                        GameObject spawnedCreature = Instantiate(creaturePrefab,
+                                                                 spawnPosition,
+                                                                 Quaternion.identity,
+                                                                 parentTransform);
                     }
                 }
             }
