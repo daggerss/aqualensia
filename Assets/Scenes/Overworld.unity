@@ -1145,6 +1145,38 @@ PrefabInstance:
       propertyPath: locationCode
       value: O3
       objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: O3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1683,6 +1715,38 @@ PrefabInstance:
       propertyPath: locationCode
       value: S3
       objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: S3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1875,6 +1939,38 @@ PrefabInstance:
     - target: {fileID: 4918654763157828038, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
       propertyPath: locationCode
       value: C3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: C3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2195,6 +2291,50 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &722260283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722260285}
+  - component: {fileID: 722260284}
+  m_Layer: 0
+  m_Name: Scene Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &722260284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722260283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f47fd79628dde240bf046f8bd4b47df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &722260285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722260283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 896401768}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786835377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 722260285}
   - {fileID: 1816850401}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -3341,6 +3482,38 @@ PrefabInstance:
     - target: {fileID: 4918654763157828038, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
       propertyPath: locationCode
       value: S2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: S2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3838,7 +4011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1171127679}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 722260284}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Gallery
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1171127679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5064,6 +5249,38 @@ PrefabInstance:
       propertyPath: locationCode
       value: O2
       objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: O2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5954,6 +6171,38 @@ PrefabInstance:
       propertyPath: locationCode
       value: O1
       objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: O1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6063,6 +6312,38 @@ PrefabInstance:
     - target: {fileID: 4918654763157828038, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
       propertyPath: locationCode
       value: C2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: C2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6374,6 +6655,38 @@ PrefabInstance:
       propertyPath: locationCode
       value: C1
       objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: C1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6483,6 +6796,38 @@ PrefabInstance:
     - target: {fileID: 4918654763157828038, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
       propertyPath: locationCode
       value: S1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 722260284}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: S1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132677316674832777, guid: c5279ad3e2700d34ea427c6b816f2b1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
