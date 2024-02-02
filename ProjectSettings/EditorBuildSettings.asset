@@ -9,6 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 360d9adf21904d14ba0985aca2b066e3
   - enabled: 1
-    path: Assets/Scenes/Dive Locations/Base Dive.unity
-    guid: 156ff3ecc5e424b43859bb30ad9ff5c4
+    path: Assets/Scenes/Dive Locations/C1.unity
+    guid: fb9e31165a0fbcb46b0a96af968ef1ee
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/C2.unity
+    guid: 4ead31335a97f6d42a6ff36f9aa63b24
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/C3.unity
+    guid: 795bb2ac295221b45877e74fbe51e95d
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/S1.unity
+    guid: bf4bec1a79ef5c54990e96a836acdbc3
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/S2.unity
+    guid: 5ad6ad9ae4b507e46b7b5f4edf413d84
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/S3.unity
+    guid: 3fe994206f5540f408a60e3d41759b3a
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/O1.unity
+    guid: aaf40382bce63a540a236891f3f89bb9
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/O2.unity
+    guid: 427bdea06f073454d915ded3b1d7b40f
+  - enabled: 1
+    path: Assets/Scenes/Dive Locations/O3.unity
+    guid: 0cbdb48183f3bf6449e19e5429ee25b3
   m_configObjects: {}
