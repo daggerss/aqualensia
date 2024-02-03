@@ -28,15 +28,16 @@ public class UniversalManagers : MonoBehaviour
 /*                               Universal Enums                              */
 /* -------------------------------------------------------------------------- */
 
-/* ------------------------------- Environment ------------------------------ */
+// ENVIRONMENT
 
-// ! If I had dawn and dusk, I'd use flags
-// ! or total 4 for crepuscular and cathemeral creatures
-// ! But for now, this is okay
+// ! TimeOfDay: Semantics/Clarity Note
+// If I had dawn and dusk, I'd use flags
+// or total 4 for crepuscular and cathemeral creatures
+// But for now, this is okay
 public enum TimeOfDay { Day, Night, Both };
-
 public enum OceanZone { Sunlight, Twilight, Midnight, Abyssal, Hadal };
+public enum Biome {CoralReef, SeagrassBed, OpenOcean};
 
-/* -------------------------------- Creatures ------------------------------- */
+// CREATURES
 public enum CreatureStatus { Unknown, Captured, Identified };
 public enum ConservationStatus { NE, DD, LC, NT, VU, EN, CR };
