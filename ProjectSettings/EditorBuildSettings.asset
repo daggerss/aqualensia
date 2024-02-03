@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 360d9adf21904d14ba0985aca2b066e3
   - enabled: 1
+    path: Assets/Scenes/Gallery/Main Hall.unity
+    guid: 2ad3b1979018fbb4fa4a53fcbf2f9da6
+  - enabled: 1
+    path: Assets/Scenes/Gallery/Biome Hall.unity
+    guid: 5c9891dee4ece6a45b0fd81d2bb72bea
+  - enabled: 1
     path: Assets/Scenes/Dive Locations/C1.unity
     guid: fb9e31165a0fbcb46b0a96af968ef1ee
   - enabled: 1

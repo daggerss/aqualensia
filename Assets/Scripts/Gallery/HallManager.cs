@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HallManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class HallManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Image BG;
+    [SerializeField] private TMP_Text[] plaqueTexts;
 
     // STATE
     private Biome currentHall;
@@ -22,24 +24,39 @@ public class HallManager : MonoBehaviour
         currentHall = UniversalManagers.instance.GetComponentInChildren<StateManager>().CurrentHall;
 
         // Set Up
-        SetUpBG();
+        SetUpUI();
     }
 
-    private void SetUpBG()
+    private void SetUpUI()
     {
         if (currentHall == Biome.CoralReef)
         {
             BG.sprite = CoralReefBG;
+
+            foreach (TMP_Text plaqueText in plaqueTexts)
+            {
+                plaqueText.text = "Coral Reefs";
+            }
         }
 
         else if (currentHall == Biome.SeagrassBed)
         {
             BG.sprite = SeagrassBedBG;
+            
+            foreach (TMP_Text plaqueText in plaqueTexts)
+            {
+                plaqueText.text = "Seagrass Meadows";
+            }
         }
 
         else if (currentHall == Biome.OpenOcean)
         {
             BG.sprite = OpenOceanBG;
+            
+            foreach (TMP_Text plaqueText in plaqueTexts)
+            {
+                plaqueText.text = "Open Ocean";
+            }
         }
     }
 }
