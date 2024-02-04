@@ -18,6 +18,10 @@ public class Creature : ScriptableObject
     private Sprite _realPhoto;
     public Sprite RealPhoto => _realPhoto;
 
+    [SerializeField]
+    private string _photoCredit;
+    public string PhotoCredit => _photoCredit;
+
     [Header("Basic Information")]
     [SerializeField]
     private string _commonName;
