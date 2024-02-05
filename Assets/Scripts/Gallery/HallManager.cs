@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Linq;
 
 public class HallManager : MonoBehaviour
 {
@@ -61,6 +62,10 @@ public class HallManager : MonoBehaviour
         // ! TO DELETE
         // SetUpContent(sampleCreatures);
 
+        // Sort creature arrays
+        SortCreaturesPerBiome();
+
+        // Set + populate
         if (currentHall == Biome.CoralReef)
         {
             SetUpUI(coralReefBG, "Coral Reefs");
@@ -78,6 +83,14 @@ public class HallManager : MonoBehaviour
             SetUpUI(openOceanBG, "Open Ocean");
             SetUpContent(openOceanCreatures);
         }
+    }
+
+    // Sort arrays by conservation status
+    private void SortCreaturesPerBiome()
+    {
+        coralReefCreatures = coralReefCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
+        seagrassBedCreatures = seagrassBedCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
+        openOceanCreatures = openOceanCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
     }
 
     // Set BG, hall plaques
