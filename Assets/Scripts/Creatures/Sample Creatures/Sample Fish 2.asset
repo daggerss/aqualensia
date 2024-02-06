@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Sample Fish 2
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 2fb2e61d0b6fe2044850098c7e06ac19, type: 3}
+  _schoolSprite: {fileID: 0}
   _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Sample Fish 2
   _scientificName: Scientificus 2
   _conservationStatus: 4
@@ -22,10 +24,11 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
+  - Odio nunc cursus malesuada dui. Dolor donec tellus nunc.
+  - Lorem ipsum dolor sit amet consectetur. Varius pulvinar enim odio eu leo tortor.
+  - Id eget risus aliquam risus netus mi aliquam semper. At risus porta.
+  - Vitae pulvinar egestas massa iaculis senectus aliquam in. Sapien vel sit nulla
+    est dolor volutpat.
   _galleryInfo: 
   _populationScale: 5
   _speed: 5

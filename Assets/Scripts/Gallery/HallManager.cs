@@ -12,9 +12,6 @@ public class HallManager : MonoBehaviour
     [SerializeField] private Creature[] coralReefCreatures;
     [SerializeField] private Creature[] seagrassBedCreatures;
     [SerializeField] private Creature[] openOceanCreatures;
-
-    // ! TO DELETE
-    [SerializeField] private Creature[] sampleCreatures;
     
     [Header("Assets")]
     [SerializeField] private Sprite coralReefBG;
@@ -39,6 +36,7 @@ public class HallManager : MonoBehaviour
     [SerializeField] private SwipeController displaySwipe;
 
     [Header("Inventory")]
+    [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private Transform inventoryContent;
     [SerializeField] private GameObject inventoryPhotoPrefab;
 
@@ -59,9 +57,6 @@ public class HallManager : MonoBehaviour
     // Set up according to biome
     private void SetUpAll()
     {
-        // ! TO DELETE
-        // SetUpContent(sampleCreatures);
-
         // Sort creature arrays
         SortCreaturesPerBiome();
 
@@ -152,6 +147,7 @@ public class HallManager : MonoBehaviour
             {
                 photoItem.SetLabel(creature.CommonName);
             }
+
             else
             {
                 photoItem.SetLabel("???");
@@ -200,6 +196,9 @@ public class HallManager : MonoBehaviour
         {
             item.SetCreatureImage(creature.Sprite);
         }
+
+        // Add to manager
+        inventoryManager.InventoryCreatures.Add(creature);
     }
 
     /* ----------------------------- Navigation ----------------------------- */

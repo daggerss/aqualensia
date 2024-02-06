@@ -29,8 +29,21 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
     private Vector3 startingPos;
 
     private int currentPage = 1;
-    private Vector3 targetPos;
+    public int CurrentPage
+    {
+        get
+        {
+            return currentPage;
+        }
 
+        set
+        {
+            // Clamp to max children
+            currentPage = Mathf.Clamp(value, 1, contentRect.childCount);
+        }
+    }
+
+    private Vector3 targetPos;
     public Vector3 TargetPos
     {
         get
@@ -74,9 +87,9 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
     /* --------------------------- Basic Functions -------------------------- */
     public void Next()
     {
-        if (currentPage < contentRect.childCount)
+        if (CurrentPage < contentRect.childCount)
         {
-            currentPage++;
+            CurrentPage++;
             TargetPos += pageStep;
             MovePage();
         }
@@ -84,9 +97,9 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
 
     public void Prev()
     {
-        if (currentPage > 1)
+        if (CurrentPage > 1)
         {
-            currentPage--;
+            CurrentPage--;
             TargetPos -= pageStep;
             MovePage();
         }
@@ -98,25 +111,25 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
         pageNum = Mathf.Clamp(pageNum, 1, contentRect.childCount);
         
         // Next
-        if (currentPage < pageNum)
+        if (CurrentPage < pageNum)
         {
-            TargetPos += pageStep * (pageNum - currentPage);
+            TargetPos += pageStep * (pageNum - CurrentPage);
         }
 
         // Prev
-        else if (currentPage > pageNum)
+        else if (CurrentPage > pageNum)
         {
-            TargetPos -= pageStep * (currentPage - pageNum);
+            TargetPos -= pageStep * (CurrentPage - pageNum);
         }
 
         // Update current page
-        currentPage = pageNum;
+        CurrentPage = pageNum;
 
         MovePage();
     }
 
     // Move by step
-    private void MovePage()
+    public virtual void MovePage()
     {
         contentRect.LeanMoveLocal(TargetPos, tweenTime).setEase(tweenType);
 
@@ -136,8 +149,8 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
     {
         if ((leftArrow != null) && (rightArrow != null))
         {
-            ShowArrow((currentPage != 1), leftArrow);
-            ShowArrow((currentPage != contentRect.childCount), rightArrow);
+            ShowArrow((CurrentPage != 1), leftArrow);
+            ShowArrow((CurrentPage != contentRect.childCount), rightArrow);
         }
     }
 
@@ -152,7 +165,7 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
     // Note: Uses cooldown to force step interval
     public void ScrollSnap()
     {
-        if (!scrollCooldown.IsCoolingDown)
+        if (!scrollCooldown.IsCoolingDown && TryGetComponent<ScrollRect>(out ScrollRect scrollRect))
         {
             scrollCooldown.StartCooldown();
 
@@ -208,7 +221,7 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
         }
 
         // Set active
-        currentIndicator = pageIndicators[currentPage - 1];
+        currentIndicator = pageIndicators[CurrentPage - 1];
         if (currentIndicator.TryGetComponent<Image>(out Image currentImage))
         {
             currentImage.color = Color.white;
