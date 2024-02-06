@@ -2232,6 +2232,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1851543662610418103, guid: 6669da43145b35e4dbf4009e003531a0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851543662610418103, guid: 6669da43145b35e4dbf4009e003531a0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851543662610418103, guid: 6669da43145b35e4dbf4009e003531a0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4463121844701560717, guid: 6669da43145b35e4dbf4009e003531a0, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -46,7 +46,11 @@ public class PhotoItem : MonoBehaviour
 
     public void SetCreatureImage(Sprite img)
     {
-        creatureImage.sprite = img;
+        if (img != null)
+        {
+            creatureImage.color = Color.white;
+            creatureImage.sprite = img;
+        }
     }
 
     public void SetLabel(string txt)

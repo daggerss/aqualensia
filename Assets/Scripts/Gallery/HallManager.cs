@@ -147,8 +147,15 @@ public class HallManager : MonoBehaviour
             // Change image
             photoItem.SetCreatureImage(creature.Sprite);
 
-            // Change name
-            photoItem.SetLabel(creature.CommonName);
+            // Show/hide name
+            if (creature.CaptureStatus == CreatureStatus.Identified)
+            {
+                photoItem.SetLabel(creature.CommonName);
+            }
+            else
+            {
+                photoItem.SetLabel("???");
+            }
         }
 
         // Get TOCItem component
@@ -167,15 +174,17 @@ public class HallManager : MonoBehaviour
         // Set info
         if (newDisplayItem.TryGetComponent<DisplayItem>(out DisplayItem item))
         {
-            item.SetSpriteImage(creature.Sprite);
-            item.SetIRLImage(creature.RealPhoto);
-            item.SetCommonName(creature.CommonName);
-            item.SetScientificName(creature.ScientificName);
-            item.SetCategory(creature.ConservationStatus);
-            item.SetOceanZone(creature.UpperZone, creature.LowerZone);
-            item.SetActiveTime(creature.ActiveTime);
-            item.SetCredit(creature.PhotoCredit);
-            item.SetResearchInfo(creature.GalleryInfo);
+            // Revealed
+            if (creature.CaptureStatus == CreatureStatus.Identified)
+            {
+                item.SetIdentified(creature);
+            }
+
+            // Hidden
+            else
+            {
+                item.SetUnknown(creature);
+            }
         }
     }
 

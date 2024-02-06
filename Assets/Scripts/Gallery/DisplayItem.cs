@@ -27,32 +27,56 @@ public class DisplayItem : MonoBehaviour
     [SerializeField] private TMP_Text infoText;
 
 
-    public void SetSpriteImage(Sprite img)
+    public void SetUnknown(Creature creature)
+    {
+        SetCommonName("???");
+        SetScientificName("???");
+        SetCategory(creature.ConservationStatus);
+        SetOceanZone(creature.UpperZone, creature.LowerZone);
+        SetActiveTime(creature.ActiveTime);
+        SetCredit("???");
+        SetResearchInfo(creature.GalleryInfo);
+    }
+    
+    public void SetIdentified(Creature creature)
+    {
+        SetSpriteImage(creature.Sprite);
+        SetIRLImage(creature.RealPhoto);
+        SetCommonName(creature.CommonName);
+        SetScientificName(creature.ScientificName);
+        SetCategory(creature.ConservationStatus);
+        SetOceanZone(creature.UpperZone, creature.LowerZone);
+        SetActiveTime(creature.ActiveTime);
+        SetCredit(creature.PhotoCredit);
+        SetResearchInfo(creature.GalleryInfo);
+    }
+
+    private void SetSpriteImage(Sprite img)
     {
         spriteFrame.SetCreatureImage(img);
     }
 
-    public void SetIRLImage(Sprite img)
+    private void SetIRLImage(Sprite img)
     {
         irlFrame.SetCreatureImage(img);
     }
 
-    public void SetCommonName(string txt)
+    private void SetCommonName(string txt)
     {
         commonNameText.text = txt;
     }
 
-    public void SetScientificName(string txt)
+    private void SetScientificName(string txt)
     {
         scientificNameText.text = txt;
     }
 
-    public void SetCategory(ConservationStatus status)
+    private void SetCategory(ConservationStatus status)
     {
         categoryUI.SetStatus(status);
     }
 
-    public void SetOceanZone(OceanZone upper, OceanZone lower)
+    private void SetOceanZone(OceanZone upper, OceanZone lower)
     {
         // 1 Zone only
         if (upper == lower)
@@ -67,7 +91,7 @@ public class DisplayItem : MonoBehaviour
         }
     }
 
-    public void SetActiveTime(TimeOfDay time)
+    private void SetActiveTime(TimeOfDay time)
     {
         activeTimeText.text = time.ToString();
 
@@ -82,12 +106,12 @@ public class DisplayItem : MonoBehaviour
         }
     }
 
-    public void SetCredit(string txt)
+    private void SetCredit(string txt)
     {
         creditText.text = txt;
     }
 
-    public void SetResearchInfo(string txt)
+    private void SetResearchInfo(string txt)
     {
         infoText.text = String.Format("<line-indent=5%>{0}", txt);
     }

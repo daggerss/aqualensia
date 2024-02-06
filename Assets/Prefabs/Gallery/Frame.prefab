@@ -171,6 +171,7 @@ MonoBehaviour:
   openOceanBG: {fileID: 21300000, guid: 604893c0ae885794bab771afa7effacf, type: 3}
   BG: {fileID: 4103833625302292470}
   creatureImage: {fileID: 99772419366591869}
+  labelText: {fileID: 0}
 --- !u!1 &5517652355518527060
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,14 +323,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae5b6b87f6fe91942b5a538567c2789a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb16d665d2bc9ca4ea7024d329748d0e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
