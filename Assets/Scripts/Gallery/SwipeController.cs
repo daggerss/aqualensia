@@ -187,14 +187,17 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
     // ! Note: To work, this should be attached to the ScrollRect space
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData.position.x > eventData.pressPosition.x)
+        if (TryGetComponent<ScrollRect>(out ScrollRect scrollRect))
         {
-            Prev();
-        }
-
-        else
-        {
-            Next();
+            if (eventData.position.x > eventData.pressPosition.x)
+            {
+                Prev();
+            }
+    
+            else
+            {
+                Next();
+            }
         }
     }
 
