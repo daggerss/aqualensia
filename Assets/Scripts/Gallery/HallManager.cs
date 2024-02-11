@@ -103,7 +103,7 @@ public class HallManager : MonoBehaviour
     private void SetUpContent(Creature[] hallCreatures)
     {
         // TOC Grids Setup
-        int numOfGrids = (int)Math.Ceiling((double)(hallCreatures.Length / 10));
+        int numOfGrids = (int)Math.Ceiling((double)(hallCreatures.Length / 10f));
         List<GameObject> grids = new List<GameObject>();
         
         for (int i = 0; i < numOfGrids; i++)
