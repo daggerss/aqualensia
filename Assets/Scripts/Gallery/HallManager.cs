@@ -121,7 +121,7 @@ public class HallManager : MonoBehaviour
             SetUpDisplayItem(hallCreatures[i]);
 
             // Inventory
-            if (hallCreatures[i].CaptureCount > 0)
+            if (hallCreatures[i].CaptureStatus == CreatureStatus.Captured)
             {
                 SetUpInventoryItem(hallCreatures[i]);
             }
@@ -139,12 +139,13 @@ public class HallManager : MonoBehaviour
         
         if (photoItem != null)
         {
-            // Change image
-            photoItem.SetCreatureImage(creature.Sprite);
-
-            // Show/hide name
+            // Show/hide
             if (creature.CaptureStatus == CreatureStatus.Identified)
             {
+                // Change image
+                photoItem.SetCreatureImage(creature.Sprite);
+
+                // Change name
                 photoItem.SetLabel(creature.CommonName);
             }
 
