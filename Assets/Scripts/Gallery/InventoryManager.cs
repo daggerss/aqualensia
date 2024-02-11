@@ -14,6 +14,9 @@ public class InventoryManager : SwipeController
     [SerializeField] private Transform bulletsParent;
     [SerializeField] private GameObject bulletItemPrefab;
 
+    [Header("Display Item")]
+    [SerializeField] private DropZone displayDropZone;
+
     [HideInInspector]
     public List<Creature> InventoryCreatures = new List<Creature>();
 
@@ -36,6 +39,11 @@ public class InventoryManager : SwipeController
     {
         base.MovePage();
         SetAllInfo(InventoryCreatures[CurrentPage - 1]); // Pages start at 1
+    }
+
+    public void ToggleDropZone(bool visible, ZoneState state = ZoneState.Default)
+    {
+        displayDropZone.Toggle(visible, state);
     }
 
     private void SetAllInfo(Creature c)

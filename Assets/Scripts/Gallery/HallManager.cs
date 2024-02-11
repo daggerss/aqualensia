@@ -193,13 +193,19 @@ public class HallManager : MonoBehaviour
                                                    inventoryContent);
         
         // Change image
-        if (newInventoryPhoto.TryGetComponent<PhotoItem>(out PhotoItem item))
+        if (newInventoryPhoto.TryGetComponent<PhotoItem>(out PhotoItem photoItem))
         {
-            item.SetCreatureImage(creature.Sprite);
+            photoItem.SetCreatureImage(creature.Sprite);
         }
 
         // Add to manager
         inventoryManager.InventoryCreatures.Add(creature);
+
+        // Add to item
+        if (newInventoryPhoto.TryGetComponent<InventoryItem>(out InventoryItem inventoryItem))
+        {
+            inventoryItem.Creature = creature;
+        }
     }
 
     /* ----------------------------- Navigation ----------------------------- */

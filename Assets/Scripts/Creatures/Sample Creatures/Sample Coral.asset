@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Sample Coral
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 3a69ccfdbb5c60a4587da61e971fdf03, type: 3}
+  _schoolSprite: {fileID: 0}
   _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Sample Coral
   _scientificName: 
   _conservationStatus: 6
@@ -22,13 +24,14 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
+  - Id eget risus aliquam risus netus mi aliquam semper. At risus porta.
+  - Lorem ipsum dolor sit amet consectetur. Varius pulvinar enim odio eu leo tortor.
+  - Vitae pulvinar egestas massa iaculis senectus aliquam in. Sapien vel sit nulla
+    est dolor volutpat.
+  - Odio nunc cursus malesuada dui. Dolor donec tellus nunc.
   _galleryInfo: 
   _populationScale: 3
   _speed: 0
-  <CaptureStatus>k__BackingField: 0
-  _captureCount: 0
+  <CaptureStatus>k__BackingField: 1
+  _captureCount: 2
   <isBlocked>k__BackingField: 0
