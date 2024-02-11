@@ -58,6 +58,9 @@ public class DisplayItem : MonoBehaviour, IDropHandler
                     // Reveal on display
                     SetIdentified();
 
+                    // Update progress tracker
+                    idManager.UpdateTracker();
+
                     // Destroy inventory item
                     idManager.DestroyInInventory(eventData.pointerDrag, Creature);
                 }

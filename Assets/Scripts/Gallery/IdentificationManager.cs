@@ -6,6 +6,7 @@ public class IdentificationManager : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private Toast identificationToast;
+    [SerializeField] private ProgressTracker progressTracker;
 
     public void DestroyInInventory(GameObject item, Creature creature)
     {
@@ -47,6 +48,11 @@ public class IdentificationManager : MonoBehaviour
 
         // Hide
         identificationToast.gameObject.SetActive(false);
+    }
+
+    public void UpdateTracker()
+    {
+        progressTracker.AddOne();
     }
 
     private void ShowToast(bool isMatch)

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4490184145906915232}
   - component: {fileID: 3433849771460536545}
   - component: {fileID: 973503102698528185}
+  - component: {fileID: 683474281230864532}
   m_Layer: 5
   m_Name: Progress
   m_TagString: Untagged
@@ -215,6 +216,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &683474281230864532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137638853327405295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eef5e6937f02a34a95bf6aca95fab7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressText: {fileID: 1784244992972367270}
+  progressBar: {fileID: 6770737931071023676}
 --- !u!1 &5809878746023850629
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,3 +653,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3335574929946326860, guid: cd8a6c159a493124ab12e79d7b13ab9d, type: 3}
   m_PrefabInstance: {fileID: 2478011014834266548}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784244992972367270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4224729109010351122, guid: cd8a6c159a493124ab12e79d7b13ab9d, type: 3}
+  m_PrefabInstance: {fileID: 2478011014834266548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

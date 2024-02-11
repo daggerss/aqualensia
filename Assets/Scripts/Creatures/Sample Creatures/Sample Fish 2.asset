@@ -32,6 +32,6 @@ MonoBehaviour:
   _galleryInfo: 
   _populationScale: 5
   _speed: 5
-  <CaptureStatus>k__BackingField: 2
-  _captureCount: 4
+  <CaptureStatus>k__BackingField: 1
+  _captureCount: 2
   <isBlocked>k__BackingField: 0

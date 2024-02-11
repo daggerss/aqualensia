@@ -40,6 +40,9 @@ public class HallManager : MonoBehaviour
     [SerializeField] private Transform inventoryContent;
     [SerializeField] private GameObject inventoryPhotoPrefab;
 
+    [Header("Progress Tracker")]
+    [SerializeField] private ProgressTracker progressTracker;
+
     // STATE
     private Biome currentHall;
 
@@ -129,6 +132,10 @@ public class HallManager : MonoBehaviour
 
         // Inventory Manager (for getting current display)
         inventoryManager.DisplayCreatures = hallCreatures;
+
+        // Progress Tracker
+        int identifiedCount = hallCreatures.Where(c => c.CaptureStatus == CreatureStatus.Identified).Count();
+        progressTracker.Initialize(identifiedCount, hallCreatures.Length);
     }
 
     // Set TOC item
