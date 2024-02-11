@@ -14,12 +14,15 @@ public class IdentificationZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        droppedCreature = other.gameObject.GetComponent<InventoryItem>().Creature;
-
-        // Highlight if applicable
-        if (droppedCreature.CaptureCount == 4)
+        if (dropZone.gameObject.activeSelf)
         {
-            dropZone.Toggle(true, ZoneState.WithinRange);
+            droppedCreature = other.gameObject.GetComponent<InventoryItem>().Creature;
+    
+            // Highlight if applicable
+            if (droppedCreature.CaptureCount == 4)
+            {
+                dropZone.Toggle(true, ZoneState.WithinRange);
+            }
         }
     }
 

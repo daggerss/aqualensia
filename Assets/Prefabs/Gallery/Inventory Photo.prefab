@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2208711844318743696}
   - component: {fileID: 8969615068421975781}
   - component: {fileID: 1995939623111552081}
+  - component: {fileID: 6779842832476599170}
   m_Layer: 5
   m_Name: Inventory Photo
   m_TagString: Untagged
@@ -183,6 +184,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 294, y: 204}
   m_EdgeRadius: 0
+--- !u!225 &6779842832476599170
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665128205704777550}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1841659708432277195
 GameObject:
   m_ObjectHideFlags: 0

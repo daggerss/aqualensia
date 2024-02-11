@@ -126,6 +126,9 @@ public class HallManager : MonoBehaviour
                 SetUpInventoryItem(hallCreatures[i]);
             }
         }
+
+        // Inventory Manager (for getting current display)
+        inventoryManager.DisplayCreatures = hallCreatures;
     }
 
     // Set TOC item
@@ -171,17 +174,8 @@ public class HallManager : MonoBehaviour
         // Set info
         if (newDisplayItem.TryGetComponent<DisplayItem>(out DisplayItem item))
         {
-            // Revealed
-            if (creature.CaptureStatus == CreatureStatus.Identified)
-            {
-                item.SetIdentified(creature);
-            }
-
-            // Hidden
-            else
-            {
-                item.SetUnknown(creature);
-            }
+            item.Creature = creature;
+            item.SetDisplay();
         }
     }
 

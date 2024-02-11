@@ -43,4 +43,4 @@ public enum CreatureStatus { Unknown, Captured, Identified };
 public enum ConservationStatus { NE, DD, LC, NT, VU, EN, CR };
 
 // UI
-public enum ZoneState {Default, WithinRange, Error };
+public enum ZoneState { Default, WithinRange, Error };

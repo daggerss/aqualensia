@@ -14,11 +14,16 @@ public class InventoryManager : SwipeController
     [SerializeField] private Transform bulletsParent;
     [SerializeField] private GameObject bulletItemPrefab;
 
-    [Header("Display Item")]
+    [Header("Drag & Drop")]
     [SerializeField] private DropZone displayDropZone;
+    [SerializeField] private SwipeController displaySwipe;
+    public List<CanvasGroup> DropBlockers = new List<CanvasGroup>();
 
     [HideInInspector]
     public List<Creature> InventoryCreatures = new List<Creature>();
+
+    [HideInInspector]
+    public Creature[] DisplayCreatures;
 
     void Start()
     {
@@ -33,6 +38,12 @@ public class InventoryManager : SwipeController
         {
             SetAllInfo(InventoryCreatures[0]);
         }
+
+        // Get item canvas groups
+        foreach (Transform item in ContentRect)
+        {
+            DropBlockers.Add(item.gameObject.GetComponent<CanvasGroup>());
+        }
     }
 
     public override void MovePage()
@@ -41,11 +52,27 @@ public class InventoryManager : SwipeController
         SetAllInfo(InventoryCreatures[CurrentPage - 1]); // Pages start at 1
     }
 
+    /* ----------------------------- Drag & Drop ---------------------------- */
+
     public void ToggleDropZone(bool visible, ZoneState state = ZoneState.Default)
     {
         displayDropZone.Toggle(visible, state);
     }
 
+    public void ToggleDropBlockers(bool toBlock)
+    {
+        foreach (CanvasGroup ui in DropBlockers)
+        {
+            ui.blocksRaycasts = toBlock;
+        }
+    }
+
+    public Creature GetCurrentCreatureOnDisplay()
+    {
+        return DisplayCreatures[displaySwipe.CurrentPage - 1];
+    }
+
+    /* ----------------------------- Photo Info ----------------------------- */
     private void SetAllInfo(Creature c)
     {
         // Image

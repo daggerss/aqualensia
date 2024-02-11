@@ -17,7 +17,7 @@ MonoBehaviour:
   _realPhoto: {fileID: 0}
   _photoCredit: 
   _commonName: Sample Coral
-  _scientificName: 
+  _scientificName: Coral Scientificus
   _conservationStatus: 6
   _activeTime: 0
   _sessile: 1

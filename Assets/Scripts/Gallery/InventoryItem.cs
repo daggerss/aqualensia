@@ -41,7 +41,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         offset = GetMousePosition() - transform.position;
 
         // Drop Zone
-        SetDropZone();
+        if (inventoryManager.GetCurrentCreatureOnDisplay().CaptureStatus != CreatureStatus.Identified)
+        {
+            SetDropZone();
+            inventoryManager.ToggleDropBlockers(false);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -56,5 +60,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         // Drop Zone
         inventoryManager.ToggleDropZone(false);
+        inventoryManager.ToggleDropBlockers(true);
+    }
+
+    void OnDestroy()
+    {
+        // Drop Zone
+        inventoryManager.ToggleDropZone(false);
+        inventoryManager.ToggleDropBlockers(true);
     }
 }

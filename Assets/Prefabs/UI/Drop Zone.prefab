@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5425183106251171327}
   - component: {fileID: 2436780071360218510}
   - component: {fileID: 3853697829492294989}
+  - component: {fileID: 5128089147895021260}
   m_Layer: 5
   m_Name: Drop Zone
   m_TagString: Untagged
@@ -246,6 +247,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1265, y: 570}
   m_EdgeRadius: 0
+--- !u!225 &5128089147895021260
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727932508489339437}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2518689558142141389
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +482,6 @@ GameObject:
   - component: {fileID: 9119546014218012610}
   - component: {fileID: 3730540085677937444}
   - component: {fileID: 336980596984420325}
-  - component: {fileID: 3549206208711304080}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -562,28 +574,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &3549206208711304080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774998685695677686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faa78d2ecab5c544b8f53d2d76c2e6e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  background: {fileID: 3730540085677937444}
-  text: {fileID: 1137116168968661580}
-  darkTextColor: {r: 0, g: 0.06666667, b: 0.20784314, a: 1}
-  LCColor: {r: 0.27450982, g: 0.92156863, b: 0.45490196, a: 1}
-  NTColor: {r: 0.7882353, g: 0.9764706, b: 0.25490198, a: 1}
-  VUColor: {r: 1, g: 0.75686276, b: 0.12941177, a: 1}
-  ENColor: {r: 1, g: 0.38431373, b: 0.03529412, a: 1}
-  CRColor: {r: 1, g: 0, b: 0.23921569, a: 1}
-  NEColor: {r: 0.83137256, g: 0.91764706, b: 1, a: 1}
-  DDColor: {r: 0.4627451, g: 0.6666667, b: 0.85882354, a: 1}
 --- !u!1 &5458965709276371003
 GameObject:
   m_ObjectHideFlags: 0

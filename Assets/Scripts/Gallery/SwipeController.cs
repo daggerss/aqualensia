@@ -58,6 +58,14 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
         }
     }
 
+    public RectTransform ContentRect
+    {
+        get
+        {
+            return contentRect;
+        }
+    }
+
     // INDICATOR
     private List<GameObject> pageIndicators = new List<GameObject>();
     private GameObject currentIndicator;

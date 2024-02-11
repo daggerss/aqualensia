@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.EventSystems;
 
-public class DisplayItem : MonoBehaviour
+public class DisplayItem : MonoBehaviour, IDropHandler
 {
+    public Creature Creature {get; set;}
+
     [Header("Frames")]
     [SerializeField] private PhotoItem spriteFrame;
     [SerializeField] private PhotoItem irlFrame;
@@ -26,29 +29,86 @@ public class DisplayItem : MonoBehaviour
     [Header("Info Plaque")]
     [SerializeField] private TMP_Text infoText;
 
+    private IdentificationManager idManager;
 
-    public void SetUnknown(Creature creature)
+    /* --------------------------- Identification --------------------------- */
+    void Start()
     {
-        SetCommonName("???");
-        SetScientificName("???");
-        SetCategory(creature.ConservationStatus);
-        SetOceanZone(creature.UpperZone, creature.LowerZone);
-        SetActiveTime(creature.ActiveTime);
-        SetCredit("???");
-        SetResearchInfo(creature.GalleryInfo);
+        idManager = GetComponentInParent<IdentificationManager>();
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        if (Creature.CaptureStatus != CreatureStatus.Identified)
+        {
+            Creature droppedCreature = eventData.pointerDrag.GetComponent<InventoryItem>().Creature;
+
+            if (droppedCreature.CaptureCount == 4)
+            {
+                bool match = (Creature.ScientificName == droppedCreature.ScientificName);
+    
+                // Toast
+                StartCoroutine(idManager.ShowResult(match));
+
+                if (match)
+                {
+                    // Set identified
+                    Creature.CaptureStatus = CreatureStatus.Identified;
+                    
+                    // Reveal on display
+                    SetIdentified();
+
+                    // Destroy inventory item
+                    idManager.DestroyInInventory(eventData.pointerDrag, Creature);
+                }
+            }
+        }
+    }
+
+    /* ----------------------------- Display UI ----------------------------- */
+    public void SetDisplay()
+    {
+        // Revealed
+        if (Creature.CaptureStatus == CreatureStatus.Identified)
+        {
+            SetIdentified();
+        }
+
+        // Hidden
+        else
+        {
+            SetUnknown();
+        }
     }
     
-    public void SetIdentified(Creature creature)
+    private void SetUnknown()
     {
-        SetSpriteImage(creature.Sprite);
-        SetIRLImage(creature.RealPhoto);
-        SetCommonName(creature.CommonName);
-        SetScientificName(creature.ScientificName);
-        SetCategory(creature.ConservationStatus);
-        SetOceanZone(creature.UpperZone, creature.LowerZone);
-        SetActiveTime(creature.ActiveTime);
-        SetCredit(creature.PhotoCredit);
-        SetResearchInfo(creature.GalleryInfo);
+        if (Creature != null)
+        {
+            SetCommonName("???");
+            SetScientificName("???");
+            SetCategory(Creature.ConservationStatus);
+            SetOceanZone(Creature.UpperZone, Creature.LowerZone);
+            SetActiveTime(Creature.ActiveTime);
+            SetCredit("???");
+            SetResearchInfo(Creature.GalleryInfo);
+        }
+    }
+    
+    private void SetIdentified()
+    {
+        if (Creature != null)
+        {
+            SetSpriteImage(Creature.Sprite);
+            SetIRLImage(Creature.RealPhoto);
+            SetCommonName(Creature.CommonName);
+            SetScientificName(Creature.ScientificName);
+            SetCategory(Creature.ConservationStatus);
+            SetOceanZone(Creature.UpperZone, Creature.LowerZone);
+            SetActiveTime(Creature.ActiveTime);
+            SetCredit(Creature.PhotoCredit);
+            SetResearchInfo(Creature.GalleryInfo);
+        }
     }
 
     private void SetSpriteImage(Sprite img)
