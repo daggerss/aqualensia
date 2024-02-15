@@ -8,11 +8,6 @@ using System.Linq;
 
 public class HallManager : MonoBehaviour
 {
-    [Header("Creatures")]
-    [SerializeField] private Creature[] coralReefCreatures;
-    [SerializeField] private Creature[] seagrassBedCreatures;
-    [SerializeField] private Creature[] openOceanCreatures;
-    
     [Header("Assets")]
     [SerializeField] private Sprite coralReefBG;
     [SerializeField] private Sprite seagrassBedBG;
@@ -46,10 +41,16 @@ public class HallManager : MonoBehaviour
     // STATE
     private Biome currentHall;
 
+    // CREATURES
+    private Creature[] currentHallCreatures;
+
     void Awake()
     {
         // Current Hall
         currentHall = UniversalManagers.instance.GetComponentInChildren<StateManager>().CurrentHall;
+
+        // Current Creatures
+        currentHallCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().GetCreatures(currentHall);
 
         // Set Up
         SetUpAll();
@@ -60,35 +61,41 @@ public class HallManager : MonoBehaviour
     // Set up according to biome
     private void SetUpAll()
     {
-        // Sort creature arrays
-        SortCreaturesPerBiome();
+        // Populate hall
+        SetUpCreatures();
 
-        // Set + populate
+        // Set biome UI
         if (currentHall == Biome.CoralReef)
         {
             SetUpUI(coralReefBG, "Coral Reefs");
-            SetUpContent(coralReefCreatures);
         }
 
         else if (currentHall == Biome.SeagrassBed)
         {
             SetUpUI(seagrassBedBG, "Seagrass Meadows");
-            SetUpContent(seagrassBedCreatures);
         }
 
         else if (currentHall == Biome.OpenOcean)
         {
             SetUpUI(openOceanBG, "Open Ocean");
-            SetUpContent(openOceanCreatures);
         }
     }
 
-    // Sort arrays by conservation status
-    private void SortCreaturesPerBiome()
+    private void SetUpCreatures()
     {
-        coralReefCreatures = coralReefCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
-        seagrassBedCreatures = seagrassBedCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
-        openOceanCreatures = openOceanCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
+        if (currentHallCreatures != null)
+        {
+            // Sort by conservation status
+            currentHallCreatures = currentHallCreatures.OrderBy(c => (int)(c.ConservationStatus)).ToArray();
+
+            // Set up
+            SetUpContent(currentHallCreatures);
+        }
+
+        else
+        {
+            Debug.LogWarning("Current hall creatures not found");
+        }
     }
 
     // Set BG, hall plaques
