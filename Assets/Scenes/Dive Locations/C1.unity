@@ -538,9 +538,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e78fd44c6ab1bf4abd288f09b42f217, type: 2}
   - {fileID: 11400000, guid: f97cf10eb8478524fbd52da304fb6bd8, type: 2}
   - {fileID: 11400000, guid: 84a073322c4deaf45b529e6c8446dfac, type: 2}
-  - {fileID: 11400000, guid: 235d35bd729fba24aa23e5c1a1d53b30, type: 2}
-  - {fileID: 11400000, guid: 14a9172ce2946b54c95e70ac763e5867, type: 2}
-  - {fileID: 11400000, guid: 0c0b9bc5572b8914db7954851b87d2fe, type: 2}
   sessileCreatures: []
 --- !u!60 &381175755
 PolygonCollider2D:
