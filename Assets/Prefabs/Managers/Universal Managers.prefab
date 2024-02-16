@@ -535,3 +535,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8616cefeb2970a4e963367ba00d5272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeInterval: 7
+  countNE: 0
+  countDD: 0
+  countLC: 0
+  countNT: 0
+  countVU: 0
+  countEN: 0
+  countCR: 0

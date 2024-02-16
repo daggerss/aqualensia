@@ -30,11 +30,14 @@ public class DisplayItem : MonoBehaviour, IDropHandler
     [SerializeField] private TMP_Text infoText;
 
     private IdentificationManager idManager;
+    private CurrencyManager currencyManager;
 
     /* --------------------------- Identification --------------------------- */
     void Start()
     {
+        // Get managers
         idManager = GetComponentInParent<IdentificationManager>();
+        currencyManager = UniversalManagers.instance.GetComponentInChildren<CurrencyManager>();
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -58,8 +61,9 @@ public class DisplayItem : MonoBehaviour, IDropHandler
                     // Reveal on display
                     SetIdentified();
 
-                    // Update progress tracker
+                    // Update progress
                     idManager.UpdateTracker();
+                    currencyManager.AddToCount(Creature.ConservationStatus);
 
                     // Destroy inventory item
                     idManager.DestroyInInventory(eventData.pointerDrag, Creature);
