@@ -24,11 +24,17 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
-  _galleryInfo: 
+  - Quam pellentesque nec nam aliquam sem et tortor consequat.
+  - Rhoncus aenean vel elit scelerisque mauris.
+  - Nisl tincidunt eget nullam non nisi est sit amet facilisis.
+  - Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Est velit
+    egestas.
+  _galleryInfo: Nulla posuere sollicitudin aliquam ultrices. Eget mi proin sed libero
+    enim sed faucibus turpis. Sed velit dignissim sodales ut eu sem integer vitae.
+    Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Aliquam etiam
+    erat velit scelerisque in. Consequat semper viverra nam libero justo laoreet.
+    Varius sit amet mattis vulputate enim nulla aliquet porttitor. Lacus viverra
+    vitae congue eu consequat ac. Vulputate ut pharetra.
   _populationScale: 6
   _speed: 7
   <CaptureStatus>k__BackingField: 0
