@@ -166,15 +166,10 @@ public class HallManager : MonoBehaviour
             {
                 // Change image
                 photoItem.SetCreatureImage(creature.Sprite);
-
-                // Change name
-                photoItem.SetLabel(creature.CommonName);
             }
 
-            else
-            {
-                photoItem.SetLabel("???");
-            }
+            // Change name
+            photoItem.SetLabel(creature.CommonName);
         }
 
         // Get TOCItem component

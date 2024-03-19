@@ -92,8 +92,8 @@ public class DisplayItem : MonoBehaviour, IDropHandler
     {
         if (Creature != null)
         {
-            SetCommonName("???");
-            SetScientificName("???");
+            SetCommonName(Creature.CommonName);
+            SetScientificName(Creature.ScientificName);
             SetCategory(Creature.ConservationStatus);
             SetOceanZone(Creature.UpperZone, Creature.LowerZone);
             SetActiveTime(Creature.ActiveTime);
