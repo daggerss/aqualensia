@@ -61,6 +61,9 @@ public class DisplayItem : MonoBehaviour, IDropHandler
                     // Reveal on display
                     SetIdentified();
 
+                    // Reveal on TOC
+                    idManager.SetIdentifiedTOCItem();
+
                     // Update progress
                     idManager.UpdateTracker();
                     currencyManager.AddToCount(Creature.ConservationStatus);

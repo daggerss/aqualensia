@@ -44,6 +44,9 @@ public class HallManager : MonoBehaviour
     // CREATURES
     private Creature[] currentHallCreatures;
 
+    // TOC
+    private List<GameObject> grids = new List<GameObject>();
+
     // ! TO DELETE
     [SerializeField] private Creature[] sampleCreatures;
 
@@ -119,7 +122,6 @@ public class HallManager : MonoBehaviour
     {
         // TOC Grids Setup
         int numOfGrids = (int)Math.Ceiling((double)(hallCreatures.Length / 10f));
-        List<GameObject> grids = new List<GameObject>();
         
         for (int i = 0; i < numOfGrids; i++)
         {
@@ -176,6 +178,31 @@ public class HallManager : MonoBehaviour
         if (newTOCItem.TryGetComponent<TOCItem>(out TOCItem tocItem))
         {
             tocItem.SetUp(this, index);
+        }
+    }
+
+    // Set TOC item based on current page
+    public void RebuildTOCItemOfCurrentPage()
+    {
+        // Get index
+        int index = displaySwipe.CurrentPage - 1;
+
+        // Get photo item from TOC item at index
+        PhotoItem photoItem = grids[index / 10].transform
+                                               .GetChild(index - (10 * (index / 10)))
+                                               .GetComponentInChildren<PhotoItem>();
+
+        // Rebuild TOC photo
+        Creature creature = currentHallCreatures[index];
+
+        if (photoItem != null)
+        {
+            // Show/hide
+            if (creature.CaptureStatus == CreatureStatus.Identified)
+            {
+                // Change image
+                photoItem.SetCreatureImage(creature.Sprite);
+            }
         }
     }
 

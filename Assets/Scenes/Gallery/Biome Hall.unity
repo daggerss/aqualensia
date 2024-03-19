@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48762fc1efb8a0d4ab4e49b2bc70d3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hallManager: {fileID: 27130773}
   inventoryManager: {fileID: 1427499908}
   identificationToast: {fileID: 713727871}
   progressTracker: {fileID: 1426886357}

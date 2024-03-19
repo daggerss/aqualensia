@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class IdentificationManager : MonoBehaviour
 {
+    [SerializeField] private HallManager hallManager;
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private Toast identificationToast;
     [SerializeField] private ProgressTracker progressTracker;
+
+    void OnEnable()
+    {
+        // Hide toast
+        identificationToast.gameObject.SetActive(false);
+    }
 
     public void DestroyInInventory(GameObject item, Creature creature)
     {
@@ -53,6 +60,11 @@ public class IdentificationManager : MonoBehaviour
     public void UpdateTracker()
     {
         progressTracker.AddOne();
+    }
+
+    public void SetIdentifiedTOCItem()
+    {
+        hallManager.RebuildTOCItemOfCurrentPage();
     }
 
     private void ShowToast(bool isMatch)
