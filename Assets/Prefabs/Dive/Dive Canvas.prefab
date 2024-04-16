@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7647059, g: 0.14901961, b: 0.14901961, a: 0}
+  m_Color: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <OnTimeLeft>k__BackingField: 10
-  startColor: {r: 0.7647059, g: 0.14901961, b: 0.14901961, a: 0}
-  endColor: {r: 0.764151, g: 0.14898534, b: 0.14898534, a: 0.9019608}
+  startColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 0}
+  endColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 0.9019608}
   speed: 1.5
   images:
   - {fileID: 6921552879253616104}
