@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Halavi Guitarfish
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  _sprite: {fileID: 0}
+  _schoolSprite: {fileID: 0}
+  _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Halavi Guitarfish
   _scientificName: Glaucostegus halavi
   _conservationStatus: 6
@@ -30,4 +33,4 @@ MonoBehaviour:
   _speed: 0
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 1
+  _blockable: 1

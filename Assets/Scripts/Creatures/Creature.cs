@@ -89,6 +89,7 @@ public class Creature : ScriptableObject
         }
     }
 
-    [field: SerializeField]
-    public bool isBlocked {get; set;}
+    [SerializeField]
+    private bool _blockable;
+    public bool Blockable => _blockable;
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SpawnManager : MonoBehaviour
 
     private CreatureInDive creatureInfo;
     private StateManager stateManager;
+    private string currentLocation;
     private List<int> usedSessilePositions = new List<int>();
 
     void Awake()
@@ -29,6 +31,7 @@ public class SpawnManager : MonoBehaviour
 
         // Setup
         stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
+        currentLocation = SceneManager.GetActiveScene().name;
     }
 
     // Spawn mobile or sessile
@@ -43,8 +46,11 @@ public class SpawnManager : MonoBehaviour
         foreach (Creature creature in creatures)
         {
             // Spawn creatures based on blocked and active time
-            if (!creature.isBlocked && ((creature.ActiveTime == stateManager.CurrentTimeOfDay) ||
-                                        (creature.ActiveTime == TimeOfDay.Both)))
+            if (!(creature.Blockable &&
+                  stateManager.LocationBlockStates[currentLocation])
+                &&
+                 ((creature.ActiveTime == stateManager.CurrentTimeOfDay) ||
+                 (creature.ActiveTime == TimeOfDay.Both)))
             {
                 // Set prefab's creature
                 creatureInfo.Creature = creature;
