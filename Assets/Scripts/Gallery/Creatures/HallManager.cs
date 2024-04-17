@@ -47,18 +47,13 @@ public class HallManager : MonoBehaviour
     // TOC
     private List<GameObject> grids = new List<GameObject>();
 
-    // ! TO DELETE
-    [SerializeField] private Creature[] sampleCreatures;
-
     void Awake()
     {
         // Current Hall
         currentHall = UniversalManagers.instance.GetComponentInChildren<StateManager>().CurrentHall;
 
         // Current Creatures
-        // ! TO SWAP
-        // currentHallCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().GetCreatures(currentHall);
-        currentHallCreatures = sampleCreatures;
+        currentHallCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().GetCreatures(currentHall);
 
         // Set Up
         SetUpAll();
