@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d35c7b7d4d35d34f806dc3d309f8018, type: 3}
-  m_Name: Parent_Garbage
+  m_Name: Parent_Trawling
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 7dfe85f9376061146bdce9a0ec6e840e, type: 3}
-  _blockerType: 0
-  _name: Garbage
-  _biome: 2
-  _location: Merakai Trench
+  _sprite: {fileID: 21300000, guid: 102f5da3ed88a2f4b812eac16472af46, type: 3}
+  _blockerType: 1
+  _name: Overfishing
+  _biome: 1
+  _location: Verdant Grounds
   _galleryInfo: 
   _captureCount: 0
-  _shopInfo: A research team from the MARLIN works with the local government and
-    stakeholders to design an effective waste management system throughout the island.
+  _shopInfo: The NetZero Initiative lobbies for trawling bans and works with the
+    MARLIN to calculate catch shares that sustains the local fishing community.

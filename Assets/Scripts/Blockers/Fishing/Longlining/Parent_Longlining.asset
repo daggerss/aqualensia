@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d35c7b7d4d35d34f806dc3d309f8018, type: 3}
-  m_Name: Parent_Garbage
+  m_Name: Parent_Longlining
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: 7dfe85f9376061146bdce9a0ec6e840e, type: 3}
-  _blockerType: 0
-  _name: Garbage
+  _sprite: {fileID: 21300000, guid: e6cf59eeaea4f6f49b510d1586a13efa, type: 3}
+  _blockerType: 1
+  _name: Longline Fishing
   _biome: 2
-  _location: Merakai Trench
+  _location: Whale Watch Point
   _galleryInfo: 
   _captureCount: 0
-  _shopInfo: A research team from the MARLIN works with the local government and
-    stakeholders to design an effective waste management system throughout the island.
+  _shopInfo: "The MARLIN\u2019s Preserve Campaign is urging the local government
+    to establish Whale Watch Point as a Marine Protected Area."

@@ -148,8 +148,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allBlockerOrders:
-  - Blocker: {fileID: 11400000, guid: 0a491f8804267b44a8c894fb8613843c, type: 2}
-    LocationOrder: 1
+  - LocationOrder: 1
+    Blocker: {fileID: 11400000, guid: 0a491f8804267b44a8c894fb8613843c, type: 2}
+  - LocationOrder: 2
+    Blocker: {fileID: 11400000, guid: 2a9fb3cab83d01d4187d30261db7bced, type: 2}
+  - LocationOrder: 3
+    Blocker: {fileID: 11400000, guid: deb4ff4298d6de74f8b27fa3a08b3677, type: 2}
+  - LocationOrder: 4
+    Blocker: {fileID: 11400000, guid: 3e90afaa0299ca643b6a1677bc38153f, type: 2}
+  - LocationOrder: 5
+    Blocker: {fileID: 11400000, guid: c2101417ea8d3924fa34e8ee80625f8a, type: 2}
+  - LocationOrder: 6
+    Blocker: {fileID: 11400000, guid: 56761e992871b964d9aeb6f35ffaa063, type: 2}
+  - LocationOrder: 7
+    Blocker: {fileID: 11400000, guid: 3e8ca9ec227844342a85271095b28638, type: 2}
+  - LocationOrder: 8
+    Blocker: {fileID: 11400000, guid: 405fcc65059f8c741854437f73b4646e, type: 2}
+  - LocationOrder: 9
+    Blocker: {fileID: 11400000, guid: a18cb49d98143584a8cbf3bb1b1ab140, type: 2}
 --- !u!1 &2972107884971568483
 GameObject:
   m_ObjectHideFlags: 0
