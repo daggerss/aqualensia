@@ -103,6 +103,53 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fad70be23ae8c3d4aa843685cf0938fb, type: 2}
   - {fileID: 11400000, guid: 7ce356004759fc14bba139d100382462, type: 2}
   - {fileID: 11400000, guid: 99b9e628fb850ea4499630ed0f8d401f, type: 2}
+--- !u!1 &2368206557975930023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3444881958494190953}
+  - component: {fileID: 1997410876361851324}
+  m_Layer: 0
+  m_Name: Blocker Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3444881958494190953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368206557975930023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6306616360969821804}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997410876361851324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368206557975930023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e5cf4df9860f748966ae062886fa0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allBlockerOrders:
+  - Blocker: {fileID: 11400000, guid: 0a491f8804267b44a8c894fb8613843c, type: 2}
+    LocationOrder: 1
 --- !u!1 &2972107884971568483
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +474,7 @@ Transform:
   m_Children:
   - {fileID: 2644142033028215543}
   - {fileID: 4243756411542487366}
+  - {fileID: 3444881958494190953}
   - {fileID: 4479149677064136294}
   - {fileID: 239978084089017883}
   - {fileID: 3809545281458545872}
@@ -491,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExitDive: 0
   CapturedCreatures: []
+  CapturedBlockers: []
 --- !u!1 &7565073460703064195
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,10 +585,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInterval: 7
-  countNE: 0
-  countDD: 0
-  countLC: 0
-  countNT: 0
-  countVU: 0
-  countEN: 0
-  countCR: 0

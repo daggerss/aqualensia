@@ -98,7 +98,7 @@ MonoBehaviour:
   seagrassBedBG: {fileID: 21300000, guid: 348dd7afa42909a4bacaa3fcb2916375, type: 3}
   openOceanBG: {fileID: 21300000, guid: 604893c0ae885794bab771afa7effacf, type: 3}
   BG: {fileID: 1077845232313760860}
-  creatureImage: {fileID: 3437720788340735569}
+  itemImage: {fileID: 3437720788340735569}
   labelText: {fileID: 0}
 --- !u!114 &-2208711844318743696
 MonoBehaviour:
@@ -400,7 +400,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -24, y: -24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4456394059808741457
 CanvasRenderer:

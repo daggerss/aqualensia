@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Gallery/Biome Hall.unity
     guid: 5c9891dee4ece6a45b0fd81d2bb72bea
   - enabled: 1
+    path: Assets/Scenes/Gallery/Protest Hall.unity
+    guid: bc0fc7c8b6de7844baf2f55431773f76
+  - enabled: 1
     path: Assets/Scenes/Dive Locations/C1.unity
     guid: fb9e31165a0fbcb46b0a96af968ef1ee
   - enabled: 1

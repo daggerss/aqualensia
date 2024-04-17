@@ -45,7 +45,7 @@ public enum CreatureStatus { Unknown, Captured, Identified };
 public enum ConservationStatus { NE, DD, LC, NT, VU, EN, CR };
 
 // BLOCKERS
-public enum BlockerType { Pollution, DestructiveFishing, Development };
+public enum BlockerType { Pollution, Fishing, Development };
 
 // UI
 public enum ZoneState { Default, WithinRange, Error };

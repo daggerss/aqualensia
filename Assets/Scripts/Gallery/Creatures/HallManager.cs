@@ -167,7 +167,7 @@ public class HallManager : MonoBehaviour
             if (creature.CaptureStatus == CreatureStatus.Identified)
             {
                 // Change image
-                photoItem.SetCreatureImage(creature.Sprite);
+                photoItem.SetItemImage(creature.Sprite);
             }
 
             // Change name
@@ -201,7 +201,7 @@ public class HallManager : MonoBehaviour
             if (creature.CaptureStatus == CreatureStatus.Identified)
             {
                 // Change image
-                photoItem.SetCreatureImage(creature.Sprite);
+                photoItem.SetItemImage(creature.Sprite);
             }
         }
     }
@@ -230,7 +230,7 @@ public class HallManager : MonoBehaviour
         // Change image
         if (newInventoryPhoto.TryGetComponent<PhotoItem>(out PhotoItem photoItem))
         {
-            photoItem.SetCreatureImage(creature.Sprite);
+            photoItem.SetItemImage(creature.Sprite);
         }
 
         // Add to manager

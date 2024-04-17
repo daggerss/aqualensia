@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5437598330350509183}
   - component: {fileID: 3285121749339055451}
   m_Layer: 5
-  m_Name: Category
+  m_Name: Conservation Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

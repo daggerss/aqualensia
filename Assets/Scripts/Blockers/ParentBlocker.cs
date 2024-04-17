@@ -27,6 +27,11 @@ public class ParentBlocker : ScriptableObject
     private string _location;
     public string Location => _location;
 
+    [SerializeField]
+    [TextArea(3, 10)]
+    private string _galleryInfo;
+    public string GalleryInfo => _galleryInfo;
+
     [field: Header("Progression")]
     [field: SerializeField]
     private int _captureCount;
@@ -41,4 +46,9 @@ public class ParentBlocker : ScriptableObject
             _captureCount = Mathf.Clamp(value, 0, 4);
         }
     }
+
+    [SerializeField]
+    [TextArea(3, 10)]
+    private string _shopInfo;
+    public string ShopInfo => _shopInfo;
 }

@@ -11,7 +11,7 @@ public class PhotoItem : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Image BG;
-    [SerializeField] private Image creatureImage;
+    [SerializeField] private Image itemImage;
     [SerializeField] private TMP_Text labelText;
 
     // STATE
@@ -44,12 +44,30 @@ public class PhotoItem : MonoBehaviour
         }
     }
 
-    public void SetCreatureImage(Sprite img)
+    public void SetBG(Biome biome)
+    {
+        if (biome == Biome.CoralReef)
+        {
+            BG.sprite = coralReefBG;
+        }
+
+        else if (biome == Biome.SeagrassBed)
+        {
+            BG.sprite = seagrassBedBG;
+        }
+
+        else if (biome == Biome.OpenOcean)
+        {
+            BG.sprite = openOceanBG;
+        }
+    }
+
+    public void SetItemImage(Sprite img)
     {
         if (img != null)
         {
-            creatureImage.color = Color.white;
-            creatureImage.sprite = img;
+            itemImage.color = Color.white;
+            itemImage.sprite = img;
         }
     }
 

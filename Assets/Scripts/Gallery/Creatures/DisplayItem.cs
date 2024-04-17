@@ -123,12 +123,12 @@ public class DisplayItem : MonoBehaviour, IDropHandler
 
     private void SetSpriteImage(Sprite img)
     {
-        spriteFrame.SetCreatureImage(img);
+        spriteFrame.SetItemImage(img);
     }
 
     private void SetIRLImage(Sprite img)
     {
-        irlFrame.SetCreatureImage(img);
+        irlFrame.SetItemImage(img);
     }
 
     private void SetCommonName(string txt)

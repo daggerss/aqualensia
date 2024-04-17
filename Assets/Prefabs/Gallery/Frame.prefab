@@ -170,7 +170,7 @@ MonoBehaviour:
   seagrassBedBG: {fileID: 21300000, guid: 348dd7afa42909a4bacaa3fcb2916375, type: 3}
   openOceanBG: {fileID: 21300000, guid: 604893c0ae885794bab771afa7effacf, type: 3}
   BG: {fileID: 4103833625302292470}
-  creatureImage: {fileID: 99772419366591869}
+  itemImage: {fileID: 99772419366591869}
   labelText: {fileID: 0}
 --- !u!1 &5517652355518527060
 GameObject:
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 3260269640752784055}
   - component: {fileID: 99772419366591869}
   m_Layer: 5
-  m_Name: Creature Image
+  m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -48, y: -48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3260269640752784055
 CanvasRenderer:
