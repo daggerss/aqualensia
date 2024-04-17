@@ -3,12 +3,12 @@ using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
-public class LogCapturedUI
+public class LogCapturedUI : MonoBehaviour
 {
     [SerializeField] private Image creatureImage;
     [SerializeField] private GameObject shots;
     [SerializeField] private TMP_Text shotsText;
-    [SerializeField] private GameObject tag;
+    [SerializeField] private GameObject newTag;
 
     public void SetImage(Sprite img)
     {
@@ -24,7 +24,7 @@ public class LogCapturedUI
 
     public void SetTag(bool flag)
     {
-        tag.SetActive(flag);
+        newTag.SetActive(flag);
     }
 
     public void Reset()
@@ -32,6 +32,6 @@ public class LogCapturedUI
         creatureImage.sprite = null;
         creatureImage.color = Color.clear;
         shots.SetActive(false);
-        tag.SetActive(false);
+        newTag.SetActive(false);
     }
 }

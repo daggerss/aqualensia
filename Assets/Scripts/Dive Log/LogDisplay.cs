@@ -8,6 +8,7 @@ public class LogDisplay : MonoBehaviour
 {
     [Header("Parent UI")]
     [SerializeField] private GameObject[] logUI;
+    [SerializeField] private GameObject arrowsUI;
 
     [Header("Heading")]
     [SerializeField] private TMP_Text logNumText;
@@ -30,7 +31,8 @@ public class LogDisplay : MonoBehaviour
     [SerializeField] private ConservationStatusUI categoryUI;
 
     [Header("Captured")]
-    [SerializeField] private LogCapturedUI[] captured;
+    [SerializeField] private LogCapturedUI[] capturedCreatures;
+    [SerializeField] private LogCapturedUI[] capturedBlockers;
 
     [Header("Colors")]
     [SerializeField] private Color newBestColor;
@@ -57,6 +59,12 @@ public class LogDisplay : MonoBehaviour
             UpdateRarest();
             UpdateCaptured();
 
+            // Show arrows
+            if (diveLog.CapturedBlockers.Count > 0)
+            {
+                arrowsUI.SetActive(true);
+            }
+
             // Show UI
             foreach (GameObject ui in logUI)
             {
@@ -74,6 +82,8 @@ public class LogDisplay : MonoBehaviour
             {
                 ui.SetActive(false);
             }
+
+            arrowsUI.SetActive(false);
         }
     }
 
@@ -132,7 +142,7 @@ public class LogDisplay : MonoBehaviour
 
     private void UpdateCaptured()
     {
-        // Go through entire list UI
+        // Creatures
         for (int i = 0; i < 7; i++)
         {
             try
@@ -141,14 +151,34 @@ public class LogDisplay : MonoBehaviour
                 CreatureLog currentLog = diveLog.CapturedCreatures[i];
 
                 // Set item
-                SetCaptured(i, currentLog.CapturedCreature.Sprite,
+                SetCapturedCreature(i, currentLog.CapturedCreature.Sprite,
                                currentLog.CaptureCount, currentLog.isNew);
             }
 
             catch // No log at index
             {
                 // Reset item
-                ResetCaptured(i);
+                ResetCapturedCreature(i);
+            }
+        }
+
+        // Blockers
+        for (int i = 0; i < 14; i++)
+        {
+            try
+            {
+                // Get blocker log
+                BlockerLog currentLog = diveLog.CapturedBlockers[i];
+
+                // Set item
+                SetCapturedBlocker(i, currentLog.CapturedBlocker.Sprites[0],
+                               currentLog.CaptureCount, currentLog.isNew);
+            }
+
+            catch // No log at index
+            {
+                // Reset item
+                ResetCapturedBlocker(i);
             }
         }
     }
@@ -222,17 +252,31 @@ public class LogDisplay : MonoBehaviour
         }
     }
 
-    // Set Captured UI at Index
-    private void SetCaptured(int index, Sprite img, int shots, bool isNew)
+    // Set Captured Creature UI at Index
+    private void SetCapturedCreature(int index, Sprite img, int shots, bool isNew)
     {
-        captured[index].SetImage(img);
-        captured[index].SetShots(shots);
-        captured[index].SetTag(isNew);
+        capturedCreatures[index].SetImage(img);
+        capturedCreatures[index].SetShots(shots);
+        capturedCreatures[index].SetTag(isNew);
     }
 
-    // Reset Captured UI at Index
-    private void ResetCaptured(int index)
+    // Set Captured Blocker UI at Index
+    private void SetCapturedBlocker(int index, Sprite img, int shots, bool isNew)
     {
-        captured[index].Reset();
+        capturedBlockers[index].SetImage(img);
+        capturedBlockers[index].SetShots(shots);
+        capturedBlockers[index].SetTag(isNew);
+    }
+
+    // Reset Captured Creature UI at Index
+    private void ResetCapturedCreature(int index)
+    {
+        capturedCreatures[index].Reset();
+    }
+
+    // Reset Captured Blocker UI at Index
+    private void ResetCapturedBlocker(int index)
+    {
+        capturedBlockers[index].Reset();
     }
 }
