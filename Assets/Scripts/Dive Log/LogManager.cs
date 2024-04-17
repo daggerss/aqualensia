@@ -26,6 +26,9 @@ public class LogManager : MonoBehaviour
     [HideInInspector]
     public List<CreatureLog> CapturedCreatures = new List<CreatureLog>();
 
+    [HideInInspector]
+    public List<BlockerLog> CapturedBlockers = new List<BlockerLog>();
+
     /* -------------------------------------------------------------------------- */
     /*                                  Functions                                 */
     /* -------------------------------------------------------------------------- */
@@ -84,12 +87,20 @@ public class LogManager : MonoBehaviour
         CurrentBestShots = 0;
         rarestCreature = null;
 
-        // Deletion just in case
+        // Creatures deletion just in case
         for (int i = 0; i < CapturedCreatures.Count; i++)
         {
             CapturedCreatures[i] = null;
         }
 
         CapturedCreatures.Clear();
+
+        // Blockers deletion just in case
+        for (int i = 0; i < CapturedBlockers.Count; i++)
+        {
+            CapturedBlockers[i] = null;
+        }
+
+        CapturedBlockers.Clear();
     }
 }

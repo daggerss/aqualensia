@@ -7,16 +7,20 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager instance;
 
+    [Header("Prefabs")]
     [SerializeField] private GameObject creaturePrefab;
+    [SerializeField] private GameObject blockerPrefab;
 
     [Header("Fixed Points Spawn")]
     [SerializeField] private Vector2[] sessilePositions;
 
     [Header("Dynamic Spawn")]
     [SerializeField] private LayerMask layersNotToSpawnOn;
-    [SerializeField] private float creatureRadius;
+    [SerializeField] private float spawnRadius;
 
     private CreatureInDive creatureInfo;
+    private BlockerInDive blockerInfo;
+
     private StateManager stateManager;
     private string currentLocation;
     private List<int> usedSessilePositions = new List<int>();
@@ -34,7 +38,7 @@ public class SpawnManager : MonoBehaviour
         currentLocation = SceneManager.GetActiveScene().name;
     }
 
-    // Spawn mobile or sessile
+    // Spawn mobile or sessile creatures
     public void SpawnCreatures(Creature[] creatures, Transform parentTransform,
                                Collider2D spawnableAreaCollider = null)
     {
@@ -72,6 +76,50 @@ public class SpawnManager : MonoBehaviour
                     if (!spawnPosition.Equals(Vector2.zero))
                     {
                         GameObject spawnedCreature = Instantiate(creaturePrefab,
+                                                                 spawnPosition,
+                                                                 Quaternion.identity,
+                                                                 parentTransform);
+                    }
+                }
+            }
+        }
+    }
+
+    // Spawn mobile or stationary blockers
+    // Spawn mobile or sessile
+    public void SpawnBlockers(Blocker[] blockers, Transform parentTransform,
+                              Collider2D spawnableAreaCollider = null)
+    {
+        // Instantiate variables
+        blockerInfo = blockerPrefab.GetComponent<BlockerInDive>();
+        bool forStationary = (spawnableAreaCollider == null);
+        Vector2 spawnPosition;
+
+        foreach (Blocker blocker in blockers)
+        {
+            // Spawn if location is blocked
+            if (stateManager.LocationBlockStates[currentLocation])
+            {
+                // Set prefab's blocker
+                blockerInfo.Blocker = blocker;
+    
+                // Spawn based on frequency
+                for (int i = 0; i < blocker.FrequencyScale; i++)
+                {
+                    if (forStationary) // Stationary position
+                    {
+                        spawnPosition = GetRandomFixedPosition();
+                    }
+
+                    else // Dynamic position
+                    {
+                        spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
+                    }
+    
+                    // Spawn only if valid
+                    if (!spawnPosition.Equals(Vector2.zero))
+                    {
+                        GameObject spawnedBlocker = Instantiate(blockerPrefab,
                                                                  spawnPosition,
                                                                  Quaternion.identity,
                                                                  parentTransform);
@@ -139,7 +187,7 @@ public class SpawnManager : MonoBehaviour
 
     private bool isPositionOverlapping(Vector2 position)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, creatureRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, spawnRadius);
 
         // Check if on invalid layers
         foreach (Collider2D collider in colliders)

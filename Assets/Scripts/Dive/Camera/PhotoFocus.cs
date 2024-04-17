@@ -15,18 +15,30 @@ public class PhotoFocus : MonoBehaviour
     [SerializeField] private GameObject capturedLabel;
 
     [Header("Text")]
-    [SerializeField] private TMP_Text creatureNameText;
+    [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text captureCountText;
 
     private CreatureInDive creatureInstance;
+    private BlockerInDive blockerInstance;
 
     private void OnTriggerStay2D(Collider2D other)
     {
         creatureInstance = other.gameObject.GetComponent<CreatureInDive>();
 
-        SetInfo(creatureInstance.Creature);
+        if (creatureInstance != null)
+        {
+            SetCreatureInfo(creatureInstance.Creature);
+            DisplayCapturedLabel(creatureInstance.WasCaptured);
+        }
+
+        else
+        {
+            blockerInstance = other.gameObject.GetComponent<BlockerInDive>();
+            SetBlockerInfo(blockerInstance.Blocker);
+            DisplayCapturedLabel(blockerInstance.WasCaptured);
+        }
+
         DisplayInfo(true);
-        DisplayCapturedLabel(creatureInstance.WasCaptured);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -35,32 +47,47 @@ public class PhotoFocus : MonoBehaviour
         DisplayCapturedLabel(false);
     }
 
-    private void SetInfo(Creature creature)
+    private void SetCreatureInfo(Creature creature)
     {
+        // Show
+        statusImage.gameObject.SetActive(true);
+
         // Name
         if (creature.CaptureStatus == CreatureStatus.Identified)
         {
             statusImage.sprite = statusSprites[0];
             statusImage.color = statusColors[0];
-            creatureNameText.text = creature.CommonName;
+            nameText.text = creature.CommonName;
         }
 
         else if (creature.CaptureStatus == CreatureStatus.Captured)
         {
             statusImage.sprite = statusSprites[1];
             statusImage.color = statusColors[1];
-            creatureNameText.text = "???";
+            nameText.text = "???";
         }
 
         else
         {
             statusImage.sprite = statusSprites[2];
             statusImage.color = statusColors[2];
-            creatureNameText.text = "???";
+            nameText.text = "???";
         }
 
         // Count
         captureCountText.text = creature.CaptureCount + "/4";
+    }
+
+    private void SetBlockerInfo(Blocker blocker)
+    {
+        // Hide
+        statusImage.gameObject.SetActive(false);
+
+        // Name
+        nameText.text = blocker.Name;
+
+        // Count
+        captureCountText.text = blocker.ParentBlocker.CaptureCount + "/4";
     }
 
     private void DisplayCapturedLabel(bool toDisplay)

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6881346c644bbb14b8dc7c2d4c7a580e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Creature: {fileID: 11400000, guid: ae0eb15bd41456a4f81eb4f2fd198742, type: 2}
+  Creature: {fileID: 0}
   minWaitTime: 1
   maxWaitTime: 3
   target: {fileID: 3426312934648953512}

@@ -646,6 +646,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b8117ed5bf0dd94fad5c03b8d6cb71f, type: 2}
   sessileCreatures:
   - {fileID: 11400000, guid: aa78e1725b793254a96d6d9b2d29f373, type: 2}
+  mobileBlockers: []
+  stationaryBlockers: []
 --- !u!60 &381175755
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -59489,7 +59491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1888916331}
   m_Layer: 0
-  m_Name: Creatures
+  m_Name: Creatures + Blockers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59964,6 +59966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 7618159270492880575, guid: 638999313cc12c64395e320852e2eac9, type: 3}
+  blockerPrefab: {fileID: 7618159270492880575, guid: ee9f7e0ee7435d0469953f13bb60b182, type: 3}
   sessilePositions:
   - {x: -108, y: -10}
   - {x: -98, y: -10}
@@ -59987,7 +59990,7 @@ MonoBehaviour:
   layersNotToSpawnOn:
     serializedVersion: 2
     m_Bits: 192
-  creatureRadius: 6
+  spawnRadius: 6
 --- !u!1 &2055898361
 GameObject:
   m_ObjectHideFlags: 0
