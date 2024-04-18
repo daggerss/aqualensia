@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] private float timeInterval;
 
+    private Creature[] allCreatures;
+    private bool[] locationStates;
+
     private int _totalCoins;
     public int TotalCoins => _totalCoins;
 
-    [SerializeField] private int countNE, countDD, countLC, countNT, countVU, countEN, countCR = 0;
+    private int countNE, countDD, countLC, countNT, countVU, countEN, countCR = 0;
 
     private Dictionary<ConservationStatus, int> coinValues = new Dictionary<ConservationStatus, int>()
     {
@@ -17,14 +21,37 @@ public class CurrencyManager : MonoBehaviour
         {ConservationStatus.NT, 10},
         {ConservationStatus.VU, 50},
         {ConservationStatus.EN, 250},
-        {ConservationStatus.CR, 1000},
-        {ConservationStatus.NE, 500},
-        {ConservationStatus.DD, 500}
+        {ConservationStatus.CR, 500},
+        {ConservationStatus.NE, 300},
+        {ConservationStatus.DD, 300}
     };
 
-    void Awake()
+    void Start()
     {
+        // Get all creatures
+        allCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().AllCreatures;
+
+        // Get each location's block state
+        locationStates = UniversalManagers.instance.GetComponentInChildren<StateManager>()
+                                                   .LocationBlockStates.Values.ToArray();
+        
+        // Set up existing currency
+        InitializeCoins();
+
+        // Update
         StartCoroutine(UpdateTotal());
+    }
+
+    // Initialize from latest creatures
+    private void InitializeCoins()
+    {
+        foreach (Creature creature in allCreatures)
+        {
+            if (creature.CaptureStatus == CreatureStatus.Identified)
+            {
+                AddToCount(creature.ConservationStatus);
+            }
+        }
     }
 
     // Add identified creature to count
@@ -71,14 +98,28 @@ public class CurrencyManager : MonoBehaviour
     {
         while (true)
         {
-            _totalCoins += (countLC * coinValues[ConservationStatus.LC]) +
-                           (countNT * coinValues[ConservationStatus.NT]) +
-                           (countVU * coinValues[ConservationStatus.VU]) +
-                           (countEN * coinValues[ConservationStatus.EN]) +
-                           (countCR * coinValues[ConservationStatus.CR]) +
-                           (countNE * coinValues[ConservationStatus.NE]) +
-                           (countDD * coinValues[ConservationStatus.DD]);
+            // Calculate per identified creature
+            float sum = (countLC * coinValues[ConservationStatus.LC]) +
+                        (countNT * coinValues[ConservationStatus.NT]) +
+                        (countVU * coinValues[ConservationStatus.VU]) +
+                        (countEN * coinValues[ConservationStatus.EN]) +
+                        (countCR * coinValues[ConservationStatus.CR]) +
+                        (countNE * coinValues[ConservationStatus.NE]) +
+                        (countDD * coinValues[ConservationStatus.DD]);
 
+            // Cumulative cut of 20% for every restored location
+            foreach (bool isBlocked in locationStates)
+            {
+                if (!isBlocked)
+                {
+                    sum = sum * 0.20f;
+                }
+            }
+            
+            // Add to total
+            _totalCoins += (int) sum;
+
+            // Wait
             yield return new WaitForSeconds(timeInterval);
         }
     }
