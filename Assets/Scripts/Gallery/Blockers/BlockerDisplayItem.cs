@@ -18,6 +18,7 @@ public class BlockerDisplayItem : MonoBehaviour
     [SerializeField] private BlockerTypeUI categoryUI;
     [SerializeField] private TMP_Text locationText;
     [SerializeField] private TMP_Text captureCountText;
+    [SerializeField] GameObject[] captureLabels;
 
     [Header("Info Plaque")]
     [SerializeField] private TMP_Text infoText;
@@ -68,7 +69,23 @@ public class BlockerDisplayItem : MonoBehaviour
 
     private void SetCaptureCount(int count)
     {
-        captureCountText.text = (4 - count).ToString();
+        // Display remaining
+        if (count < 4)
+        {
+            captureCountText.text = (4 - count).ToString();
+        }
+
+        // Display complete
+        else
+        {
+            // Hide others
+            foreach (GameObject ui in captureLabels)
+            {
+                ui.SetActive(false);
+            }
+
+            captureCountText.text = "The MARLIN has exposed this issue";
+        }
     }
 
     private void SetResearchInfo(string txt)
