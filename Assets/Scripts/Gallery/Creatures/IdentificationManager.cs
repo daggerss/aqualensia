@@ -31,7 +31,8 @@ public class IdentificationManager : MonoBehaviour
         inventoryManager.InventoryCreatures.RemoveAt(index);
 
         // If deleted item was selected
-        if (index == (inventoryManager.CurrentPage - 1))
+        if ((index == (inventoryManager.CurrentPage - 1)) &&
+            (inventoryManager.InventoryCreatures.Count > 0))
         {
             // "Next" page if before end
             if (index < inventoryManager.InventoryCreatures.Count)
