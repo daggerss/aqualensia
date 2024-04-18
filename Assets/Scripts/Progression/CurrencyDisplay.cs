@@ -10,12 +10,9 @@ public class CurrencyDisplay : MonoBehaviour
 
     private CurrencyManager currencyManager;
     private int totalCoins;
-    
-    void Start()
-    {
-        // Get currency manager
-        currencyManager = UniversalManagers.instance.GetComponentInChildren<CurrencyManager>();
 
+    void OnEnable()
+    {
         // Update UI
         StartCoroutine(UpdateUI());
     }
@@ -23,10 +20,20 @@ public class CurrencyDisplay : MonoBehaviour
     // Update text
     IEnumerator UpdateUI()
     {
+        // Wait until after Start()
+        if (UniversalManagers.instance == null)
+        {
+            yield return new WaitForSeconds(0.05f);
+
+            // Get currency manager
+            currencyManager = UniversalManagers.instance.GetComponentInChildren<CurrencyManager>();
+        }
+
+        // Update UI continuously
         while (true)
         {
             coinValueText.text = currencyManager.TotalCoins.ToString();
-
+    
             yield return new WaitForSeconds(updateInterval);
         }
     }
