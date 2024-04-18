@@ -32458,6 +32458,7 @@ MonoBehaviour:
   - {fileID: 1952917442}
   - {fileID: 1952917451}
   - {fileID: 1952917452}
+  - {fileID: 1935035023}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0
@@ -59513,6 +59514,11 @@ Transform:
   m_Father: {fileID: 1071747292}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1935035023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1086867293603685927, guid: 3bf9020709c5e0e46966cace62d99cc4, type: 3}
+  m_PrefabInstance: {fileID: 1952917435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952917435
 PrefabInstance:
   m_ObjectHideFlags: 0

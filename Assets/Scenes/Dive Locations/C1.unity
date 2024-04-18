@@ -23010,6 +23010,7 @@ MonoBehaviour:
   - {fileID: 519641421}
   - {fileID: 1943287447}
   - {fileID: 1003154713}
+  - {fileID: 1416456833}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0
@@ -23498,6 +23499,11 @@ MonoBehaviour:
   whiteScreenAnimation: {fileID: 1300245150}
   vCamConfiner: {fileID: 142880520}
   tileCollider: {fileID: 1796453382}
+--- !u!1 &1416456833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1086867293603685927, guid: 3bf9020709c5e0e46966cace62d99cc4, type: 3}
+  m_PrefabInstance: {fileID: 2105712493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1471768884 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5209847204444185398, guid: 3bf9020709c5e0e46966cace62d99cc4, type: 3}

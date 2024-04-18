@@ -43359,6 +43359,7 @@ MonoBehaviour:
   - {fileID: 1561666140}
   - {fileID: 1561666142}
   - {fileID: 1561666143}
+  - {fileID: 1849635458}
 --- !u!4 &899239976
 Transform:
   m_ObjectHideFlags: 0
@@ -80949,6 +80950,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a52ec4fe639e34fb363c9a2bb8f469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1849635458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1086867293603685927, guid: 3bf9020709c5e0e46966cace62d99cc4, type: 3}
+  m_PrefabInstance: {fileID: 1561666133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945901842
 GameObject:
   m_ObjectHideFlags: 0
