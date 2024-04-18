@@ -601,3 +601,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInterval: 7
+  valueLC: 5
+  valueNT: 10
+  valueVU: 50
+  valueEN: 250
+  valueCR: 500
+  valueNE: 300
+  valueDD: 300
+  valueBlocker: 150
