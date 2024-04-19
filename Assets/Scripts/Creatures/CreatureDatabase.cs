@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CreatureDatabase : MonoBehaviour
 {
@@ -42,5 +43,10 @@ public class CreatureDatabase : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool HasIdentified()
+    {
+        return _allCreatures.Any(creature => creature.CaptureStatus == CreatureStatus.Identified);
     }
 }

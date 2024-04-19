@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class RoomSpawn : MonoBehaviour
 {
@@ -73,8 +72,7 @@ public class RoomSpawn : MonoBehaviour
         // Check for identified creatures
         if (UniversalManagers.instance
                                 .GetComponentInChildren<CreatureDatabase>()
-                                .AllCreatures
-                                .Any(creature => creature.CaptureStatus == CreatureStatus.Identified))
+                                .HasIdentified())
         {
             SpawnBlockers();
             return true;
