@@ -20,20 +20,23 @@ public class CurrencyDisplay : MonoBehaviour
     // Update text
     IEnumerator UpdateUI()
     {
-        // Wait until after Start()
-        if (UniversalManagers.instance == null)
+        // Wait until no NRE
+        while (currencyManager == null)
         {
-            yield return new WaitForSeconds(0.05f);
-
             // Get currency manager
-            currencyManager = UniversalManagers.instance.GetComponentInChildren<CurrencyManager>();
+            if (UniversalManagers.instance != null)
+            {
+                currencyManager = UniversalManagers.instance.GetComponentInChildren<CurrencyManager>();
+            }
+
+            yield return new WaitForSeconds(0.05f);
         }
 
         // Update UI continuously
         while (true)
         {
             coinValueText.text = currencyManager.TotalCoins.ToString();
-    
+
             yield return new WaitForSeconds(updateInterval);
         }
     }
