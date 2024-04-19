@@ -8,7 +8,8 @@ public class BlockerDatabase : MonoBehaviour
     [SerializeField] private BlockerOrder[] allBlockerOrders;
 
     private List<ParentBlocker> parentBlockers = new List<ParentBlocker>();
-    private List<ParentBlocker> capturedBlockers = new List<ParentBlocker>();
+    private List<ParentBlocker> anyCaptured = new List<ParentBlocker>();
+    private List<ParentBlocker> fullyCaptured = new List<ParentBlocker>();
 
     private ParentBlocker[] _allBlockers;
     public ParentBlocker[] AllBlockers => _allBlockers;
@@ -28,20 +29,42 @@ public class BlockerDatabase : MonoBehaviour
         _allBlockers = parentBlockers.ToArray();
     }
 
-    public ParentBlocker[] GetCapturedBlockers()
+    public bool HasCaptured()
+    {
+        return _allBlockers.Any(blocker => blocker.CaptureCount > 0);
+    }
+
+    public ParentBlocker[] GetAnyCaptured()
     {
         // Reset
-        capturedBlockers.Clear();
+        anyCaptured.Clear();
+
+        // Add if captured at least 1 instance
+        foreach (ParentBlocker blocker in _allBlockers)
+        {
+            if (blocker.CaptureCount > 0)
+            {
+                anyCaptured.Add(blocker);
+            }
+        }
+
+        return anyCaptured.ToArray();
+    }
+
+    public ParentBlocker[] GetFullyCaptured()
+    {
+        // Reset
+        fullyCaptured.Clear();
 
         // Add if captured 4 instances
         foreach (ParentBlocker blocker in _allBlockers)
         {
             if (blocker.CaptureCount == 4)
             {
-                capturedBlockers.Add(blocker);
+                fullyCaptured.Add(blocker);
             }
         }
 
-        return capturedBlockers.ToArray();
+        return fullyCaptured.ToArray();
     }
 }

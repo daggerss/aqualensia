@@ -29,30 +29,13 @@ public class ProtestHallManager : MonoBehaviour
 
     void Awake()
     {
-        // Set Up
-        SetUpBlockers();
+        // Populate
+        SetUpContent(UniversalManagers.instance
+                                      .GetComponentInChildren<BlockerDatabase>()
+                                      .GetAnyCaptured());
     }
 
     /* -------------------------------- Setup ------------------------------- */
-    // Set up captured blockers
-    private void SetUpBlockers()
-    {
-        // Get all blockers
-        ParentBlocker[] allBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().AllBlockers;
-        
-        // Get captured blockers
-        foreach (ParentBlocker blocker in allBlockers)
-        {
-            if (blocker.CaptureCount > 0)
-            {
-                capturedBlockers.Add(blocker);
-            }
-        }
-
-        // Populate
-        SetUpContent(capturedBlockers.ToArray());
-    }
-
     // Populate TOC, display item
     private void SetUpContent(ParentBlocker[] currentBlockers)
     {

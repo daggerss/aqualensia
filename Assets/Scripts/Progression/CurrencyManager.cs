@@ -32,7 +32,7 @@ public class CurrencyManager : MonoBehaviour
         allCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().AllCreatures;
 
         // Get captured blockers
-        capturedBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().GetCapturedBlockers();
+        capturedBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().GetFullyCaptured();
 
         // Get each location's block state
         locationStates = UniversalManagers.instance.GetComponentInChildren<StateManager>()

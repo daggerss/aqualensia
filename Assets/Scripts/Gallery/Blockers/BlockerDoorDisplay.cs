@@ -8,17 +8,12 @@ public class BlockerDoorDisplay : MonoBehaviour
 
     void Start()
     {
-        // Get all blockers
-        ParentBlocker[] allBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().AllBlockers;
-        
-        // Check each blocker if captured
-        foreach (ParentBlocker blocker in allBlockers)
+        // If any blockers captured
+        if (UniversalManagers.instance
+                             .GetComponentInChildren<BlockerDatabase>()
+                             .HasCaptured())
         {
-            if (blocker.CaptureCount > 0)
-            {
-                ShowUI();
-                break;
-            }
+            ShowUI();
         }
     }
 
