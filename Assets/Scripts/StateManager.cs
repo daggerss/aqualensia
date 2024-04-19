@@ -12,9 +12,6 @@ public class StateManager : MonoBehaviour
     [field: SerializeField]
     public Biome CurrentHall {get; set;}
 
-    // LOCATION UNLOCKING
-    // TODO: Location Unlocking
-
     // LOCATION RESTORING
     public Dictionary<string, bool> LocationBlockStates = new Dictionary<string, bool>()
     {

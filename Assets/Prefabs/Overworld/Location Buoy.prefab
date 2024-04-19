@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3280232922256359597}
+  - component: {fileID: 7101250826229859453}
   m_Layer: 5
   m_Name: Location Buoy
   m_TagString: Untagged
@@ -38,6 +39,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 136, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7101250826229859453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460463895863317990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746424138305b39489edf1e641a27cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: {fileID: 2268192649966943765}
 --- !u!1 &2119792380701630171
 GameObject:
   m_ObjectHideFlags: 0
