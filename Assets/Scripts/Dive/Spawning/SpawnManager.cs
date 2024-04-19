@@ -97,33 +97,29 @@ public class SpawnManager : MonoBehaviour
 
         foreach (Blocker blocker in blockers)
         {
-            // Spawn if location is blocked
-            if (stateManager.LocationBlockStates[currentLocation])
+            // Set prefab's blocker
+            blockerInfo.Blocker = blocker;
+    
+            // Spawn based on frequency
+            for (int i = 0; i < blocker.FrequencyScale; i++)
             {
-                // Set prefab's blocker
-                blockerInfo.Blocker = blocker;
-    
-                // Spawn based on frequency
-                for (int i = 0; i < blocker.FrequencyScale; i++)
+                if (forStationary) // Stationary position
                 {
-                    if (forStationary) // Stationary position
-                    {
-                        spawnPosition = GetRandomFixedPosition();
-                    }
+                    spawnPosition = GetRandomFixedPosition();
+                }
 
-                    else // Dynamic position
-                    {
-                        spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
-                    }
-    
-                    // Spawn only if valid
-                    if (!spawnPosition.Equals(Vector2.zero))
-                    {
-                        GameObject spawnedBlocker = Instantiate(blockerPrefab,
-                                                                 spawnPosition,
-                                                                 Quaternion.identity,
-                                                                 parentTransform);
-                    }
+                else // Dynamic position
+                {
+                    spawnPosition = GetRandomMapPosition(spawnableAreaCollider);
+                }
+
+                // Spawn only if valid
+                if (!spawnPosition.Equals(Vector2.zero))
+                {
+                    GameObject spawnedBlocker = Instantiate(blockerPrefab,
+                                                                spawnPosition,
+                                                                Quaternion.identity,
+                                                                parentTransform);
                 }
             }
         }

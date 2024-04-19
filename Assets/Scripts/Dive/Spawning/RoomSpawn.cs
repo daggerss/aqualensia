@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class RoomSpawn : MonoBehaviour
 {
@@ -21,19 +23,63 @@ public class RoomSpawn : MonoBehaviour
 
     void Start()
     {
-        Spawn();
+        // Current Location
+        string currentLocation = SceneManager.GetActiveScene().name;
+
+        // Creatures
+        SpawnCreatures();
+
+        // Blockers (if location blocked)
+        if (UniversalManagers.instance.GetComponentInChildren<StateManager>()
+                                      .LocationBlockStates[currentLocation])
+        {
+            // Default
+            if ((PlayerPrefs.GetInt("NewGame", 1) == 0) ||
+                (PlayerPrefs.GetInt("BlockersTutorial", 0) == 1))
+            {
+                SpawnBlockers();
+            }
+    
+            // Tutorial
+            else if (ReleaseBlockers())
+            {
+                    // TODO: Tutorial Proper
+        
+                    // Set blockers tutorial done
+                    PlayerPrefs.SetInt("BlockersTutorial", 1);
+            }
+        }
     }
 
-    void Spawn()
+    // Spawn mobile and sessile creatures
+    private void SpawnCreatures()
     {
-        // Creatures
         SpawnManager.instance.SpawnCreatures(mobileCreatures, transform,
                                              spawnableArea);
         SpawnManager.instance.SpawnCreatures(sessileCreatures, transform);
+    }
 
-        // Blockers
+    // Spawn mobile and stationary blockers
+    private void SpawnBlockers()
+    {
         SpawnManager.instance.SpawnBlockers(mobileBlockers, transform,
                                             spawnableArea);
         SpawnManager.instance.SpawnBlockers(stationaryBlockers, transform);
+    }
+
+    // If at least one creature is identified, spawn blockers
+    private bool ReleaseBlockers()
+    {
+        // Check for identified creatures
+        if (UniversalManagers.instance
+                                .GetComponentInChildren<CreatureDatabase>()
+                                .AllCreatures
+                                .Any(creature => creature.CaptureStatus == CreatureStatus.Identified))
+        {
+            SpawnBlockers();
+            return true;
+        }
+
+        return false;
     }
 }
