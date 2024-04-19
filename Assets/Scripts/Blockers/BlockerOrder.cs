@@ -3,6 +3,11 @@ using UnityEngine;
 [System.Serializable]
 public class BlockerOrder
 {
-    public int LocationOrder;
-    public ParentBlocker Blocker;
+    [SerializeField]
+    private int _locationOrder;
+    public int LocationOrder => _locationOrder;
+
+    [SerializeField]
+    private ParentBlocker _blocker;
+    public ParentBlocker Blocker => _blocker;
 }
