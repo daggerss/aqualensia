@@ -84,7 +84,7 @@ public class BlockerDisplayItem : MonoBehaviour
                 ui.SetActive(false);
             }
 
-            captureCountText.text = "The MARLIN has exposed this issue";
+            captureCountText.text = "The MARLIN is accepting donations to combat this issue";
         }
     }
 
