@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Copperband Butterflyfish
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  _sprite: {fileID: 0}
+  _schoolSprite: {fileID: 0}
+  _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Copperband Butterflyfish
   _scientificName: Chelmon rostratus
   _conservationStatus: 2
@@ -21,13 +24,18 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
-  _galleryInfo: 
+  - That snout is perfect for reaching into small crevices!
+  - What was that in its mouth? Looks like a worm.
+  - It frequently swims together with another- perhaps a partner?
+  - Their false eye has likely fooled some enemies.
+  _galleryInfo: The Copperband Butterflyfish showcases a diverse diet, preying primarily
+    on worms, clams, and mollusks with the help of its elongated beak. During breeding,
+    these fish exhibit monogamous behavior, forming pairs for reproduction. It is
+    easily distinguished by its striking yellow banding and a false eye spot near
+    its tail, in which the latter serves as a clever defense mechanism to confuse
+    and deter potential predators.
   _populationScale: 0
   _speed: 0
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

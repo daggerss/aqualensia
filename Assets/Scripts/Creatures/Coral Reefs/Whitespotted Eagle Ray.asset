@@ -24,11 +24,16 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
-  _galleryInfo: 
+  - Careful! That tail is venomous.
+  - Often digging their snouts in sand flats to find food.
+  - I was able to film one of them giving birth to live young!
+  - Seen leaping out of the water on occasion.
+  _galleryInfo: "In a process known as ovoviparity, the Whitespotted Eagle Ray produces
+    eggs that hatch inside the mother's body before giving birth to live young. It
+    forages for mollusks and other prey in the sand, using its electroreceptors to
+    locate buried prey. Equipped with venomous tail spines, it can defend itself
+    against threats. They breach the water\u2019s surface to escape predators, give
+    birth, or shake off parasites."
   _populationScale: 0
   _speed: 0
   <CaptureStatus>k__BackingField: 0

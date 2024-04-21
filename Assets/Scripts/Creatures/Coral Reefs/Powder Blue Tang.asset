@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Powder Blue Tang
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: ae5b6b87f6fe91942b5a538567c2789a, type: 3}
+  _schoolSprite: {fileID: 0}
+  _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Powder Blue Tang
   _scientificName: Acanthurus leucosternon
   _conservationStatus: 2
@@ -21,13 +24,18 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
-  _galleryInfo: 
-  _populationScale: 0
-  _speed: 0
+  - It's picking at something green on the seafloor.
+  - They're a bit of lone wolves unless they're feeding.
+  - It gets quite protective of its turf.
+  - It seems to be attacking with something sharp on the sides of its tail.
+  _galleryInfo: The Powder Blue Tang primarily feeds on benthic algae, grazing on
+    it as a staple part of its diet. Though typically solitary, they are sometimes
+    seen in large feeding groups. Despite their communal habits, they're known for
+    their aggressive territorial behavior, particularly towards their own kind. These
+    fish possess a distinctive scalpel-like spine, characteristic of surgeonfish,
+    which they may use for defense or asserting dominance.
+  _populationScale: 8
+  _speed: 12
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

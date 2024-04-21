@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Nahacky's Angelfish
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  _sprite: {fileID: 0}
+  _schoolSprite: {fileID: 0}
+  _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Nahacky's Angelfish
   _scientificName: Centropyge nahackyi
   _conservationStatus: 3
@@ -21,13 +24,18 @@ MonoBehaviour:
   _upperZone: 0
   _lowerZone: 0
   _photoInfo:
-  - 
-  - 
-  - 
-  - 
-  _galleryInfo: 
+  - Born female, it can change to male when necessary.
+  - A male usually has a group of females to mate with.
+  - Caught one nibbling on corals. This naughty fish!
+  - Said to be found only at the Johnson Atoll- well, until now!
+  _galleryInfo: Endemic to the Johnson Atoll, the Nahacky's Angelfish employs a unique
+    reproductive strategy as a protogynous hermaphrodite. Beginning life as females,
+    some individuals undergo a transition to males within their social structures,
+    necessary for maintaining a harem. In these social groups, a dominant male oversees
+    and mates with a group of females. They may exhibit aggressive tendencies, occasionally
+    nipping at corals.
   _populationScale: 0
   _speed: 0
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

@@ -19,5 +19,7 @@ MonoBehaviour:
   _location: Crystal Shoals
   _galleryInfo: Lorem ipsum tireddd
   _captureCount: 0
+  _price: 10000
   _shopInfo: The Power Shift Project continuously installs renewable energy technologies
     around the island and will soon deploy a beach clean-up and restoration team.
+  _headline: Support for Renewable Energy amid Oil Spill

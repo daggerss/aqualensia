@@ -21,8 +21,7 @@ public class CurrencyManager : MonoBehaviour
     private ParentBlocker[] capturedBlockers;
     private bool[] locationStates;
 
-    private int _totalCoins;
-    public int TotalCoins => _totalCoins;
+    public int TotalCoins {get; set;}
 
     private int countNE, countDD, countLC, countNT, countVU, countEN, countCR = 0;
 
@@ -120,7 +119,7 @@ public class CurrencyManager : MonoBehaviour
             }
             
             // Add to total
-            _totalCoins += (int) sum;
+            TotalCoins += (int) sum;
 
             // Wait
             yield return new WaitForSeconds(timeInterval);
