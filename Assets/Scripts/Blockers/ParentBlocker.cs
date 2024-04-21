@@ -48,8 +48,8 @@ public class ParentBlocker : ScriptableObject
     }
 
     [SerializeField]
-    private string _price;
-    public string Price => _price;
+    private int _cost;
+    public int Cost => _cost;
 
     [SerializeField]
     [TextArea(3, 10)]

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class PamphletDisplay : MonoBehaviour
+public class PamphletDisplay : MonoBehaviour, ISelectHandler
 {
+    [SerializeField] ShopManager shopManager;
+
     [SerializeField]
     private ParentBlocker _blocker;
     public ParentBlocker Blocker => _blocker;
@@ -26,6 +29,9 @@ public class PamphletDisplay : MonoBehaviour
     [SerializeField] private Sprite openOceanDefault;
     [SerializeField] private SpriteState openOceanState;
 
+    private Sprite currentDefault;
+    private SpriteState currentSprState;
+
     void Start()
     {
         // Get UI components
@@ -36,6 +42,12 @@ public class PamphletDisplay : MonoBehaviour
         if (_blocker != null)
         {
             SetDisplay();
+
+            // Hide if not fully captured
+            if (_blocker.CaptureCount < 4)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -45,21 +57,27 @@ public class PamphletDisplay : MonoBehaviour
         // Blocker
         blockerImage.sprite = _blocker.Sprite;
 
-        // Button States
+        // Set Current
         if (_blocker.Biome == Biome.CoralReef)
         {
-            ChangeSpriteSwap(coralReefDefault, coralReefState);
+            currentDefault = coralReefDefault;
+            currentSprState = coralReefState;
         }
 
         else if (_blocker.Biome == Biome.SeagrassBed)
         {
-            ChangeSpriteSwap(seagrassDefault, seagrassState);
+            currentDefault = seagrassDefault;
+            currentSprState = seagrassState;
         }
 
         else if (_blocker.Biome == Biome.OpenOcean)
         {
-            ChangeSpriteSwap(openOceanDefault, openOceanState);
+            currentDefault = openOceanDefault;
+            currentSprState = openOceanState;
         }
+
+        // Set Sprite Swap
+        ChangeSpriteSwap(currentDefault, currentSprState);
     }
 
     // Apply sprite states to button
@@ -70,5 +88,27 @@ public class PamphletDisplay : MonoBehaviour
 
         // States
         pamphletButton.spriteState = sprState;
+    }
+
+    // Do this when the selectable UI object is selected
+    public void OnSelect(BaseEventData eventData)
+    {
+        // Deselect previous pamphlet
+        if (shopManager.CurrentPamphlet != null)
+        {
+            shopManager.CancelFund();
+        }
+
+        // Pass self to Shop Manager
+        shopManager.CurrentPamphlet = this;
+
+        // Set normal to selected state
+        pamphletButton.image.sprite = currentSprState.selectedSprite;
+    }
+
+    // Reset sprite swap normal
+    public void ResetNormalState()
+    {
+        pamphletButton.image.sprite = currentDefault;
     }
 }
