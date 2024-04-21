@@ -34,6 +34,6 @@ public class DialogueDisplay : MonoBehaviour
 
     public void SetCost(int num)
     {
-        costText.text = num.ToString();
+        costText.text = num.ToString("N0");
     }
 }

@@ -35,7 +35,7 @@ public class CurrencyDisplay : MonoBehaviour
         // Update UI continuously
         while (true)
         {
-            coinValueText.text = currencyManager.TotalCoins.ToString();
+            coinValueText.text = currencyManager.TotalCoins.ToString("N0");
 
             yield return new WaitForSeconds(updateInterval);
         }
