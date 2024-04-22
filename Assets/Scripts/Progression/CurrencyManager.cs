@@ -136,8 +136,7 @@ public class CurrencyManager : MonoBehaviour
             }
             
             // Add to total
-            // TotalCoins += (int) sum;
-            TotalCoins += 10000;
+            TotalCoins += (int) sum;
 
             // Wait
             yield return new WaitForSeconds(timeInterval);

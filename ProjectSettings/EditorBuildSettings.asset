@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Gallery/Protest Hall.unity
     guid: bc0fc7c8b6de7844baf2f55431773f76
   - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 93ee1c810c5417f40a7c2ffa108c0687
+  - enabled: 1
     path: Assets/Scenes/Dive Locations/C1.unity
     guid: fb9e31165a0fbcb46b0a96af968ef1ee
   - enabled: 1
