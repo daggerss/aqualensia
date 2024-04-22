@@ -25,6 +25,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     // Open biome hall
         // ! Param Note
         // OnClick() doesn't support dropdowns apparently
