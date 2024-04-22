@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Globalization;
 
 public class CurrencyDisplay : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class CurrencyDisplay : MonoBehaviour
     [SerializeField] private float updateInterval;
 
     private CurrencyManager currencyManager;
-    private int totalCoins;
 
     void OnEnable()
     {
         // Update UI
         StartCoroutine(UpdateUI());
+
+        // Add update UI to deduct event
+        CurrencyManager.OnDeduct += UpdateCurrency;
     }
 
     // Update text
@@ -35,9 +38,15 @@ public class CurrencyDisplay : MonoBehaviour
         // Update UI continuously
         while (true)
         {
-            coinValueText.text = currencyManager.TotalCoins.ToString("N0");
+            UpdateCurrency();
 
             yield return new WaitForSeconds(updateInterval);
         }
+    }
+
+    // Update Currency UI
+    public void UpdateCurrency()
+    {
+        coinValueText.text = currencyManager.TotalCoins.ToString("N0");
     }
 }

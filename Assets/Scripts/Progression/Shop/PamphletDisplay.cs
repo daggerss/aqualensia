@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class PamphletDisplay : MonoBehaviour, ISelectHandler
 {
     [SerializeField] ShopManager shopManager;
+    private StateManager stateManager;
 
     [SerializeField]
     private ParentBlocker _blocker;
@@ -14,6 +15,7 @@ public class PamphletDisplay : MonoBehaviour, ISelectHandler
 
     [Header("UI")]
     [SerializeField] private Image blockerImage;
+    [SerializeField] private GameObject checkIcon;
     private Image pamphletImage;
     private Button pamphletButton;
 
@@ -34,6 +36,9 @@ public class PamphletDisplay : MonoBehaviour, ISelectHandler
 
     void Start()
     {
+        // Get managers
+        stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
+
         // Get UI components
         pamphletImage = GetComponent<Image>();
         pamphletButton = GetComponent<Button>();
@@ -41,12 +46,16 @@ public class PamphletDisplay : MonoBehaviour, ISelectHandler
         // Set display and button assets
         if (_blocker != null)
         {
-            SetDisplay();
-
             // Hide if not fully captured
             if (_blocker.CaptureCount < 4)
             {
                 gameObject.SetActive(false);
+            }
+
+            else
+            {
+                SetDisplay();
+                SetCompleteState(!stateManager.LocationBlockStates[_blocker.LocationCode]);
             }
         }
     }
@@ -90,6 +99,28 @@ public class PamphletDisplay : MonoBehaviour, ISelectHandler
         pamphletButton.spriteState = sprState;
     }
 
+    // Set check + newspaper
+    public void SetCompleteState(bool completed)
+    {
+        // To Fund
+        if (!completed)
+        {
+            pamphletButton.onClick.AddListener(shopManager.ShowFundDialogue);
+        }
+
+        else
+        {
+            // Show
+            checkIcon.SetActive(true);
+
+            // Remove previous listeners
+            pamphletButton.onClick.RemoveAllListeners();
+
+            // Newspaper
+            pamphletButton.onClick.AddListener(shopManager.ShowNewspaper);
+        }
+    }
+
     // Do this when the selectable UI object is selected
     public void OnSelect(BaseEventData eventData)
     {
@@ -102,8 +133,11 @@ public class PamphletDisplay : MonoBehaviour, ISelectHandler
         // Pass self to Shop Manager
         shopManager.CurrentPamphlet = this;
 
-        // Set normal to selected state
-        pamphletButton.image.sprite = currentSprState.selectedSprite;
+        // Set normal to selected state for funds
+        if (stateManager.LocationBlockStates[_blocker.LocationCode])
+        {
+            pamphletButton.image.sprite = currentSprState.selectedSprite;
+        }
     }
 
     // Reset sprite swap normal

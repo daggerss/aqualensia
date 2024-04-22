@@ -10,6 +10,10 @@ public class ParentBlocker : ScriptableObject
     private Sprite _sprite;
     public Sprite Sprite => _sprite;
 
+    [SerializeField]
+    private Sprite _newsPhoto;
+    public Sprite NewsPhoto => _newsPhoto;
+
     [Header("Basic Information")]
     [SerializeField]
     private BlockerType _blockerType;
@@ -24,8 +28,12 @@ public class ParentBlocker : ScriptableObject
     public Biome Biome => _biome;
 
     [SerializeField]
-    private string _location;
-    public string Location => _location;
+    private string _locationCode;
+    public string LocationCode => _locationCode;
+
+    [SerializeField]
+    private string _locationName;
+    public string LocationName => _locationName;
 
     [SerializeField]
     [TextArea(3, 10)]

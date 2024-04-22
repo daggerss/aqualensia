@@ -40,7 +40,7 @@ public class BlockerDisplayItem : MonoBehaviour
             SetSpriteImage(Blocker.Sprite);
             SetName(Blocker.Name);
             SetCategory(Blocker.BlockerType);
-            SetLocation(Blocker.Location);
+            SetLocation(Blocker.LocationName);
             SetCaptureCount(Blocker.CaptureCount);
             SetResearchInfo(Blocker.GalleryInfo);
         }

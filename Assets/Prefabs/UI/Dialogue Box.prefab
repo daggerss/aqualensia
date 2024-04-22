@@ -808,6 +808,8 @@ MonoBehaviour:
   - {fileID: 5261582510813870769}
   - {fileID: 4347058843061450168}
   costText: {fileID: 7964242755977176676}
+  primaryBtn: {fileID: 1821828545202315741}
+  errorColor: {r: 1, g: 0, b: 0.23921569, a: 1}
 --- !u!1 &3709099082954586397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +1989,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 836257173189569683}
   m_SourcePrefab: {fileID: 100100000, guid: 1ae4636f7e2f8684ebb03b4acfc5f5f8, type: 3}
+--- !u!114 &1821828545202315741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3771155056493729700, guid: 1ae4636f7e2f8684ebb03b4acfc5f5f8, type: 3}
+  m_PrefabInstance: {fileID: 3250959993662961273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793146505595627426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4849117559275628437 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7950608548003762668, guid: 1ae4636f7e2f8684ebb03b4acfc5f5f8, type: 3}

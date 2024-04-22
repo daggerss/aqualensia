@@ -16,8 +16,11 @@ MonoBehaviour:
   _blockerType: 0
   _name: Garbage
   _biome: 2
-  _location: Merakai Trench
+  _locationCode: O3
+  _locationName: Merakai Trench
   _galleryInfo: 
   _captureCount: 0
+  _cost: 0
   _shopInfo: A research team from the MARLIN works with the local government and
     stakeholders to design an effective waste management system throughout the island.
+  _headline: 

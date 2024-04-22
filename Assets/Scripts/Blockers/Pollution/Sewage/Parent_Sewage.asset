@@ -16,8 +16,11 @@ MonoBehaviour:
   _blockerType: 0
   _name: Sewage Waste
   _biome: 1
-  _location: Siren Sanctuary
+  _locationCode: S2
+  _locationName: Siren Sanctuary
   _galleryInfo: 
   _captureCount: 0
+  _cost: 0
   _shopInfo: The Tide Clean Program is developing and installing nature-based wastewater
     management, such as constructed wetlands.
+  _headline: 

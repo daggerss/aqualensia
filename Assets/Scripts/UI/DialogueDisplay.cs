@@ -9,6 +9,10 @@ public class DialogueDisplay : MonoBehaviour
     [SerializeField] TMP_Text paragraphText;
     [SerializeField] TMP_Text[] emphasisText;
     [SerializeField] TMP_Text costText;
+    [SerializeField] Button primaryBtn;
+
+    [Header("Colors")]
+    [SerializeField] Color errorColor;
 
     public void SetParagraph(string txt)
     {
@@ -32,8 +36,25 @@ public class DialogueDisplay : MonoBehaviour
         }
     }
 
-    public void SetCost(int num)
+    public void SetCost(int num, bool insufficient = false)
     {
         costText.text = num.ToString("N0");
+
+        // Insufficient funds
+        if (insufficient)
+        {
+            // Change cost color
+            costText.color = errorColor;
+            
+            // Disable fund button
+            primaryBtn.interactable = false;
+        }
+
+        // Sufficient funds
+        else
+        {
+            // Enable fund button
+            primaryBtn.interactable = true;
+        }
     }
 }

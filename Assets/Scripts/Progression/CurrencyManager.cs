@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class CurrencyManager : MonoBehaviour
     public int TotalCoins {get; set;}
 
     private int countNE, countDD, countLC, countNT, countVU, countEN, countCR = 0;
+
+    [HideInInspector]
+    public static event Action OnDeduct;
 
     void Start()
     {
@@ -95,6 +99,19 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
+    // Deduct
+    public void Deduct(int num)
+    {
+        // Deduct from coins
+        if (TotalCoins >= num)
+        {
+            TotalCoins -= num;
+        }
+
+        // Additional actions
+        OnDeduct?.Invoke(); // UpdateCurrency
+    }
+
     // Update total coins
     IEnumerator UpdateTotal()
     {
@@ -119,7 +136,8 @@ public class CurrencyManager : MonoBehaviour
             }
             
             // Add to total
-            TotalCoins += (int) sum;
+            // TotalCoins += (int) sum;
+            TotalCoins += 10000;
 
             // Wait
             yield return new WaitForSeconds(timeInterval);

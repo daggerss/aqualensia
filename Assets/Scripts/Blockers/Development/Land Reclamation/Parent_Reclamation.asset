@@ -16,8 +16,11 @@ MonoBehaviour:
   _blockerType: 2
   _name: Land Reclamation
   _biome: 1
-  _location: Emerald Lagoon
+  _locationCode: S3
+  _locationName: Emerald Lagoon
   _galleryInfo: 
   _captureCount: 0
+  _cost: 0
   _shopInfo: "The MARLIN\u2019s urban research team conducts an environmental assessment
     and proposes ecosystem-based development plans in a more apt area of the island."
+  _headline: 

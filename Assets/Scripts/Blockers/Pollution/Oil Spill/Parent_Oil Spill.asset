@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Parent_Oil Spill
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 51e3a163d7f53c94aa653c04111cd96e, type: 3}
+  _newsPhoto: {fileID: 21300000, guid: a72e9d17820401a4b823f706ab633665, type: 3}
   _blockerType: 0
   _name: Oil Spill
   _biome: 0
-  _location: Crystal Shoals
+  _locationCode: C1
+  _locationName: Crystal Shoals
   _galleryInfo: Lorem ipsum tireddd
-  _captureCount: 0
+  _captureCount: 4
   _cost: 10000
   _shopInfo: The Power Shift Project continuously installs renewable energy technologies
     around the island and will soon deploy a beach clean-up and restoration team.
