@@ -26,6 +26,12 @@ public class TutorialManager : MonoBehaviour
         {
             currentSequence = PlayerPrefs.GetInt("TutorialSequence", 0);
 
+            if (currentSequence > 7)
+            {
+                PlayerPrefs.SetInt("NewGame", 0);
+                break;
+            }
+
             SetUpTrigger();
 
             if (currentTrigger == null) // If no trigger, auto play
