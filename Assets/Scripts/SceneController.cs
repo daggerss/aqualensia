@@ -10,6 +10,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    // Transition
+    [SerializeField] private Animator transition;
+    [SerializeField] private float transitionTime = 1f;
+
     // State Manager
     private StateManager stateManager;
 
@@ -22,6 +26,19 @@ public class SceneController : MonoBehaviour
     // Basic open scene according to name
     public void OpenScene(string sceneName)
     {
+        // Transition
+        StartCoroutine(Transition(sceneName));
+    }
+
+    IEnumerator Transition(string sceneName)
+    {
+        // Play animation
+        transition.SetTrigger("Start");
+
+        // Wait
+        yield return new WaitForSeconds(transitionTime);
+
+        // Load
         SceneManager.LoadScene(sceneName);
     }
 
@@ -41,7 +58,7 @@ public class SceneController : MonoBehaviour
         // Set current hall
         stateManager.CurrentHall = (Biome)hallBiome;
 
-        // Open scene
-        SceneManager.LoadScene("Biome Hall");
+        // Transition
+        StartCoroutine(Transition("Biome Hall"));
     }
 }
