@@ -34,6 +34,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private CinemachineConfiner2D vCamConfiner;
     [SerializeField] private CompositeCollider2D tileCollider;
 
+    private float timeEnabled;
     private int airLeft;
     private float depth;
 
@@ -46,6 +47,7 @@ public class StatsManager : MonoBehaviour
         // Set up air level
         airLevel.SetCooldownTime(PlayerPrefs.GetFloat("TankCapacity", 90));
         airLevel.StartCooldown();
+        timeEnabled = Time.timeSinceLevelLoad;
 
         // Dive Log
         diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
@@ -66,7 +68,8 @@ public class StatsManager : MonoBehaviour
         if (airLevel.IsCoolingDown)
         {
             // Text
-            airLeft = (int)(airLevel.CooldownTime - Time.timeSinceLevelLoad);
+            float timeSinceEnabled = Time.timeSinceLevelLoad - timeEnabled;
+            airLeft = (int)(airLevel.CooldownTime - timeSinceEnabled);
             airText.text = airLeft.ToString();
 
             // Radial
