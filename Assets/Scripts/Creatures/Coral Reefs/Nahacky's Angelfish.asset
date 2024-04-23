@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Nahacky's Angelfish
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: d7064778e9f094746b3847eff41a4d9f, type: 3}
   _schoolSprite: {fileID: 0}
   _realPhoto: {fileID: 21300000, guid: f47ac09e4e09ace4ebbf232d0e1943e5, type: 3}
   _photoCredit: J.C. Delbeek

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Powder Blue Tang
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: ae5b6b87f6fe91942b5a538567c2789a, type: 3}
+  _sprite: {fileID: 21300000, guid: 704baa82f022e724a868379d82ef9fbe, type: 3}
   _schoolSprite: {fileID: 0}
   _realPhoto: {fileID: 21300000, guid: 9639a10613eeea24da6815797863b452, type: 3}
   _photoCredit: Circe Denyer

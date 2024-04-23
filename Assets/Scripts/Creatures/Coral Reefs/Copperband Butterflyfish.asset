@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Copperband Butterflyfish
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: ced559d9512a8704fa32f5b92fed7bf7, type: 3}
   _schoolSprite: {fileID: 0}
   _realPhoto: {fileID: 21300000, guid: 62223abccbbfbc84f96895361c3f6215, type: 3}
   _photoCredit: Steve Bidmead
