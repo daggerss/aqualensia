@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
@@ -25,6 +24,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private Sprite[] zoneSprites;
 
     [Header("Ascent")]
+    [SerializeField] private SceneController sceneController;
     [SerializeField] private float ascendTime;
     [SerializeField] private float ascendSpeed;
     [SerializeField] private GameObject whiteScreen;
@@ -164,6 +164,6 @@ public class StatsManager : MonoBehaviour
         // Set up + Load scene
         diveLog.ExitDive = true;
         Cursor.visible = true;
-        SceneManager.LoadScene("Overworld");
+        sceneController.OpenScene("Overworld");
     }
 }
