@@ -33,6 +33,12 @@ public class CreatureInDive : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetSprite();
 
+        // Set Radius
+        if (Creature.Radius > 0)
+        {
+            GetComponent<CircleCollider2D>().radius = Creature.Radius;
+        }
+
         if (!Creature.Sessile)
         {
             // Flip setup

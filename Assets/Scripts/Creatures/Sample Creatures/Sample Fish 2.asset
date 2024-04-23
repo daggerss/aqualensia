@@ -37,6 +37,7 @@ MonoBehaviour:
     Arcu dictum varius duis at consectetur lorem.
   _populationScale: 5
   _speed: 5
+  _radius: 6
   <CaptureStatus>k__BackingField: 1
   _captureCount: 2
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

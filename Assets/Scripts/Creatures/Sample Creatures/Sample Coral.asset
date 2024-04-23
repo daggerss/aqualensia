@@ -37,6 +37,7 @@ MonoBehaviour:
     enim sed. Sit amet nisl suscipit adipiscing bibendum.
   _populationScale: 3
   _speed: 0
+  _radius: 6
   <CaptureStatus>k__BackingField: 1
   _captureCount: 4
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

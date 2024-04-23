@@ -37,6 +37,7 @@ MonoBehaviour:
     Cursus euismod quis viverra nibh cras pulvinar.
   _populationScale: 8
   _speed: 10
+  _radius: 6
   <CaptureStatus>k__BackingField: 2
   _captureCount: 4
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

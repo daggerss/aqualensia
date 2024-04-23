@@ -36,6 +36,7 @@ MonoBehaviour:
     birth, or shake off parasites."
   _populationScale: 3
   _speed: 4
+  _radius: 18
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 1

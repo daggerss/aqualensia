@@ -31,6 +31,7 @@ MonoBehaviour:
   _galleryInfo: 
   _populationScale: 0
   _speed: 0
+  _radius: 6
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 0

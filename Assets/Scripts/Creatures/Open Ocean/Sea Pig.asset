@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825fb2527ce3c49a4a30e6501a2c43, type: 3}
   m_Name: Sea Pig
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  _sprite: {fileID: 0}
+  _schoolSprite: {fileID: 0}
+  _realPhoto: {fileID: 0}
+  _photoCredit: 
   _commonName: Sea Pig
   _scientificName: Scotoplanes globosa
   _conservationStatus: 0
@@ -28,6 +31,7 @@ MonoBehaviour:
   _galleryInfo: 
   _populationScale: 0
   _speed: 0
+  _radius: 6
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

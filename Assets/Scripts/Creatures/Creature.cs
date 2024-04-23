@@ -71,6 +71,10 @@ public class Creature : ScriptableObject
     private float _speed;
     public float Speed => _speed;
 
+    [SerializeField]
+    private float _radius;
+    public float Radius => _radius;
+
     [field: Header("Progression")]
     [field: SerializeField]
     public CreatureStatus CaptureStatus {get; set;}

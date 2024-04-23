@@ -36,6 +36,7 @@ MonoBehaviour:
     which they may use for defense or asserting dominance.
   _populationScale: 4
   _speed: 12
+  _radius: 6
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 0

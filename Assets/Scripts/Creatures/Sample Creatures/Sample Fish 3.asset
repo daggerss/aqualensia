@@ -37,6 +37,7 @@ MonoBehaviour:
     vitae congue eu consequat ac. Vulputate ut pharetra.
   _populationScale: 6
   _speed: 7
+  _radius: 6
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
-  <isBlocked>k__BackingField: 0
+  _blockable: 0

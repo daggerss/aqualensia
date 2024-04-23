@@ -36,6 +36,7 @@ MonoBehaviour:
     and deter potential predators.
   _populationScale: 4
   _speed: 8
+  _radius: 6
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 0
