@@ -34,18 +34,15 @@ public class RoomSpawn : MonoBehaviour
         {
             // Default
             if ((PlayerPrefs.GetInt("NewGame", 1) == 0) ||
-                (PlayerPrefs.GetInt("BlockersTutorial", 0) == 1))
+                (PlayerPrefs.GetInt("TutorialSequence", 0) > 7))
             {
                 SpawnBlockers();
             }
     
             // Tutorial
-            else if (ReleaseBlockers())
+            else if (PlayerPrefs.GetInt("TutorialSequence", 0) <= 7)
             {
-                    // TODO: Tutorial Proper
-        
-                    // Set blockers tutorial done
-                    PlayerPrefs.SetInt("BlockersTutorial", 1);
+                ReleaseBlockers();
             }
         }
     }
