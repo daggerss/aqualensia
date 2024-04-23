@@ -41,7 +41,7 @@ public class StatsManager : MonoBehaviour
     private float deepestDepth = 0f;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         // Set up air level
         airLevel.SetCooldownTime(PlayerPrefs.GetFloat("TankCapacity", 90));

@@ -49,3 +49,6 @@ public enum BlockerType { Pollution, Fishing, Development };
 
 // UI
 public enum ZoneState { Default, WithinRange, Error };
+
+// TUTORIAL
+public enum TutorialAction { Show, Hide, Enable, Disable };

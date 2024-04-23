@@ -2671,15 +2671,15 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: eb5ff146e6d298a4cbabd2475eb8dfa5, type: 2}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: 95e396c5697db3e408ce1a23b2d66254, type: 2}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: 6aaeaf2759cccef42a12a2fbb3a22d9e, type: 2}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: 10a756eeb683e5d4a8b4b01679ac4227, type: 2}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: 10a756eeb683e5d4a8b4b01679ac4227, type: 2}
     italicTypeface: {fileID: 0}
   fontWeights: []
   normalStyle: 0
