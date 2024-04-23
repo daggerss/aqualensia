@@ -29,6 +29,7 @@ public class TutorialManager : MonoBehaviour
             if (currentSequence > 7)
             {
                 PlayerPrefs.SetInt("NewGame", 0);
+                break;
             }
 
             SetUpTrigger();
