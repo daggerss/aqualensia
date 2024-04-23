@@ -19,8 +19,13 @@ MonoBehaviour:
   _biome: 0
   _locationCode: C1
   _locationName: Crystal Shoals
-  _galleryInfo: Lorem ipsum tireddd
-  _captureCount: 4
+  _galleryInfo: Oil spills occur when petroleum is released into the environment,
+    harming marine life, habitats, and livelihoods. The oil coats the feathers and
+    fur of birds and mammals, leading to suffocation and reduced insulation. It also
+    contaminates the water, affecting fish and shellfish populations and disrupting
+    the food chain. The impacts can persist for years, highlighting the need for
+    sustainable energy alternatives.
+  _captureCount: 0
   _cost: 10000
   _shopInfo: The Power Shift Project continuously installs renewable energy technologies
     around the island and will soon deploy a beach clean-up and restoration team.

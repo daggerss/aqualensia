@@ -34,8 +34,8 @@ MonoBehaviour:
     necessary for maintaining a harem. In these social groups, a dominant male oversees
     and mates with a group of females. They may exhibit aggressive tendencies, occasionally
     nipping at corals.
-  _populationScale: 0
-  _speed: 0
+  _populationScale: 3
+  _speed: 7
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 0

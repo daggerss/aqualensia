@@ -34,8 +34,8 @@ MonoBehaviour:
     locate buried prey. Equipped with venomous tail spines, it can defend itself
     against threats. They breach the water\u2019s surface to escape predators, give
     birth, or shake off parasites."
-  _populationScale: 0
-  _speed: 0
+  _populationScale: 3
+  _speed: 4
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 1

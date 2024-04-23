@@ -34,8 +34,8 @@ MonoBehaviour:
     easily distinguished by its striking yellow banding and a false eye spot near
     its tail, in which the latter serves as a clever defense mechanism to confuse
     and deter potential predators.
-  _populationScale: 0
-  _speed: 0
+  _populationScale: 4
+  _speed: 8
   <CaptureStatus>k__BackingField: 0
   _captureCount: 0
   _blockable: 0

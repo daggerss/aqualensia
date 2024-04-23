@@ -44,10 +44,8 @@ public class StatsManager : MonoBehaviour
     void Start()
     {
         // Set up air level
-        // TODO: Set new air level upgrade?
+        airLevel.SetCooldownTime(PlayerPrefs.GetFloat("TankCapacity", 90));
         airLevel.StartCooldown();
-
-        // TODO: Set transform to exit point (for depth)
 
         // Dive Log
         diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
