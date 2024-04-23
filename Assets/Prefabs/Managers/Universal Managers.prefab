@@ -45,149 +45,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coralReefCreatures:
-  - {fileID: 11400000, guid: a4a970d5b06fc524e987ff3cc2e4e588, type: 2}
-  - {fileID: 11400000, guid: 48e7e864361d5fe449eb44099e09b204, type: 2}
-  - {fileID: 11400000, guid: 9f220a732e564004c997e10cdf680150, type: 2}
-  - {fileID: 11400000, guid: 84a073322c4deaf45b529e6c8446dfac, type: 2}
-  - {fileID: 11400000, guid: 95ddf5e861049e74bad03e7be3d31218, type: 2}
-  - {fileID: 11400000, guid: ffd5d3dc39895ed44b4b259d5b76fda8, type: 2}
-  - {fileID: 11400000, guid: 4c922c5d9b281bb41a91ce46781bd0ed, type: 2}
-  - {fileID: 11400000, guid: f1e353b2eef1c2e4881c296275955b89, type: 2}
-  - {fileID: 11400000, guid: 223989957d95a2244a0ae301138192b6, type: 2}
-  - {fileID: 11400000, guid: f97cf10eb8478524fbd52da304fb6bd8, type: 2}
-  - {fileID: 11400000, guid: c02d666478873f449b35dd8793948ea1, type: 2}
   - {fileID: 11400000, guid: 3b4e1660ee60aa4489dea3693d89fae1, type: 2}
-  - {fileID: 11400000, guid: dae3faa537774994e8bad862bf1d0b18, type: 2}
-  - {fileID: 11400000, guid: f64528bff72ec6a449196abc007a439a, type: 2}
-  - {fileID: 11400000, guid: fae0787c823f3f243a372f96c7c9b9e7, type: 2}
-  - {fileID: 11400000, guid: 837c0f8b08fe87345af07b56e11a4ac1, type: 2}
-  - {fileID: 11400000, guid: 92e906af28bad9e48a4752001d82dc4c, type: 2}
-  - {fileID: 11400000, guid: 210ebcb0759011e4c9881c085cec9450, type: 2}
-  - {fileID: 11400000, guid: 8eb417fd254ae2a43bcde719d491f2fb, type: 2}
+  - {fileID: 11400000, guid: 95ddf5e861049e74bad03e7be3d31218, type: 2}
+  - {fileID: 11400000, guid: c02d666478873f449b35dd8793948ea1, type: 2}
   - {fileID: 11400000, guid: 5e78fd44c6ab1bf4abd288f09b42f217, type: 2}
-  seagrassBedCreatures:
-  - {fileID: 11400000, guid: 3e7dce2c54f7a994bbf44a0057dc1f95, type: 2}
-  - {fileID: 11400000, guid: c6672b6dfbaf91f49accfe0cb99cdeb8, type: 2}
-  - {fileID: 11400000, guid: f735d2f15dc485f43a3c9a4ba8b8c65b, type: 2}
-  - {fileID: 11400000, guid: feb5f998363037b43a4ef2a9f69bd701, type: 2}
-  - {fileID: 11400000, guid: a6715067af5eb9a488434bc1efd5f3a5, type: 2}
-  - {fileID: 11400000, guid: 2d75964cb72b2a544ac57b05653c5dc4, type: 2}
-  - {fileID: 11400000, guid: 395f2bdc7c8537847888c508f23573da, type: 2}
-  - {fileID: 11400000, guid: 2b8117ed5bf0dd94fad5c03b8d6cb71f, type: 2}
-  - {fileID: 11400000, guid: 1faf3be3b0832aa4a89c986558e7f8f8, type: 2}
-  - {fileID: 11400000, guid: 4244601cca9ff244c9fd7ba2cb45d548, type: 2}
-  - {fileID: 11400000, guid: aa78e1725b793254a96d6d9b2d29f373, type: 2}
-  - {fileID: 11400000, guid: ff8ec535650bfbc459cd57cd84b3455a, type: 2}
-  - {fileID: 11400000, guid: 1fa7712c7e7edb145b1d5071313ae577, type: 2}
-  - {fileID: 11400000, guid: 7c5d7a2400e88b04797dc62fbacdb55c, type: 2}
-  - {fileID: 11400000, guid: 60b18b886917fcf4aa3ba6b38a20a185, type: 2}
-  - {fileID: 11400000, guid: e5596b5b99661e04da199075c951fcab, type: 2}
-  openOceanCreatures:
-  - {fileID: 11400000, guid: be20b1b5a3b202747b65b60fec7caf0b, type: 2}
-  - {fileID: 11400000, guid: 226fac7ca44819243924b86f939253cf, type: 2}
-  - {fileID: 11400000, guid: 9b2ea0bd206ff194d8fcef3d9a63a3d8, type: 2}
-  - {fileID: 11400000, guid: ad8e9f4ef946f0744ac352cbafcec427, type: 2}
-  - {fileID: 11400000, guid: e5d2caa66e9c243479cd38a38bdab75f, type: 2}
-  - {fileID: 11400000, guid: 5b8e72fbd3921024f90963bc2662553b, type: 2}
-  - {fileID: 11400000, guid: a1f315481e89a094ebff8af71e29237f, type: 2}
-  - {fileID: 11400000, guid: c555f0b213a9b3e4d90146e2c915bc85, type: 2}
-  - {fileID: 11400000, guid: 40d18b7993097644eaaf49b667adc687, type: 2}
-  - {fileID: 11400000, guid: cc93a401a00f3604f9405e5538418a6e, type: 2}
-  - {fileID: 11400000, guid: 8abc4ae94529d2f46a06923554ecc36f, type: 2}
-  - {fileID: 11400000, guid: e46c953cc8664174f8bed2d97e8476a6, type: 2}
-  - {fileID: 11400000, guid: 04d2f61e6e7d32b4e91aa2d7425f86e1, type: 2}
-  - {fileID: 11400000, guid: a2a4229d6e717b3439d68fba1794df7e, type: 2}
-  - {fileID: 11400000, guid: 5531b247a654d97429aabd5cf2af43c4, type: 2}
-  - {fileID: 11400000, guid: c1dfc15fe0240724296d8e8383c43b9c, type: 2}
-  - {fileID: 11400000, guid: 77951d1fce385744cabd1d47d1b69388, type: 2}
-  - {fileID: 11400000, guid: fad70be23ae8c3d4aa843685cf0938fb, type: 2}
-  - {fileID: 11400000, guid: 7ce356004759fc14bba139d100382462, type: 2}
-  - {fileID: 11400000, guid: 99b9e628fb850ea4499630ed0f8d401f, type: 2}
+  seagrassBedCreatures: []
+  openOceanCreatures: []
   creaturesC1:
   - {fileID: 11400000, guid: 3b4e1660ee60aa4489dea3693d89fae1, type: 2}
   - {fileID: 11400000, guid: 95ddf5e861049e74bad03e7be3d31218, type: 2}
   - {fileID: 11400000, guid: c02d666478873f449b35dd8793948ea1, type: 2}
   - {fileID: 11400000, guid: 5e78fd44c6ab1bf4abd288f09b42f217, type: 2}
-  - {fileID: 11400000, guid: f97cf10eb8478524fbd52da304fb6bd8, type: 2}
-  - {fileID: 11400000, guid: 84a073322c4deaf45b529e6c8446dfac, type: 2}
-  creaturesC2:
-  - {fileID: 11400000, guid: dae3faa537774994e8bad862bf1d0b18, type: 2}
-  - {fileID: 11400000, guid: 48e7e864361d5fe449eb44099e09b204, type: 2}
-  - {fileID: 11400000, guid: 223989957d95a2244a0ae301138192b6, type: 2}
-  - {fileID: 11400000, guid: a4a970d5b06fc524e987ff3cc2e4e588, type: 2}
-  - {fileID: 11400000, guid: 4c922c5d9b281bb41a91ce46781bd0ed, type: 2}
-  - {fileID: 11400000, guid: 92e906af28bad9e48a4752001d82dc4c, type: 2}
-  - {fileID: 11400000, guid: 9f220a732e564004c997e10cdf680150, type: 2}
-  - {fileID: 11400000, guid: 210ebcb0759011e4c9881c085cec9450, type: 2}
-  creaturesC3:
-  - {fileID: 11400000, guid: 95ddf5e861049e74bad03e7be3d31218, type: 2}
-  - {fileID: 11400000, guid: dae3faa537774994e8bad862bf1d0b18, type: 2}
-  - {fileID: 11400000, guid: f64528bff72ec6a449196abc007a439a, type: 2}
-  - {fileID: 11400000, guid: ffd5d3dc39895ed44b4b259d5b76fda8, type: 2}
-  - {fileID: 11400000, guid: 5e78fd44c6ab1bf4abd288f09b42f217, type: 2}
-  - {fileID: 11400000, guid: f1e353b2eef1c2e4881c296275955b89, type: 2}
-  - {fileID: 11400000, guid: 8eb417fd254ae2a43bcde719d491f2fb, type: 2}
-  - {fileID: 11400000, guid: f97cf10eb8478524fbd52da304fb6bd8, type: 2}
-  - {fileID: 11400000, guid: fae0787c823f3f243a372f96c7c9b9e7, type: 2}
-  - {fileID: 11400000, guid: 9f220a732e564004c997e10cdf680150, type: 2}
-  - {fileID: 11400000, guid: 837c0f8b08fe87345af07b56e11a4ac1, type: 2}
-  creaturesS1:
-  - {fileID: 11400000, guid: 1faf3be3b0832aa4a89c986558e7f8f8, type: 2}
-  - {fileID: 11400000, guid: f735d2f15dc485f43a3c9a4ba8b8c65b, type: 2}
-  - {fileID: 11400000, guid: c6672b6dfbaf91f49accfe0cb99cdeb8, type: 2}
-  - {fileID: 11400000, guid: feb5f998363037b43a4ef2a9f69bd701, type: 2}
-  - {fileID: 11400000, guid: e5596b5b99661e04da199075c951fcab, type: 2}
-  - {fileID: 11400000, guid: 395f2bdc7c8537847888c508f23573da, type: 2}
-  - {fileID: 11400000, guid: 60b18b886917fcf4aa3ba6b38a20a185, type: 2}
-  creaturesS2:
-  - {fileID: 11400000, guid: 1fa7712c7e7edb145b1d5071313ae577, type: 2}
-  - {fileID: 11400000, guid: ff8ec535650bfbc459cd57cd84b3455a, type: 2}
-  - {fileID: 11400000, guid: c6672b6dfbaf91f49accfe0cb99cdeb8, type: 2}
-  - {fileID: 11400000, guid: 7c5d7a2400e88b04797dc62fbacdb55c, type: 2}
-  - {fileID: 11400000, guid: 2d75964cb72b2a544ac57b05653c5dc4, type: 2}
-  - {fileID: 11400000, guid: 395f2bdc7c8537847888c508f23573da, type: 2}
-  - {fileID: 11400000, guid: aa78e1725b793254a96d6d9b2d29f373, type: 2}
-  - {fileID: 11400000, guid: 2b8117ed5bf0dd94fad5c03b8d6cb71f, type: 2}
-  creaturesS3:
-  - {fileID: 11400000, guid: 4244601cca9ff244c9fd7ba2cb45d548, type: 2}
-  - {fileID: 11400000, guid: f735d2f15dc485f43a3c9a4ba8b8c65b, type: 2}
-  - {fileID: 11400000, guid: ff8ec535650bfbc459cd57cd84b3455a, type: 2}
-  - {fileID: 11400000, guid: feb5f998363037b43a4ef2a9f69bd701, type: 2}
-  - {fileID: 11400000, guid: 3e7dce2c54f7a994bbf44a0057dc1f95, type: 2}
-  - {fileID: 11400000, guid: a6715067af5eb9a488434bc1efd5f3a5, type: 2}
-  - {fileID: 11400000, guid: aa78e1725b793254a96d6d9b2d29f373, type: 2}
-  - {fileID: 11400000, guid: 60b18b886917fcf4aa3ba6b38a20a185, type: 2}
-  - {fileID: 11400000, guid: 2b8117ed5bf0dd94fad5c03b8d6cb71f, type: 2}
-  creaturesO1:
-  - {fileID: 11400000, guid: cc93a401a00f3604f9405e5538418a6e, type: 2}
-  - {fileID: 11400000, guid: a2a4229d6e717b3439d68fba1794df7e, type: 2}
-  - {fileID: 11400000, guid: 40d18b7993097644eaaf49b667adc687, type: 2}
-  - {fileID: 11400000, guid: 9b2ea0bd206ff194d8fcef3d9a63a3d8, type: 2}
-  - {fileID: 11400000, guid: 8abc4ae94529d2f46a06923554ecc36f, type: 2}
-  - {fileID: 11400000, guid: 99b9e628fb850ea4499630ed0f8d401f, type: 2}
-  - {fileID: 11400000, guid: 04d2f61e6e7d32b4e91aa2d7425f86e1, type: 2}
-  - {fileID: 11400000, guid: fad70be23ae8c3d4aa843685cf0938fb, type: 2}
-  - {fileID: 11400000, guid: 7ce356004759fc14bba139d100382462, type: 2}
-  - {fileID: 11400000, guid: e46c953cc8664174f8bed2d97e8476a6, type: 2}
-  creaturesO2:
-  - {fileID: 11400000, guid: fad70be23ae8c3d4aa843685cf0938fb, type: 2}
-  - {fileID: 11400000, guid: 5b8e72fbd3921024f90963bc2662553b, type: 2}
-  - {fileID: 11400000, guid: 40d18b7993097644eaaf49b667adc687, type: 2}
-  - {fileID: 11400000, guid: 8abc4ae94529d2f46a06923554ecc36f, type: 2}
-  - {fileID: 11400000, guid: 5531b247a654d97429aabd5cf2af43c4, type: 2}
-  - {fileID: 11400000, guid: 7ce356004759fc14bba139d100382462, type: 2}
-  - {fileID: 11400000, guid: 77951d1fce385744cabd1d47d1b69388, type: 2}
-  - {fileID: 11400000, guid: e5d2caa66e9c243479cd38a38bdab75f, type: 2}
-  - {fileID: 11400000, guid: e46c953cc8664174f8bed2d97e8476a6, type: 2}
-  creaturesO3:
-  - {fileID: 11400000, guid: 5b8e72fbd3921024f90963bc2662553b, type: 2}
-  - {fileID: 11400000, guid: a1f315481e89a094ebff8af71e29237f, type: 2}
-  - {fileID: 11400000, guid: 226fac7ca44819243924b86f939253cf, type: 2}
-  - {fileID: 11400000, guid: 5531b247a654d97429aabd5cf2af43c4, type: 2}
-  - {fileID: 11400000, guid: be20b1b5a3b202747b65b60fec7caf0b, type: 2}
-  - {fileID: 11400000, guid: c555f0b213a9b3e4d90146e2c915bc85, type: 2}
-  - {fileID: 11400000, guid: c1dfc15fe0240724296d8e8383c43b9c, type: 2}
-  - {fileID: 11400000, guid: ad8e9f4ef946f0744ac352cbafcec427, type: 2}
+  creaturesC2: []
+  creaturesC3: []
+  creaturesS1: []
+  creaturesS2: []
+  creaturesS3: []
+  creaturesO1: []
+  creaturesO2: []
+  creaturesO3: []
 --- !u!1 &2368206557975930023
 GameObject:
   m_ObjectHideFlags: 0
