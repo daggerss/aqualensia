@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 0}
   _schoolSprite: {fileID: 0}
-  _realPhoto: {fileID: 0}
-  _photoCredit: 
+  _realPhoto: {fileID: 21300000, guid: 0cf94381fd8a1f54fb1db20516969c7d, type: 3}
+  _photoCredit: John Norton
   _commonName: Whitespotted Eagle Ray
   _scientificName: Aetobatus narinari
   _conservationStatus: 5

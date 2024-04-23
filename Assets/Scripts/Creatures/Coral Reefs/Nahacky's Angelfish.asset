@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 0}
   _schoolSprite: {fileID: 0}
-  _realPhoto: {fileID: 0}
-  _photoCredit: 
+  _realPhoto: {fileID: 21300000, guid: f47ac09e4e09ace4ebbf232d0e1943e5, type: 3}
+  _photoCredit: J.C. Delbeek
   _commonName: Nahacky's Angelfish
   _scientificName: Centropyge nahackyi
   _conservationStatus: 3
