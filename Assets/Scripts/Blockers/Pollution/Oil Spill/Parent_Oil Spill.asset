@@ -26,7 +26,7 @@ MonoBehaviour:
     the food chain. The impacts can persist for years, highlighting the need for
     sustainable energy alternatives.
   _captureCount: 0
-  _cost: 10000
+  _cost: 1000
   _shopInfo: The Power Shift Project continuously installs renewable energy technologies
     around the island and will soon deploy a beach clean-up and restoration team.
   _headline: Support for Renewable Energy amid Oil Spill
