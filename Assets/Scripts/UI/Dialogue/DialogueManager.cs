@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
             // Get sequence
             DialogueSequence currentSequence = FindSequence(id);
 
-            if (currentSequence != null && !SequenceComplete)
+            if (currentSequence != null && !_sequenceComplete)
             {
                 // Additional actions
                 OnNextDialogue?.Invoke(); // ActivateObjSequence, SetUpTrigger

@@ -46,7 +46,8 @@ public class TutorialManager : MonoBehaviour
         // If new game
         if (PlayerPrefs.GetInt("NewGame", 1) == 1)
         {
-            if (currentTrigger == null && !dialogueManager.SequenceComplete)
+            if ((currentTrigger == null || currentTrigger.Completed) &&
+                 !dialogueManager.SequenceComplete)
             {
                 // Play Dialogue
                 dialogueManager.PlaySequence(currentSequence);
@@ -82,6 +83,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     // Add onclick
                     trigger.Button.onClick.AddListener(StartSequence);
+                    trigger.Button.onClick.AddListener(trigger.MarkComplete);
                     currentTrigger = trigger;
                     return;
                 }
@@ -107,7 +109,7 @@ public class TutorialManager : MonoBehaviour
     // Play tutorial sequence
     private void ActivateTutorialSequence()
     {
-        if (currentObjSequence != null)
+        if (currentObjSequence != null && !dialogueManager.SequenceComplete)
         {
             // Check each tutorial obj for matching index
             foreach (TutorialObject obj in currentObjSequence.TutorialObjects)

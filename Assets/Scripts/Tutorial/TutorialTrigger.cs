@@ -15,4 +15,11 @@ public class TutorialTrigger
     [SerializeField]
     private Button _button;
     public Button Button => _button;
+
+    public bool Completed {get; set;}
+
+    public void MarkComplete()
+    {
+        Completed = true;
+    }
 }
