@@ -21,6 +21,13 @@ public class UniversalManagers : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        // New Game
+        if (!PlayerPrefs.HasKey("NewGame") || PlayerPrefs.GetInt("NewGame", 1) == 1)
+        {
+            PlayerPrefs.SetInt("NewGame", 1);
+            PlayerPrefs.SetInt("TutorialSequence", 0);
+        }
     }
 }
 
