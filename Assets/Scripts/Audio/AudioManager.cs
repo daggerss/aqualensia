@@ -6,12 +6,46 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public Sound[] musicSounds, ambientSounds, sfxSounds;
+    public AudioSource musicSource, ambientSource, sfxSource;
 
     void Start()
     {
-        // PlayMusic("Theme");
+        PlayMusic("Main Theme");
+    }
+
+    public void PlaySceneAudio(string sceneName)
+    {
+        if (sceneName == "Start")
+        {
+            PlayMusic("Main Theme");
+        }
+
+        else if (sceneName == "Overworld")
+        {
+            PlayMusic("Harbor");
+        }
+
+        else if (sceneName == "Main Hall" || sceneName == "Shop")
+        {
+            PlayMusic("MARLIN");
+        }
+
+        else if (sceneName == "C1" || sceneName == "C2" || sceneName == "C3" ||
+                 sceneName == "S1" || sceneName == "S2" || sceneName == "S3" ||
+                 sceneName == "O1" || sceneName == "O2" || sceneName == "O3")
+        {
+            // Ambient
+            PlayAmbience("Underwater");
+
+            // Music
+            if (sceneName == "C1" || sceneName == "C2" || sceneName == "C3")
+            {
+                PlayMusic("Coral Reef");
+            }
+
+            // TODO: Seagrass & Open Ocean
+        }
     }
 
     // For Music that loops
@@ -30,6 +64,25 @@ public class AudioManager : MonoBehaviour
             musicSource.volume = s.Volume;
             musicSource.pitch = s.Pitch;
             musicSource.Play();
+        }
+    }
+
+    // For ambience
+    public void PlayAmbience(string name)
+    {
+        Sound s = Array.Find(ambientSounds, sound => sound.Name == name);
+
+        if (s == null)
+        {
+            Debug.LogWarning("Ambience: " + name + " not found");
+            return;
+        }
+        else
+        {
+            ambientSource.clip = s.Clip;
+            ambientSource.volume = s.Volume;
+            ambientSource.pitch = s.Pitch;
+            ambientSource.Play();
         }
     }
 

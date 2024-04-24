@@ -17,15 +17,32 @@ public class SceneController : MonoBehaviour
     // State Manager
     private StateManager stateManager;
 
+    // Audio Manager
+    private AudioManager audioManager;
+
     void Start()
     {
         // State Manager
         stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
+
+        // Audio Manager
+        audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
     }
 
     // Basic open scene according to name
     public void OpenScene(string sceneName)
     {
+        // MUSIC
+        if (SceneManager.GetActiveScene().name == "Biome Hall" && sceneName == "Main Hall")
+        {
+            // Don't change music
+        }
+
+        else
+        {
+            audioManager.PlaySceneAudio(sceneName);
+        }
+
         // Transition
         StartCoroutine(Transition(sceneName));
     }
@@ -34,6 +51,9 @@ public class SceneController : MonoBehaviour
     {
         // Play animation
         transition.SetTrigger("Start");
+
+        // Splash SFX
+        audioManager.PlaySFX("Splash");
 
         // Wait
         yield return new WaitForSeconds(transitionTime);
