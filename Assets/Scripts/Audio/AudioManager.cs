@@ -96,7 +96,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("SFX: " + name + " not found");
             return;
         }
-        else
+        else if (!sfxSource.isPlaying)
         {
             sfxSource.pitch = s.Pitch;
             sfxSource.PlayOneShot(s.Clip, s.Volume);
