@@ -113,6 +113,17 @@ public class DialogueManager : MonoBehaviour
                     _dialogueIndex++;
                 }
             }
+
+            else if (currentSequence == null || currentSequence.Dialogues.Length == 0)
+            {
+                // Increment Tutorial Sequence
+                PlayerPrefs.SetInt("TutorialSequence", PlayerPrefs.GetInt("TutorialSequence", 0) + 1);
+
+                // Disable
+                _sequenceComplete = true;
+                enabled = false;
+                return;
+            }
         }
     }
 

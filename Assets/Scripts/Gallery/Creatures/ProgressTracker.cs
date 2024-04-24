@@ -15,6 +15,12 @@ public class ProgressTracker : MonoBehaviour
     [Header("Magic Word")]
     [SerializeField] private GameObject magicWord;
 
+    void Update()
+    {
+        // Check for magic word
+        CheckCompletion();
+    }
+
     // Set parameters
     public void Initialize(int count, int total)
     {
@@ -51,13 +57,8 @@ public class ProgressTracker : MonoBehaviour
     // for Magic Word
     private void CheckCompletion()
     {
-        if (Count / Total == 1)
+        if (Count / Total >= 1)
         {
-            // MAGIC WORD
-            // SFX
-            AudioManager audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
-            audioManager.PlaySFX("Magic Word");
-
             // Reveal
             magicWord.SetActive(true);
         }

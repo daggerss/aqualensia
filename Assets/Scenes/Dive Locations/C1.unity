@@ -656,7 +656,7 @@ MonoBehaviour:
       - {fileID: 899239974}
       - {fileID: 2105712494}
       - {fileID: 1071747291}
-  - _sequenceID: 7
+  - _sequenceID: 8
     _tutorialObjects:
     - _dialogueIndex: 0
       _action: 1
@@ -23608,7 +23608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._sequenceID
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[0]._dialogues.Array.size
