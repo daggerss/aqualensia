@@ -258,6 +258,11 @@ MonoBehaviour:
     _loop: 0
     _volume: 0.75
     _pitch: 1
+  - _name: Magic Word
+    _clip: {fileID: 8300000, guid: c762ffdc985dfdf4ea7537ffe5645613, type: 3}
+    _loop: 0
+    _volume: 0.75
+    _pitch: 1
   musicSource: {fileID: 2806823184702750339}
   ambientSource: {fileID: 3489050901101458659}
   sfxSource: {fileID: 9142400899968047189}

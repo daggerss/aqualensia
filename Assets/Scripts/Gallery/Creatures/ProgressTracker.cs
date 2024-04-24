@@ -12,6 +12,9 @@ public class ProgressTracker : MonoBehaviour
     [SerializeField] private TMP_Text progressText;
     [SerializeField] private Image progressBar;
 
+    [Header("Magic Word")]
+    [SerializeField] private GameObject magicWord;
+
     // Set parameters
     public void Initialize(int count, int total)
     {
@@ -28,6 +31,8 @@ public class ProgressTracker : MonoBehaviour
         Count++;
         SetCount();
         SetFill((float) Count / Total);
+
+        CheckCompletion();
     }
 
     // Set text in format "N/T"
@@ -40,5 +45,21 @@ public class ProgressTracker : MonoBehaviour
     private void SetFill(float amount)
     {
         progressBar.fillAmount = amount;
+    }
+
+    // Checks 100% in biome
+    // for Magic Word
+    private void CheckCompletion()
+    {
+        if (Count / Total == 1)
+        {
+            // MAGIC WORD
+            // SFX
+            AudioManager audioManager = UniversalManagers.instance.GetComponentInChildren<AudioManager>();
+            audioManager.PlaySFX("Magic Word");
+
+            // Reveal
+            magicWord.SetActive(true);
+        }
     }
 }

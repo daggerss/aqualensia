@@ -38,5 +38,5 @@ MonoBehaviour:
   _speed: 12
   _radius: 6
   <CaptureStatus>k__BackingField: 0
-  _captureCount: 0
+  _captureCount: 4
   _blockable: 0
