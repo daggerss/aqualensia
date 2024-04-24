@@ -42,14 +42,11 @@ public class LogDisplay : MonoBehaviour
     /* -------------------------------------------------------------------------- */
     /*                                    Setup                                   */
     /* -------------------------------------------------------------------------- */
-    void Awake()
+    void Start()
     {
         // Dive Log
         diveLog = UniversalManagers.instance.GetComponentInChildren<LogManager>();
-    }
 
-    void Start()
-    {
         if (diveLog.ExitDive)
         {
             // Set log display
