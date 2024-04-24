@@ -65,7 +65,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Dagny Yenko",
         productName: "Aqualensia",
-        productVersion: "1.0",
+        productVersion: "1.0.0-alpha",
         showBanner: unityShowBanner,
       };
 
@@ -98,6 +98,7 @@
         canvas.style.height = "480px";
       }
 
+      canvas.style.background = "url('" + buildUrl + "/WebBuild.jpg.unityweb') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
