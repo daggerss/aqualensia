@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockerDoorDisplay : MonoBehaviour
 {
-    [SerializeField] private GameObject[] blockerUI;
+    [SerializeField] private Button hallButton;
 
     void Start()
     {
@@ -13,15 +14,7 @@ public class BlockerDoorDisplay : MonoBehaviour
                              .GetComponentInChildren<BlockerDatabase>()
                              .HasCaptured())
         {
-            ShowUI();
-        }
-    }
-
-    void ShowUI()
-    {
-        foreach (GameObject ui in blockerUI)
-        {
-            ui.SetActive(true);
+            hallButton.interactable = true;
         }
     }
 }
