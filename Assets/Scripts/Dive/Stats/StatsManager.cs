@@ -147,7 +147,7 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    IEnumerator Ascend()
+    public IEnumerator Ascend()
     {
         // Fade to white
         whiteScreen.SetActive(true);
