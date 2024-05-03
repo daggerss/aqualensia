@@ -18,5 +18,5 @@ MonoBehaviour:
   _parentBlocker: {fileID: 11400000, guid: 0a491f8804267b44a8c894fb8613843c, type: 2}
   _name: Oil
   _stationary: 0
-  _frequencyScale: 7
+  _frequencyScale: 15
   _speed: 1

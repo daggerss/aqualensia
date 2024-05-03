@@ -28,22 +28,12 @@ public class RoomSpawn : MonoBehaviour
         // Creatures
         SpawnCreatures();
 
-        // Blockers (if location blocked)
+        // Blockers (if location blocked & tutorial is ready)
         if (UniversalManagers.instance.GetComponentInChildren<StateManager>()
-                                      .LocationBlockStates[currentLocation])
+                                      .LocationBlockStates[currentLocation] &&
+            PlayerPrefs.GetInt("TutorialSequence", 0) >= 7)
         {
-            // Default
-            if ((PlayerPrefs.GetInt("NewGame", 1) == 0) ||
-                (PlayerPrefs.GetInt("TutorialSequence", 0) > 7))
-            {
-                SpawnBlockers();
-            }
-    
-            // Tutorial
-            else if (PlayerPrefs.GetInt("TutorialSequence", 0) <= 7)
-            {
-                ReleaseBlockers();
-            }
+            SpawnBlockers();
         }
     }
 
@@ -61,20 +51,5 @@ public class RoomSpawn : MonoBehaviour
         SpawnManager.instance.SpawnBlockers(mobileBlockers, transform,
                                             spawnableArea);
         SpawnManager.instance.SpawnBlockers(stationaryBlockers, transform);
-    }
-
-    // If at least one creature is identified, spawn blockers
-    private bool ReleaseBlockers()
-    {
-        // Check for identified creatures
-        if (UniversalManagers.instance
-                                .GetComponentInChildren<CreatureDatabase>()
-                                .HasIdentified())
-        {
-            SpawnBlockers();
-            return true;
-        }
-
-        return false;
     }
 }
