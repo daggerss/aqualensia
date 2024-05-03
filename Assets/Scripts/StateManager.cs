@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateManager : MonoBehaviour
 {
@@ -25,4 +26,14 @@ public class StateManager : MonoBehaviour
         {"O2", true},
         {"O3", true}
     };
+
+    // Check if currently in dive
+    public bool InDive()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        return currentScene == "C1" || currentScene == "C2" || currentScene == "C3" ||
+               currentScene == "S1" || currentScene == "S2" || currentScene == "S3" ||
+               currentScene == "O1" || currentScene == "O2" || currentScene == "O3";
+    }
 }

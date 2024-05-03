@@ -20,11 +20,14 @@ public class CurrencyManager : MonoBehaviour
 
     private Creature[] allCreatures;
     private ParentBlocker[] capturedBlockers;
+    private StateManager stateManager;
     private bool[] locationStates;
 
     public int TotalCoins {get; set;}
 
     private int countNE, countDD, countLC, countNT, countVU, countEN, countCR = 0;
+
+    private IdleDetector idleDetector;
 
     [HideInInspector]
     public static event Action OnDeduct;
@@ -34,12 +37,11 @@ public class CurrencyManager : MonoBehaviour
         // Get all creatures
         allCreatures = UniversalManagers.instance.GetComponentInChildren<CreatureDatabase>().AllCreatures;
 
-        // Get captured blockers
-        capturedBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().GetFullyCaptured();
-
-        // Get each location's block state
-        locationStates = UniversalManagers.instance.GetComponentInChildren<StateManager>()
-                                                   .LocationBlockStates.Values.ToArray();
+        // Get state manager
+        stateManager = UniversalManagers.instance.GetComponentInChildren<StateManager>();
+        
+        // Get idle detector
+        idleDetector = UniversalManagers.instance.GetComponent<IdleDetector>();
         
         // Set up existing currency
         InitializeCoins();
@@ -58,6 +60,20 @@ public class CurrencyManager : MonoBehaviour
                 AddToCount(creature.ConservationStatus);
             }
         }
+    }
+
+    // Get necessary blocker states
+    private void GetBlockState()
+    {
+        // Don't update fully captured while in dive
+        if (!stateManager.InDive())
+        {
+            // Get captured blockers
+            capturedBlockers = UniversalManagers.instance.GetComponentInChildren<BlockerDatabase>().GetFullyCaptured();
+        }
+
+        // Get each location's block state
+        locationStates = stateManager.LocationBlockStates.Values.ToArray();
     }
 
     // Add identified creature to count
@@ -117,26 +133,33 @@ public class CurrencyManager : MonoBehaviour
     {
         while (true)
         {
-            // Calculate per identified creature
-            float sum = (countLC * valueLC) + (countNT * valueNT) +
-                        (countVU * valueVU) + (countEN * valueEN) +
-                        (countCR * valueCR) + (countNE * valueNE) +
-                        (countDD * valueDD);
-
-            // Calculate per fully captured blocker
-            sum += capturedBlockers.Length * valueBlocker;
-
-            // Cumulative cut of 20% for every restored location
-            foreach (bool isBlocked in locationStates)
+            // Check not AFK
+            if (!idleDetector.IsIdle())
             {
-                if (!isBlocked)
+                // Get updated blockers states
+                GetBlockState();
+
+                // Calculate per identified creature
+                float sum = (countLC * valueLC) + (countNT * valueNT) +
+                            (countVU * valueVU) + (countEN * valueEN) +
+                            (countCR * valueCR) + (countNE * valueNE) +
+                            (countDD * valueDD);
+    
+                // Calculate per fully captured blocker
+                sum += capturedBlockers.Length * valueBlocker;
+    
+                // Cumulative cut of 20% for every restored location
+                foreach (bool isBlocked in locationStates)
                 {
-                    sum = sum * 0.20f;
+                    if (!isBlocked)
+                    {
+                        sum = sum * 0.20f;
+                    }
                 }
+    
+                // Add to total
+                TotalCoins += (int) sum;
             }
-            
-            // Add to total
-            TotalCoins += (int) sum;
 
             // Wait
             yield return new WaitForSeconds(timeInterval);

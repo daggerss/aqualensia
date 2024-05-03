@@ -564,6 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6306616360969821804}
   - component: {fileID: 3823176101132017689}
+  - component: {fileID: 8147356127575521985}
   m_Layer: 0
   m_Name: Universal Managers
   m_TagString: Untagged
@@ -604,6 +605,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cfeb13001fbbe4c8f95629801a85ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8147356127575521985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586758422975033854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fb682cf4048d0429a3a476507b6f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleTimeoutSeconds: 600
 --- !u!1 &6028673525710419042
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8616cefeb2970a4e963367ba00d5272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInterval: 7
+  timeInterval: 5
   valueLC: 5
   valueNT: 10
   valueVU: 50
