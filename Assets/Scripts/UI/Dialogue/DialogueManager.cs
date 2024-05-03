@@ -40,6 +40,12 @@ public class DialogueManager : MonoBehaviour
         _sequenceComplete = false;
     }
 
+    void OnDisable()
+    {
+        // Reset action
+        OnNextDialogue = null;
+    }
+
     // Find current dialogue sequence
     private DialogueSequence FindSequence(int id)
     {
@@ -65,8 +71,8 @@ public class DialogueManager : MonoBehaviour
 
     public void PlaySequence(int id)
     {
-        // Interaction - Space or Enter
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("return"))
+        // Interaction - LMB
+        if (Input.GetMouseButtonDown(0))
         {
             // Get sequence
             DialogueSequence currentSequence = FindSequence(id);
@@ -76,15 +82,9 @@ public class DialogueManager : MonoBehaviour
                 // Additional actions
                 OnNextDialogue?.Invoke(); // ActivateObjSequence, SetUpTrigger
     
-                // Check out of bounds = done
-                if (_dialogueIndex == currentSequence.Dialogues.Length)
+                // Check for end
+                if (DialogueEnd(currentSequence))
                 {
-                    // Increment Tutorial Sequence
-                    PlayerPrefs.SetInt("TutorialSequence", PlayerPrefs.GetInt("TutorialSequence", 0) + 1);
-    
-                    // Disable
-                    _sequenceComplete = true;
-                    enabled = false;
                     return;
                 }
     
@@ -111,6 +111,12 @@ public class DialogueManager : MonoBehaviour
                     HideArrow(currentDialogue.DisableTrigger);
                     isPlaying = false;
                     _dialogueIndex++;
+
+                    // Check for end
+                    if (DialogueEnd(currentSequence))
+                    {
+                        return;
+                    }
                 }
             }
 
@@ -174,6 +180,24 @@ public class DialogueManager : MonoBehaviour
         HideArrow(dialogue.DisableTrigger);
         isPlaying = false;
         _dialogueIndex++;
+    }
+
+    // Check for end of dialogue
+    private bool DialogueEnd(DialogueSequence sequence)
+    {
+        // Check out of bounds = done
+        if (_dialogueIndex == sequence.Dialogues.Length)
+        {
+            // Increment Tutorial Sequence
+            PlayerPrefs.SetInt("TutorialSequence", PlayerPrefs.GetInt("TutorialSequence", 0) + 1);
+
+            // Disable
+            _sequenceComplete = true;
+            enabled = false;
+            return true;
+        }
+
+        return false;
     }
 
     // Hide arrow

@@ -656,7 +656,7 @@ MonoBehaviour:
       - {fileID: 899239974}
       - {fileID: 2105712494}
       - {fileID: 1071747291}
-  - _sequenceID: 8
+  - _sequenceID: 6
     _tutorialObjects:
     - _dialogueIndex: 0
       _action: 1
@@ -23608,7 +23608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._sequenceID
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[0]._dialogues.Array.size
@@ -23647,9 +23647,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._dialogues.Array.data[0]._text
-      value: "One last thing! <#008DDB><b>When you encounter a damaged environment,
-        we\u2019ll need your help bringing attention to it so that the citizens are
-        aware!</b></color>"
+      value: "<#008DDB><b>When you encounter a damaged environment, we\u2019ll need
+        your help bringing attention to it so that the citizens are aware!</b></color>"
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._dialogues.Array.data[1]._text
@@ -23659,14 +23658,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._dialogues.Array.data[2]._text
-      value: "We\u2019ll be opening up <#008DDB><b>a new hall at the Merakai Index</b></color>
-        to do just that. Hopefully we get enough donations from that and the creature
-        halls to fund conservation initiatives."
+      value: "We\u2019ll be opening up <#008DDB><b>the Anthropocene hall at the Merakai
+        Index</b></color> to do just that. Hopefully we get enough donations from
+        that and the creature halls to fund conservation initiatives."
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._dialogues.Array.data[3]._text
-      value: Alright, stay safe out there! <#008DDB><b>Make sure to pass by The Exchange
-        to fund restoration projects.</b></color> Hang on, my brethren.
+      value: Alright, stay safe out there! Hang on, my brethren.
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[1]._dialogues.Array.data[4]._text

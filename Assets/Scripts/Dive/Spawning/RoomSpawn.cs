@@ -31,7 +31,7 @@ public class RoomSpawn : MonoBehaviour
         // Blockers (if location blocked & tutorial is ready)
         if (UniversalManagers.instance.GetComponentInChildren<StateManager>()
                                       .LocationBlockStates[currentLocation] &&
-            PlayerPrefs.GetInt("TutorialSequence", 0) >= 7)
+            PlayerPrefs.GetInt("TutorialSequence", 0) >= 6)
         {
             SpawnBlockers();
         }

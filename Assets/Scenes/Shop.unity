@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6109275638025078019, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 146.5
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 6109275638025078019, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[0]._sequenceID
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6868868180866309693, guid: f709f609483cca644a356d527ff8721c, type: 3}
       propertyPath: dialogueSequences.Array.data[0]._dialogues.Array.size
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 12881425}
   objectSequences:
-  - _sequenceID: 6
+  - _sequenceID: 8
     _tutorialObjects:
     - _dialogueIndex: 0
       _action: 0
@@ -534,10 +534,27 @@ MonoBehaviour:
       _action: 3
       _gameObjects:
       - {fileID: 6580390418802360309}
+    - _dialogueIndex: 2
+      _action: 0
+      _gameObjects:
+      - {fileID: 6408456237143174820}
+    - _dialogueIndex: 2
+      _action: 3
+      _gameObjects:
+      - {fileID: 6408456237143174820}
     - _dialogueIndex: 5
       _action: 2
       _gameObjects:
       - {fileID: 6580390418802360309}
+      - {fileID: 6408456237143174820}
+    - _dialogueIndex: 6
+      _action: 0
+      _gameObjects:
+      - {fileID: 862643538}
+    - _dialogueIndex: 6
+      _action: 1
+      _gameObjects:
+      - {fileID: 12881424}
   triggers: []
 --- !u!1001 &428781385
 PrefabInstance:
@@ -3773,6 +3790,11 @@ PrefabInstance:
 --- !u!224 &6408456237143174819 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4515308449506214151, guid: 1be51a1bc0c2b2c44b7bac2f6ac32fae, type: 3}
+  m_PrefabInstance: {fileID: 6408456237143174818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408456237143174820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2058937314930130184, guid: 1be51a1bc0c2b2c44b7bac2f6ac32fae, type: 3}
   m_PrefabInstance: {fileID: 6408456237143174818}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6580390418802360308

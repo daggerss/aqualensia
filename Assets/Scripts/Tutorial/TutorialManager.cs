@@ -26,7 +26,7 @@ public class TutorialManager : MonoBehaviour
         {
             currentSequence = PlayerPrefs.GetInt("TutorialSequence", 0);
 
-            if (currentSequence > 8)
+            if (currentSequence > 9)
             {
                 PlayerPrefs.SetInt("NewGame", 0);
                 return;
@@ -51,6 +51,15 @@ public class TutorialManager : MonoBehaviour
             {
                 // Play Dialogue
                 dialogueManager.PlaySequence(currentSequence);
+            }
+
+            // Check for last actions
+            else if (dialogueManager.SequenceComplete)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ActivateTutorialSequence();
+                }
             }
         }
     }
@@ -109,7 +118,23 @@ public class TutorialManager : MonoBehaviour
     // Play tutorial sequence
     private void ActivateTutorialSequence()
     {
+        // Mid sequence
         if (currentObjSequence != null && !dialogueManager.SequenceComplete)
+        {
+            // Check each tutorial obj for matching index
+            foreach (TutorialObject obj in currentObjSequence.TutorialObjects)
+            {
+                // Match index
+                if (dialogueManager.DialogueIndex == obj.DialogueIndex)
+                {
+                    // Do corresponding action
+                    ExecuteTutorialObject(obj.Action, obj.GameObjects);
+                }
+            }
+        }
+
+        // End sequence
+        else if (currentObjSequence != null && dialogueManager.SequenceComplete)
         {
             // Check each tutorial obj for matching index
             foreach (TutorialObject obj in currentObjSequence.TutorialObjects)
