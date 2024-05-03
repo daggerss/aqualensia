@@ -65,8 +65,8 @@ public class DialogueManager : MonoBehaviour
 
     public void PlaySequence(int id)
     {
-        // Interaction - LMB, Space, Enter
-        if (Input.GetMouseButtonDown(0))
+        // Interaction - Space or Enter
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("return"))
         {
             // Get sequence
             DialogueSequence currentSequence = FindSequence(id);
